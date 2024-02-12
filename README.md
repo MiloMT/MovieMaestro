@@ -43,7 +43,11 @@ Other Tech used in our application includes:
 
 
 ## R2	Dataflow Diagram {#r2}
+
+![Dataflow Diagram](./Resources/DataflowDiagram.png)
+
 ## R3	Application Architecture Diagram {#r3}
+![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram.png)
 ## R4	User Stories {#r4}
 ## R5	Wireframes for multiple standard screen sizes {r5}
 ## R6	Screenshots of your Github Projects {#r6}
