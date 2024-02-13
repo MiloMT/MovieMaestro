@@ -42,7 +42,7 @@ Other Tech used in our application includes:
 
 ## R3	Application Architecture Diagram 
 
-![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram.png)
+![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram1.png)
 
 In the frontend, React handles the user interface rendering. HTML, CSS, JavaScript which are fundamental web technologies are used to structure the UI(HTML), style(CSS), and add interactivity(JavaScript).　Netlify is well-suited for hosting frontend applications.
 
