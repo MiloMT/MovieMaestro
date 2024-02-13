@@ -54,6 +54,23 @@ In the backend, Node.js with Express.js handle incoming requests from the fronte
 In the database, MongoDB stores and manage application data, such as user information.
 
 ## R4	User Stories 
+User stories can help us define features of our application, by creating user stories we can turn our problems into real life examples and use this to implement usable features. As our application will have un-registered and registered users, the needs can be defined differently. The use of the user stories will greatly assist when writing our appliction. They will be used to look back on throughout the process to make sure our features are being implemented in the way we want them and for usability.
+
+Users:
+- As a user, I want to be able to apply filters based on genres, so that I can find movies that match my specific interests.
+- As a user, I want to filter movies based on their availability on different streaming platforms, such as Netflix, Amazon Prime, or Hulu, to streamline my viewing options.
+- As a user, I want to filter movies based on their availability in different countries, so that I can discover international films that suit my preferences.
+- As a user, I want to include or exclude movies based on specific keywords or themes, such as "romantic comedy" or "action-packed", to refine my search results.
+- As a user, I want to filter movies based on their average vote ratings, so that I can discover highly-rated films that align with my tastes.
+
+Registered Users:
+- As a registered user, I want to create and manage my account settings, including language preferences and default filters, to personalize my browsing experience.
+- As a registered user, I want to maintain a "watched list" of movies that I've already seen, so that they are excluded from future recommendations and searches.
+
+Specific Users:
+- As a parent, I want to filter movies based on appropriation, so that my children can watch appropriate movies.
+- 
+
 
 ## R5	Wireframes for multiple standard screen sizes
 ## R6	Screenshots of your Github Projects
