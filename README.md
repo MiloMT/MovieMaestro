@@ -1,16 +1,6 @@
 # MovieMaestro
 
-# Table of Contents
-
-## [R1	Description of your website](#r1)
-## [R2	Dataflow Diagram](#r2)
-## [R3	Application Architecture Diagram](#r3)
-## [R4	User Stories](#r4)
-## [R5	Wireframes for multiple standard screen sizes](#r5)
-## [R6	Screenshots of your Trello board](#r6)
-
-
-## R1	Description of your website {#r1}
+## R1	Description of your website
 ### Purpose
 Do you ever struggle to pick a movie you want to watch? Do you spend hours scrolling through different streaming platforms just to settle on a movie that isn't what you felt like watching? Well say no more! MovieMaestro is an application that saves you time and helps you identify what you want to watch, quickly! By using a variety of Filters, MovieMaestro will select a movie for you to watch so you can go to your streaming platform after and put it straight on! 
 
@@ -45,11 +35,11 @@ Other Tech used in our application includes:
 - MongoDB.com(Atlas Cloud Service) - Used for Database hosting
 
 
-## R2	Dataflow Diagram {#r2}
+## R2	Dataflow Diagram 
 
 ![Dataflow Diagram](./Resources/DataflowDiagram.png)
 
-## R3	Application Architecture Diagram {#r3}
+## R3	Application Architecture Diagram 
 
 ![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram.png)
 
@@ -63,8 +53,8 @@ In the backend, Node.js with Express.js handle incoming requests from the fronte
 
 In the database, MongoDB stores and manage application data, such as user information.
 
-## R4	User Stories {#r4}
+## R4	User Stories 
 
-## R5	Wireframes for multiple standard screen sizes {r5}
-## R6	Screenshots of your Github Projects {#r6}
+## R5	Wireframes for multiple standard screen sizes
+## R6	Screenshots of your Github Projects
 
