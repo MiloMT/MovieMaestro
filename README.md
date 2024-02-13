@@ -38,8 +38,11 @@ Other Tech used in our application includes:
 - Vite
 - HTML 
 - CSS
-- Vitest and test-library
-- SuperTest
+- Vitest and test-library - Used for our front-end React tests
+- SuperTest - Used for our backend, express tests
+- Netlify.com - Used for Front-end application hosting
+- Render.com - Used for Backend application hosting
+- MongoDB.com(Atlas Cloud Service) - Used for Database hosting
 
 
 ## R2	Dataflow Diagram {#r2}
@@ -61,6 +64,7 @@ In the backend, Node.js with Express.js handle incoming requests from the fronte
 In the database, MongoDB stores and manage application data, such as user information.
 
 ## R4	User Stories {#r4}
+
 ## R5	Wireframes for multiple standard screen sizes {r5}
 ## R6	Screenshots of your Github Projects {#r6}
 
