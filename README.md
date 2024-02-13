@@ -70,7 +70,10 @@ Registered Users:
 
 Specific Users:
 - As a parent, I want to filter movies based on appropriation, so that my children can watch appropriate movies.
-- 
+- As a casual viewer, I want to be able open the application and quickly find a movie without having to sign up.
+- As a casual viewer, I want a basic set of filters to get my movie choice faster.
+- As a movie aficionado, I want a detailed set of filters to get very specific results.
+- As a movie aficionado, I want to be able to save settings to save time when I use the application in the future.
 
 
 ## R5	Wireframes for multiple standard screen sizes
