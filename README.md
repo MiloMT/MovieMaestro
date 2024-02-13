@@ -46,6 +46,16 @@ Other Tech used in our application includes:
 
 ![Dataflow Diagram](./Resources/DataflowDiagram.png)
 
+In the frontend, React handles the user interface rendering. HTML, CSS, JavaScript which are fundamental web technologies are used to structure the UI(HTML), style(CSS), and add interactivity(JavaScript).
+
+The front end uses filters and state to construct URLs for fetch requests to the TMDB API which in turn sends back movie details related to the filters that were applied by the user.
+
+Vite helps in the development workflow by fast build times and a modern development experience.
+
+In the backend, Node.js with Express.js handle incoming requests from the frontend. Mongoose can be used to define schemas and models for our MongoDB data. It can facilitate interactions with data stored in MongoDB.
+
+In the database, MongoDB stores and manage application data, such as user information.
+
 ## R3	Application Architecture Diagram {#r3}
 ![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram.png)
 ## R4	User Stories {#r4}
