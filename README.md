@@ -76,6 +76,14 @@ Specific Users:
 - As a movie aficionado, I want to be able to save settings to save time when I use the application in the future.
 
 
-## R5	Wireframes for multiple standard screen sizes
-## R6	Screenshots of your Github Projects
+## R5	Wireframes
+## R6	Project Planning
+
+For our project we've used Github projects, a kanban style option, to organise our tasks and manage the project. This allows us to apply an agile methodology to our approach and quickly adapt throughout the project development lifecycle. At the start of each phase of the project, intial tasks are discussed, created and assigned within a group discussion to ensure responsibilities are shared and that each team member is aware of the tasks and workload to plan accordingly. As the project develops, tasks are maintained and cards are added / adjusted as required. If cards are no longer needed, ie: the task is considered not planned going forward or time constraints are too severe to finalise prior to deadline, than tasks will be marked as such and not deleted to capture a holistic view of the project cycle. Daily standups will also be held throughout the life cycle of the project to keep team communication and help maintain the project board, ensuring that awareness of tasks is kept high and that development stays on track.
+
+*Progress - 12/02/24*
+![Github Project Progress 240212](./Resources/GithubProject_240212.png)
+
+*Progress - 13/02/24*
+![Github Project Progress 240213](./Resources/GithubProject_240213.png)
 
