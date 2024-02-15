@@ -67,6 +67,7 @@ Users:
 Registered Users:
 - As a registered user, I want to create and manage my account settings, including language preferences and default filters, to personalize my browsing experience.
 - As a registered user, I want to maintain a "watched list" of movies that I've already seen, so that they are excluded from future recommendations and searches.
+- As a registered user, I want to be able to save movies that I like the look of so that I can watch them later.
 
 Specific Users:
 - As a parent, I want to filter movies based on appropriation, so that my children can watch appropriate movies.
@@ -86,4 +87,7 @@ For our project we've used Github projects, a kanban style option, to organise o
 
 *Progress - 13/02/24*
 ![Github Project Progress 240213](./Resources/GithubProject_240213.png)
+
+*Progress - 14/02/24*
+![Github Project Progress 240214](./Resources/GithubProject_240214.png)
 
