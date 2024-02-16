@@ -113,9 +113,9 @@ For our project we've used Github projects, a kanban style option, to organise o
 *Progress - 14/02/24*
 ![Github Project Progress 240214](./docs/GithubProject_240214.png)
 
-*Progress - 14/02/25*
+*Progress - 15/02/24*
 ![Github Project Progress 250214](./docs/GithubProject_240215.png)
 
-*Progress - 14/02/26*
+*Progress - 16/02/24*
 ![Github Project Progress 260214](./docs/GithubProject_240216.png)
 
