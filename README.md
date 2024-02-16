@@ -10,7 +10,7 @@ The purpose of MovieMaestro is to save you time and get you relaxing and watchin
 - Users can apply filters that will identify a movie to be displayed. This could include but not limited too: genre, streaming service availability, country availability, include/disclude keywords, title, average vote, etc.
 - Users can create and register an account on Movie Maestro. They can add user information that will help add defaults to their movie search. For example only requesting movies in their language such as English or Japanese.
 - Once the filters have been applied, MovieMaestro will display a movie for the user, the user can choose to accept the movie choice or refresh the search and they can add movies to their "watched list" to exclude it from new searches in the future.
-- Registered users can like and dislike movies. This will appear in the watched list and will help them decide when re-watching films what to watch.
+- Registered users can also add movies to a "Watch Later List" which will also show on there profile to save titles for later watching.
 
 ### Target Audience
 MovieMaestro is designed for people who love movies who often notice themselves having some struggle in selecting a movie from a vast selection available on streaming platforms. It helps people who struggle with indecision when it comes to choosing what to watch and assists in streamlining the process of finding a movie that fits their preferences or mood.
@@ -44,15 +44,15 @@ Other Tech used in our application includes:
 
 ![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram1.png)
 
-In the frontend, React handles the user interface rendering. HTML, CSS, JavaScript which are fundamental web technologies are used to structure the UI(HTML), style(CSS), and add interactivity(JavaScript).　Netlify is well-suited for hosting frontend applications.
+In the frontend, React handles the user interface rendering. HTML, CSS, JavaScript which are fundamental web technologies are used to structure the UI(HTML), style(CSS), and add interactivity(JavaScript).　Netlify is well-suited for hosting frontend applications. So we have chosen Netlify as the hosting service for the frontend.
 
 The front end uses filters and state to construct URLs for fetch requests to the TMDB API which in turn sends back movie details related to the filters that were applied by the user.
 
 Vite helps in the development workflow by fast build times and a modern development experience.
 
-In the backend, Node.js with Express.js handle incoming requests from the frontend. Mongoose can be used to define schemas and models for our MongoDB data. It can facilitate interactions with data stored in MongoDB. Render offers hosting for static and dynamic web applications, along with managed backgroud jobs.
+In the backend, Node.js with Express.js handle incoming requests from the frontend. Mongoose can be used to define schemas and models for our MongoDB data. It can facilitate interactions with data stored in MongoDB. Render offers hosting for static and dynamic web applications, along with managed backgroud jobs. So we have chosen Render as the hosting service for the backend.
 
-In the database, MongoDB stores and manage application data, such as user information. Atlas is a fully managed cloud database service for MongoDB.
+In the database, MongoDB stores and manage application data, such as user information. Atlas is a fully managed cloud database service for MongoDB. So we have chosen Atlas as the hosting service for the database.
 
 ## R4	User Stories 
 User stories can help us define features of our application, by creating user stories we can turn our problems into real life examples and use this to implement usable features. As our application will have un-registered and registered users, the needs can be defined differently. The use of the user stories will greatly assist when writing our appliction. They will be used to look back on throughout the process to make sure our features are being implemented in the way we want them and for usability.
@@ -78,6 +78,22 @@ Specific Users:
 
 
 ## R5	Wireframes
+
+*Wireframes - Home Page*
+![Wireframes - Home Page](./Resources/Wireframes_HomePages.png)
+
+*Wireframes - Movie Page*
+![Wireframes - Movie Page](./Resources/Wireframes_MoviePages.png)
+
+*Wireframes - Login Page*
+![Wireframes - Login Page](./Resources/Wireframes_LoginPages.png)
+
+*Wireframes - Profile Page*
+![Wireframes - Profile Page](./Resources/Wireframes_ProfilePages.png)
+
+*Wireframes - Route Relationships*
+![Wireframes - Route Relationships](./Resources/Wireframes_RouteRelationships.png)
+
 ## R6	Project Planning
 
 For our project we've used Github projects, a kanban style option, to organise our tasks and manage the project. This allows us to apply an agile methodology to our approach and quickly adapt throughout the project development lifecycle. At the start of each phase of the project, intial tasks are discussed, created and assigned within a group discussion to ensure responsibilities are shared and that each team member is aware of the tasks and workload to plan accordingly. As the project develops, tasks are maintained and cards are added / adjusted as required. If cards are no longer needed, ie: the task is considered not planned going forward or time constraints are too severe to finalise prior to deadline, than tasks will be marked as such and not deleted to capture a holistic view of the project cycle. Daily standups will also be held throughout the life cycle of the project to keep team communication and help maintain the project board, ensuring that awareness of tasks is kept high and that development stays on track.
@@ -90,4 +106,10 @@ For our project we've used Github projects, a kanban style option, to organise o
 
 *Progress - 14/02/24*
 ![Github Project Progress 240214](./Resources/GithubProject_240214.png)
+
+*Progress - 14/02/25*
+![Github Project Progress 250214](./Resources/GithubProject_250214.png)
+
+*Progress - 14/02/26*
+![Github Project Progress 260214](./Resources/GithubProject_260214.png)
 
