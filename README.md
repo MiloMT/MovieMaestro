@@ -108,8 +108,8 @@ For our project we've used Github projects, a kanban style option, to organise o
 ![Github Project Progress 240214](./Resources/GithubProject_240214.png)
 
 *Progress - 14/02/25*
-![Github Project Progress 250214](./Resources/GithubProject_250214.png)
+![Github Project Progress 250214](./Resources/GithubProject_240215.png)
 
 *Progress - 14/02/26*
-![Github Project Progress 260214](./Resources/GithubProject_260214.png)
+![Github Project Progress 260214](./Resources/GithubProject_240216.png)
 
