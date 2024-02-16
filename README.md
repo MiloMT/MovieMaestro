@@ -57,6 +57,8 @@ In the database, MongoDB stores and manage application data, such as user inform
 ## R4	User Stories 
 User stories can help us define features of our application, by creating user stories we can turn our problems into real life examples and use this to implement usable features. As our application will have un-registered and registered users, the needs can be defined differently. The use of the user stories will greatly assist when writing our appliction. They will be used to look back on throughout the process to make sure our features are being implemented in the way we want them and for usability.
 
+We created a group of generic user stories to match our intial proposal and get a firmer understanding of the functionality that we wanted to achieved.
+
 Users:
 - As a user, I want to be able to apply filters based on genres, so that I can find movies that match my specific interests.
 - As a user, I want to filter movies based on their availability on different streaming platforms, such as Netflix, Amazon Prime, or Hulu, to streamline my viewing options.
@@ -64,10 +66,14 @@ Users:
 - As a user, I want to include or exclude movies based on specific keywords or themes, such as "romantic comedy" or "action-packed", to refine my search results.
 - As a user, I want to filter movies based on their average vote ratings, so that I can discover highly-rated films that align with my tastes.
 
+As we discussed the concept of registered users and the ability to login within the interface, we recognised the need to have user stories dedicated to the registered user experience within the application.
+
 Registered Users:
 - As a registered user, I want to create and manage my account settings, including language preferences and default filters, to personalize my browsing experience.
 - As a registered user, I want to maintain a "watched list" of movies that I've already seen, so that they are excluded from future recommendations and searches.
 - As a registered user, I want to be able to save movies that I like the look of so that I can watch them later.
+
+Lastly, during the wireframing process, further functional requires became refined and as such, we wanted to created user stories that related to specific types of users that used the application. These would further our understanding on the types of users that we were designing for.
 
 Specific Users:
 - As a parent, I want to filter movies based on appropriation, so that my children can watch appropriate movies.
