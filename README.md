@@ -57,7 +57,7 @@ In the database, MongoDB stores and manage application data, such as user inform
 ## R4	User Stories 
 User stories can help us define features of our application, by creating user stories we can turn our problems into real life examples and use this to implement usable features. As our application will have un-registered and registered users, the needs can be defined differently. The use of the user stories will greatly assist when writing our appliction. They will be used to look back on throughout the process to make sure our features are being implemented in the way we want them and for usability.
 
-We created a group of generic user stories to match our intial proposal and get a firmer understanding of the functionality that we wanted to achieved.
+We created a group of generic user stories to match our intial proposal and get a firmer understanding of the functionality that we wanted to achieve.
 
 Users:
 - As a user, I want to be able to apply filters based on genres, so that I can find movies that match my specific interests.
