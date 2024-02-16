@@ -50,7 +50,7 @@ The front end uses filters and state to construct URLs for fetch requests to the
 
 Vite helps in the development workflow by fast build times and a modern development experience.
 
-In the backend, Node.js with Express.js handle incoming requests from the frontend. Mongoose can be used to define schemas and models for our MongoDB data. It can facilitate interactions with data stored in MongoDB. Render offers hosting for static and dynamic web applications, along with managed backgroud jobs. So we have chosen Render as the hosting service for the backend.
+In the backend, Node.js with Express.js handle incoming requests from the frontend. Mongoose can be used to define schemas and models for our MongoDB data. It can facilitate interactions with data stored in MongoDB. Render offers hosting for static and dynamic web applications, along with managed background jobs. So we have chosen Render as the hosting service for the backend.
 
 In the database, MongoDB stores and manage application data, such as user information. Atlas is a fully managed cloud database service for MongoDB. So we have chosen Atlas as the hosting service for the database.
 
