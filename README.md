@@ -78,6 +78,22 @@ Specific Users:
 
 
 ## R5	Wireframes
+
+*Wireframes - Home Page*
+![Wireframes - Home Page](./Resources/Wireframes_HomePages.png)
+
+*Wireframes - Movie Page*
+![Wireframes - Movie Page](./Resources/Wireframes_MoviePages.png)
+
+*Wireframes - Login Page*
+![Wireframes - Login Page](./Resources/Wireframes_LoginPages.png)
+
+*Wireframes - Profile Page*
+![Wireframes - Profile Page](./Resources/Wireframes_ProfilePages.png)
+
+*Wireframes - Route Relationships*
+![Wireframes - Route Relationships](./Resources/Wireframes_RouteRelationships.png)
+
 ## R6	Project Planning
 
 For our project we've used Github projects, a kanban style option, to organise our tasks and manage the project. This allows us to apply an agile methodology to our approach and quickly adapt throughout the project development lifecycle. At the start of each phase of the project, intial tasks are discussed, created and assigned within a group discussion to ensure responsibilities are shared and that each team member is aware of the tasks and workload to plan accordingly. As the project develops, tasks are maintained and cards are added / adjusted as required. If cards are no longer needed, ie: the task is considered not planned going forward or time constraints are too severe to finalise prior to deadline, than tasks will be marked as such and not deleted to capture a holistic view of the project cycle. Daily standups will also be held throughout the life cycle of the project to keep team communication and help maintain the project board, ensuring that awareness of tasks is kept high and that development stays on track.
@@ -90,4 +106,10 @@ For our project we've used Github projects, a kanban style option, to organise o
 
 *Progress - 14/02/24*
 ![Github Project Progress 240214](./Resources/GithubProject_240214.png)
+
+*Progress - 14/02/25*
+![Github Project Progress 250214](./Resources/GithubProject_250214.png)
+
+*Progress - 14/02/26*
+![Github Project Progress 260214](./Resources/GithubProject_260214.png)
 
