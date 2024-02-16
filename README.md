@@ -38,11 +38,11 @@ Other Tech used in our application includes:
 
 ## R2	Dataflow Diagram 
 
-![Dataflow Diagram](./Resources/DataflowDiagram.png)
+![Dataflow Diagram](./docs/DataflowDiagram.png)
 
 ## R3	Application Architecture Diagram 
 
-![Application Architecture Diagram](./Resources/ApplicationArchitectureDiagram1.png)
+![Application Architecture Diagram](./docs/ApplicationArchitectureDiagram1.png)
 
 In the frontend, React handles the user interface rendering. HTML, CSS, JavaScript which are fundamental web technologies are used to structure the UI(HTML), style(CSS), and add interactivity(JavaScript).　Netlify is well-suited for hosting frontend applications. So we have chosen Netlify as the hosting service for the frontend.
 
@@ -80,36 +80,36 @@ Specific Users:
 ## R5	Wireframes
 
 *Wireframes - Home Page*
-![Wireframes - Home Page](./Resources/Wireframes_HomePages.png)
+![Wireframes - Home Page](./docs/Wireframes_HomePages.png)
 
 *Wireframes - Movie Page*
-![Wireframes - Movie Page](./Resources/Wireframes_MoviePages.png)
+![Wireframes - Movie Page](./docs/Wireframes_MoviePages.png)
 
 *Wireframes - Login Page*
-![Wireframes - Login Page](./Resources/Wireframes_LoginPages.png)
+![Wireframes - Login Page](./docs/Wireframes_LoginPages.png)
 
 *Wireframes - Profile Page*
-![Wireframes - Profile Page](./Resources/Wireframes_ProfilePages.png)
+![Wireframes - Profile Page](./docs/Wireframes_ProfilePages.png)
 
 *Wireframes - Route Relationships*
-![Wireframes - Route Relationships](./Resources/Wireframes_RouteRelationships.png)
+![Wireframes - Route Relationships](./docs/Wireframes_RouteRelationships.png)
 
 ## R6	Project Planning
 
 For our project we've used Github projects, a kanban style option, to organise our tasks and manage the project. This allows us to apply an agile methodology to our approach and quickly adapt throughout the project development lifecycle. At the start of each phase of the project, intial tasks are discussed, created and assigned within a group discussion to ensure responsibilities are shared and that each team member is aware of the tasks and workload to plan accordingly. As the project develops, tasks are maintained and cards are added / adjusted as required. If cards are no longer needed, ie: the task is considered not planned going forward or time constraints are too severe to finalise prior to deadline, than tasks will be marked as such and not deleted to capture a holistic view of the project cycle. Daily standups will also be held throughout the life cycle of the project to keep team communication and help maintain the project board, ensuring that awareness of tasks is kept high and that development stays on track.
 
 *Progress - 12/02/24*
-![Github Project Progress 240212](./Resources/GithubProject_240212.png)
+![Github Project Progress 240212](./docs/GithubProject_240212.png)
 
 *Progress - 13/02/24*
-![Github Project Progress 240213](./Resources/GithubProject_240213.png)
+![Github Project Progress 240213](./docs/GithubProject_240213.png)
 
 *Progress - 14/02/24*
-![Github Project Progress 240214](./Resources/GithubProject_240214.png)
+![Github Project Progress 240214](./docs/GithubProject_240214.png)
 
 *Progress - 14/02/25*
-![Github Project Progress 250214](./Resources/GithubProject_240215.png)
+![Github Project Progress 250214](./docs/GithubProject_240215.png)
 
 *Progress - 14/02/26*
-![Github Project Progress 260214](./Resources/GithubProject_240216.png)
+![Github Project Progress 260214](./docs/GithubProject_240216.png)
 
