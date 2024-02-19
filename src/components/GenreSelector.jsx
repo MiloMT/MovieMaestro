@@ -21,6 +21,7 @@ const GenreSelector = ({ setGenre }) => {
       });
   }, []);
 
+
   return (
     <select
       onChange={(event) => setSelectValue(event.target.value)}
