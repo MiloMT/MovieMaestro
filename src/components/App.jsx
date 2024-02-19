@@ -6,8 +6,10 @@ import Movie from '../views/Movie';
 import Profile from '../views/Profile';
 import NavBar from './Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from 'react';
 
 function App() {
+  const [genre, setGenre] = useState([])
 
   return (
     <BrowserRouter>

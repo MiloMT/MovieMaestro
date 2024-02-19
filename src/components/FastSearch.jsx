@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import GenreSelector from "./GenreSelector"; // Import the GenreSelector component here
-
+import GenreSelector from "./GenreSelector";
 import Button from "react-bootstrap/Button";
 
+
 function FastSearch() {
-  const [selectedGenre, setSelectedGenre] = useState(null);
   let [genre, setGenre] = useState("");
 
   function MovieRequest() {
@@ -21,7 +20,9 @@ function FastSearch() {
       }
     )
       .then((res) => res.json())
-      .then((data) => console.log(data.results));
+      .then((data) => {
+        console.log(data.results);
+      });
   }
 
   return (
