@@ -4,6 +4,8 @@ import Home from '../views/Home';
 import Login from '../views/Login';
 import Movie from '../views/Movie';
 import Profile from '../views/Profile';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
 
