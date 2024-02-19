@@ -5,6 +5,7 @@ import Login from '../views/Login';
 import Movie from '../views/Movie';
 import Profile from '../views/Profile';
 import NavBar from './Navbar';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 
