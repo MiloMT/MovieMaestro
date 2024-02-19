@@ -14,7 +14,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/profile" element={<Profile />} />
-        <h1>MovieMaestro!</h1>
       </Routes>
     </BrowserRouter>
   );
