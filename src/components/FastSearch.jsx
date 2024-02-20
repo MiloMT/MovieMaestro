@@ -4,11 +4,9 @@ import GenreSelector from "./GenreSelector";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
-
-function FastSearch({setMovies}) {
+function FastSearch({ setMovies, genreList }) {
   let [genre, setGenre] = useState("");
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
 
   function MovieRequest() {
     fetch(
@@ -26,7 +24,7 @@ function FastSearch({setMovies}) {
       .then((data) => {
         setMovies(data.results);
       })
-      .then(()  => navigate("/movie"))
+      .then(() => navigate("/movie"));
   }
 
   return (

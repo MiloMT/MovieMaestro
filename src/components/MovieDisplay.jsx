@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-const MovieDisplay = ({ movies }) => {
+const MovieDisplay = ({ movies, genreList }) => {
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(null);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const MovieDisplay = ({ movies }) => {
     }
   };
 
+
   return (
     <>
       <div>
@@ -30,7 +31,7 @@ const MovieDisplay = ({ movies }) => {
             <h4>Title: {movies[selectedMovieIndex].title}</h4>
             <h6>Overview: {movies[selectedMovieIndex].overview}</h6>
             <p>Rating: {movies[selectedMovieIndex].vote_average}</p>
-            <p>Genre: {movies[selectedMovieIndex].genre}</p>
+            <p>Genre: {selectedGenre}</p>
           </div>
         )}
         <button onClick={selectRandomMovie}>Refresh</button>
