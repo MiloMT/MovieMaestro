@@ -17,7 +17,6 @@ const MovieDisplay = ({ movies, genreList }) => {
     }
   };
 
-
   return (
     <>
       <div>
@@ -31,7 +30,7 @@ const MovieDisplay = ({ movies, genreList }) => {
             <h4>Title: {movies[selectedMovieIndex].title}</h4>
             <h6>Overview: {movies[selectedMovieIndex].overview}</h6>
             <p>Rating: {movies[selectedMovieIndex].vote_average}</p>
-            <p>Genre: {selectedGenre}</p>
+            <p>Genres: {movies[selectedMovieIndex].genre_ids} </p>
           </div>
         )}
         <button onClick={selectRandomMovie}>Refresh</button>
