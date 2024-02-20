@@ -1,8 +1,11 @@
 import React from 'react'
 
-const MovieDisplay = () => {
+const MovieDisplay = ({movies}) => {
   return (
+    <>
     <div>MovieDisplay</div>
+    <p>{movies[0].title}</p>
+    </>
   )
 }
 

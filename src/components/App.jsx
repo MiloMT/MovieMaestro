@@ -9,15 +9,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from 'react';
 
 function App() {
-  const [genre, setGenre] = useState([])
+  let [movies, setMovies] = useState([])
 
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setMovies={setMovies}/>} />
         <Route path="/login" element={<Login />} />
-        <Route path="/movie" element={<Movie />} />
+        <Route path="/movie" element={<Movie movie={movies}/>} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>

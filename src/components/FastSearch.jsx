@@ -4,7 +4,7 @@ import GenreSelector from "./GenreSelector";
 import Button from "react-bootstrap/Button";
 
 
-function FastSearch() {
+function FastSearch({setMovies}) {
   let [genre, setGenre] = useState("");
 
   function MovieRequest() {
@@ -21,7 +21,7 @@ function FastSearch() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results);
+        setMovies(data.results);
       });
   }
 

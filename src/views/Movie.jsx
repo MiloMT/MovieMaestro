@@ -1,11 +1,11 @@
 import React from 'react'
 import MovieDisplay from '../components/MovieDisplay';
 
-const Movie = () => {
+const Movie = ({movies}) => {
   return (
     <>
       <div>Movie</div>
-      <MovieDisplay />
+      <MovieDisplay movies={movies} />
     </>
   );
 }
