@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import GenreSelector from "./GenreSelector"; // Import the GenreSelector component here
-
+import GenreSelector from "./GenreSelector";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
-function FastSearch() {
-  const [selectedGenre, setSelectedGenre] = useState(null);
+
+function FastSearch({setMovies}) {
   let [genre, setGenre] = useState("");
+  const navigate = useNavigate()
+  
 
   function MovieRequest() {
     fetch(
@@ -21,7 +23,10 @@ function FastSearch() {
       }
     )
       .then((res) => res.json())
-      .then((data) => console.log(data.results));
+      .then((data) => {
+        setMovies(data.results);
+      })
+      .then(()  => navigate("/movie"))
   }
 
   return (

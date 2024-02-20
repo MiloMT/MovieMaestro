@@ -2,11 +2,11 @@ import React from 'react'
 import FastSearch from '../components/FastSearch';
 import RegisterButton from '../components/RegisterButton';
 
-const Home = () => {
+const Home = ({setMovies}) => {
   return (
     <>
       <div>Home</div>
-      <FastSearch />
+      <FastSearch setMovies={setMovies}/>
       <RegisterButton />
     </>
   );
