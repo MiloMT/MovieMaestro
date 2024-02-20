@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const MovieDisplay = ({ movies, genreList }) => {
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(null);
 
@@ -25,12 +24,18 @@ const MovieDisplay = ({ movies, genreList }) => {
           <div className="movie-details">
             <img
               src={`https://image.tmdb.org/t/p/original${movies[selectedMovieIndex].poster_path}`}
-              alt="Movie Poster Image" style={{ width: "300px", height: "400px"}}
+              alt="Movie Poster Image"
+              style={{ width: "300px", height: "400px" }}
             />
             <h4>Title: {movies[selectedMovieIndex].title}</h4>
             <h6>Overview: {movies[selectedMovieIndex].overview}</h6>
             <p>Rating: {movies[selectedMovieIndex].vote_average}</p>
-            <p>Genres: {movies[selectedMovieIndex].genre_ids} </p>
+            <p>
+              Genres:{" "}
+              {movies[selectedMovieIndex].genre_ids.map(
+                (id) => genreList.find((obj) => obj.id === id).name
+              ).join(", ")}
+            </p>
           </div>
         )}
         <button onClick={selectRandomMovie}>Refresh</button>
