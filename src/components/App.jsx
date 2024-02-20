@@ -11,8 +11,9 @@ import { useState, useEffect } from "react";
 function App() {
   let [movies, setMovies] = useState([]);
   let [genreList, setGenreList] = useState([]);
+  const [isBusy, setBusy] = useState(true)
 
-    useEffect(() => {
+  useEffect(() => {
     fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", {
       method: "GET",
       headers: {
@@ -22,19 +23,27 @@ function App() {
       },
     })
       .then((res) => res.json())
-      .then((data) => {setGenreList(data.genres)});
+      .then((data) => {setGenreList(data.genres)})
+      .then(() => setBusy(false))
   }, []);
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home setMovies={setMovies} genreList={genreList} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/movie" element={<Movie movies={movies} genreList={genreList} />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      { isBusy ? (
+        <h1>Loading...</h1>
+      ) : (
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home setMovies={setMovies} genreList={genreList} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/movie" element={<Movie movies={movies} genreList={genreList} />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </BrowserRouter>
+      )}
+      {console.log(genreList)}
+    </>
   );
 }
 

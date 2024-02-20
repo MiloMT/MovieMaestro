@@ -33,7 +33,7 @@ function FastSearch({ setMovies, genreList }) {
         <Accordion.Header>Fast Search</Accordion.Header>
         <Accordion.Body>
           <p>Select a Genre</p>
-          <GenreSelector setGenre={setGenre} />
+          <GenreSelector setGenre={setGenre} genreList={genreList} />
           <Button onClick={MovieRequest} variant="primary">
             Search Movie
           </Button>{" "}
