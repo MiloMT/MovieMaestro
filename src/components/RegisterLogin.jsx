@@ -45,23 +45,22 @@ function RegisterLogin() {
         }
     }
 
-    // async function addUser(name, email) {
+    async function addUser(name, email) {
 
-    //     const newUser = {
-    //         name: name,
-    //         email: email
-    //     }
-    //     // const res = await fetch('', {
-    //     //     method: 'POST',
-    //     //     headers: {
-    //     //         'Content-Type': 'application/json'
-    //     //     },
-    //     //     body: JSON.stringify(newUser)
-    //     // })
-    //     const data = newUser
-    //     setUsers([...users, data])
-    //     // console.log(users)
-    // }
+        const newEntry = {
+            name: name,
+            email: email
+        }
+        const res = await fetch('https://moviemaestro-api.onrender.com/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newEntry)
+        })
+        // const data = await res.json()
+        // console.log(data)
+    }
 
     return (
         <Form onSubmit={handleSubmit}>
