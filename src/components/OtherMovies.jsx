@@ -3,40 +3,26 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 const OtherMovies = ({ genreList, selectedMovies, setMovieIndex }) => {
-
-  // Function to limit the length of movie overview
-  const truncateOverview = (overview, maxLength) => {
-    if (overview.length > maxLength) {
-      return overview.substring(0, 50) + "...";
-    } else {
-      return overview;
-    }
-  };
-
   return (
     <>
-      <CardGroup className="other-movie-cards">
+      <CardGroup
+        className="other-movie-cards"
+        style={{ display: "flex", flexWrap: "wrap" }}
+      >
         {selectedMovies.map((movie, index) => (
-          <div key={index} onClick={() => setMovieIndex(index)}>
-            <Card >
+          <div
+            key={index}
+            onClick={() => setMovieIndex(index)}
+            style={{ width: "calc(20% - 10px)", margin: "5px" }}
+          >
+            <Card>
               <Card.Img
                 variant="top"
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               />
               <Card.Body>
                 <Card.Title>{movie.title}</Card.Title>
-                <Card.Text>{truncateOverview(movie.overview, 150)}</Card.Text>
               </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Rating: {movie.vote_average}</small>
-                <br />
-                <small className="text-muted">
-                  Genres:{" "}
-                  {movie.genre_ids
-                    .map((id) => genreList.find((obj) => obj.id === id).name)
-                    .join(", ")}
-                </small>
-              </Card.Footer>
             </Card>
           </div>
         ))}
