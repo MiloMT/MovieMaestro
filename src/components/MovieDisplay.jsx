@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import OtherMovies from "./OtherMovies.jsx";
+import { Context } from "./App.jsx"
 
-const MovieDisplay = ({ movies, genreList }) => {
-  const [selectedMovies, setSelectedMovies] = useState([]);
+const MovieDisplay = ({ movies }) => {
+  const [apiDefaults, setApiDefaults] = useContext(Context)
+  const [selectedMovies, setSelectedMovies] = useState([])
   const [movieIndex, setMovieIndex] = useState([0])
   const [isBusy, setBusy] = useState(true)
 
@@ -58,14 +60,14 @@ const MovieDisplay = ({ movies, genreList }) => {
               <p>
                 Genres:{" "}
                 {selectedMovies[movieIndex].genre_ids
-                  .map((id) => genreList.find((obj) => obj.id === id).name)
+                  .map((id) => apiDefaults.genreList.find((obj) => obj.id === id).name)
                   .join(", ")}
               </p>
             </div>
           )}
           {/* <button onClick={selectRandomMovie}>Refresh</button> */}
         </div>
-        <OtherMovies genreList={genreList} selectedMovies={selectedMovies} setMovieIndex={setMovieIndex} />
+        <OtherMovies selectedMovies={selectedMovies} setMovieIndex={setMovieIndex} />
       </>
       )}
     </>
