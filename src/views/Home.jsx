@@ -7,7 +7,7 @@ const Home = ({ setMovies, genreList }) => {
   return (
     <>
       <div>Home</div>
-      <FastSearch setMovies={setMovies} genreList={genreList} />
+      <FastSearch setMovies={setMovies} />
       <RegisterButton />
     </>
   );

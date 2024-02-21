@@ -6,12 +6,14 @@ import Movie from "../views/Movie";
 import Profile from "../views/Profile";
 import NavBar from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Footer from "./Footer";
 
+const Context = React.createContext()
+
 function App() {
-  let [movies, setMovies] = useState([]);
-  let [genreList, setGenreList] = useState([]);
+  const [apiDefaults, setApiDefaults] = useState([])
+  let [movies, setMovies] = useState([])
   const [isBusy, setBusy] = useState(true)
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function App() {
       },
     })
       .then((res) => res.json())
-      .then((data) => {setGenreList(data.genres)})
+      .then((data) => {setApiDefaults(...apiDefaults, { genreList: data.genres })})
       .then(() => setBusy(false))
   }, []);
 
@@ -33,19 +35,21 @@ function App() {
       { isBusy ? (
         <h1>Loading...</h1>
       ) : (
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home setMovies={setMovies} genreList={genreList} />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/movie" element={<Movie movies={movies} genreList={genreList} />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <Context.Provider value={[ apiDefaults, setApiDefaults ]}>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<Home setMovies={setMovies} />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/movie" element={<Movie movies={movies} />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </Context.Provider>
       )}
     </>
   );
 }
 
-export default App;
+export { App, Context };
