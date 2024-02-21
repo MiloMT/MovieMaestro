@@ -7,6 +7,7 @@ import Profile from "../views/Profile";
 import NavBar from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
+import Footer from "./Footer";
 
 function App() {
   let [movies, setMovies] = useState([]);
@@ -40,6 +41,7 @@ function App() {
             <Route path="/movie" element={<Movie movies={movies} genreList={genreList} />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       )}
     </>

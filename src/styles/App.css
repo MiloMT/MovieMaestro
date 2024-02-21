@@ -5,6 +5,27 @@
   text-align: center;
 }
 
+
+
+.tmdb-logo {
+  width: 60px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.tmdb-attribution {
+  margin-top: 15px;
+}
+
+.footer-names {
+  display: flex;
+  margin-left: 75%;
+}
+
+
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
