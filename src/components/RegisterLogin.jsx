@@ -36,10 +36,9 @@ function RegisterLogin() {
             addUser(name, email, password)
             nav('/login')
         } else {
-            // console.log({ email, password });
-            loginUser(email, password)
-            setPassword("")
-            setEmail("")
+            loginUser({ email: email, password: password })
+            // Got acessToken
+            // nav('/')
         }
     }
 
@@ -60,10 +59,9 @@ function RegisterLogin() {
         })
         const data = await res.json()
         console.log(data)
-        // console.log()
     }
     async function loginUser(credentials) {
-        return fetch('https://moviemaestro-api.onrender.com/users/login', {
+        return await fetch('https://moviemaestro-api.onrender.com/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
