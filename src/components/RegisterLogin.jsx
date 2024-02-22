@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Context } from './App';
 
 
 function RegisterLogin() {
@@ -11,6 +12,7 @@ function RegisterLogin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [isLoggedIn, setLoggedIn] = useContext(Context)
 
     const nav = useNavigate()
 
@@ -25,22 +27,26 @@ function RegisterLogin() {
     }
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        if (action === "Register") {
-            console.log({
-                name,
-                email,
-                password
-            })
-            addUser(name, email, password)
-            nav('/login')
-        } else {
-            loginUser({ email: email, password: password })
-            // Got acessToken
-            // nav('/')
+        try {
+            if (action === "Register") {
+                console.log({
+                    name,
+                    email,
+                    password
+                })
+                await addUser(name, email, password)
+                nav('/login')
+            } else {
+                await loginUser({ email: email, password: password })
+                setLoggedIn(true)
+                nav('/')
+            }
+        } catch (error) {
+            console.log("Error:", error)
         }
-    }
+        }
 
 
     async function addUser(name, email, password) {
@@ -70,6 +76,7 @@ function RegisterLogin() {
         })
             .then(data => data.json())
             .then(data => sessionStorage.setItem("token", data.accessToken))
+            // .then(() => setLoggedIn(true))
     }
 
     return (
