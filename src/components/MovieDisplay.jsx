@@ -15,7 +15,7 @@ const MovieDisplay = () => {
     useEffect(() => {
         selectMovies()
         setBusy(false)
-    }, []);
+    }, [movies]);
 
     const selectMovies = () => {
         if (movies && movies.length > 0) {
