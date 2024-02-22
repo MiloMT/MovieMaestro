@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom"
+import { Context } from "./App.jsx"
 
 const NavBar = () => {
+    const { api, LoggedIn } = useContext(Context)
+    const [isLoggedIn, setLoggedIn] = LoggedIn
+
     return (
         <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
@@ -11,9 +16,15 @@ const NavBar = () => {
                     <Navbar.Brand>LOGO</Navbar.Brand>
                 </Link>
                 <h1>MovieMaestro</h1>
-                <Link to="/profile">
-                    <Navbar.Brand>profile</Navbar.Brand>
-                </Link>
+                { isLoggedIn ? (
+                    <Link to="/profile">
+                        <Navbar.Brand>Profile</Navbar.Brand>
+                    </Link>
+                ) : (
+                    <Link to="/login">
+                        <Navbar.Brand>login</Navbar.Brand>
+                    </Link>
+                )}
             </Container>
         </Navbar>
     );
