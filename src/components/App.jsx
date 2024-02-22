@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [apiDefaults, setApiDefaults] = useState([])
-  let [movies, setMovies] = useState([])
+  const [movies, setMovies] = useState([])
   const [isBusy, setBusy] = useState(true)
 
   useEffect(() => {
