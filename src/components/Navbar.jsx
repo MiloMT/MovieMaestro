@@ -1,17 +1,21 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
         <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand href="/">LOGO</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>LOGO</Navbar.Brand>
+                </Link>
                 <h1>MovieMaestro</h1>
-                <Navbar.Brand href="/profile">profile</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>profile</Navbar.Brand>
+                </Link>
             </Container>
         </Navbar>
     );
 }
-
 export default NavBar;
