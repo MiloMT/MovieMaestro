@@ -69,8 +69,7 @@ function RegisterLogin() {
             body: JSON.stringify(credentials)
         })
             .then(data => data.json())
-            .then(data => console.log(data))
-
+            .then(data => sessionStorage.setItem("token", data.accessToken))
     }
 
     return (
