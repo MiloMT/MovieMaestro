@@ -2,12 +2,13 @@ import React from 'react'
 import FastSearch from '../components/FastSearch'
 import AdvancedSearch from '../components/AdvancedSearch'
 import RegisterButton from '../components/RegisterButton'
+import Header from '../components/HomeHeader';
 
 
 const Home = () => {
     return (
         <>
-            <div>Home</div>
+            <Header />
             <FastSearch />
             <AdvancedSearch />
             <RegisterButton />
