@@ -5,29 +5,20 @@ import Login from "../views/Login";
 import Movie from "../views/Movie";
 import Profile from "../views/Profile";
 import NavBar from "./Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext, useState, useEffect } from "react";
 import Footer from "./Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from "react";
+import { fetchDefaults } from "../utils/fetchDefaults";
 
 const Context = React.createContext()
 
 function App() {
-  const [apiDefaults, setApiDefaults] = useState([])
-  let [movies, setMovies] = useState([])
+  const [apiDefaults, setApiDefaults] = useState({})
+  const [movies, setMovies] = useState([])
   const [isBusy, setBusy] = useState(true)
 
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhY2NkNDA5NDQ3MGU3YmFhNjZmYTg0MjljYmU3OTM3YiIsInN1YiI6IjY1YzVkODg5OGUyMGM1MDE2NDMzMTM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OBGleiES5kWMJQmgbRAvnzsSEGmJvHcx-tBkr454SoY",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {setApiDefaults(...apiDefaults, { genreList: data.genres })})
-      .then(() => setBusy(false))
+    fetchDefaults(setApiDefaults, setBusy)
   }, []);
 
   return (
