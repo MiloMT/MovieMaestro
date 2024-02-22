@@ -11,7 +11,7 @@ const NavBar = () => {
                     <Navbar.Brand>LOGO</Navbar.Brand>
                 </Link>
                 <h1>MovieMaestro</h1>
-                <Link to="/">
+                <Link to="/profile">
                     <Navbar.Brand>profile</Navbar.Brand>
                 </Link>
             </Container>
