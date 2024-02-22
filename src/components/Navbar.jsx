@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { Context } from "./App.jsx"
 import Button from "react-bootstrap/Button"
 import { useNavigate } from "react-router-dom"
-import MOVIEMAESTRO from "../assets/MOVIEMAESTRO.png"
+import logo from "../assets/logo.png"
 import profile from "../assets/profile.png"
 
 
@@ -32,7 +32,7 @@ const NavBar = () => {
         <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
                 <Link to="/">
-                    <Navbar.Brand><img src={MOVIEMAESTRO} style={{height:"60px"}} /></Navbar.Brand>
+                    <Navbar.Brand><img src={logo} style={{height:"65px"}} /></Navbar.Brand>
                 </Link>
                 <h1>MovieMaestro</h1>
                 { isLoggedIn ? (
