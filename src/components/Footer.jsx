@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap"
 const Footer = () => {
     return (
         <>
-        <Navbar fixed="bottom" className="bg-body-tertiary">
+        <Navbar sticky="bottom" className="bg-body-tertiary">
             <Navbar.Brand href="https://www.themoviedb.org/">
             <img src={Logo} alt="TMDB Logo" className="tmdb-logo" />
             </Navbar.Brand>
