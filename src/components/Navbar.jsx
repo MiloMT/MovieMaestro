@@ -7,13 +7,15 @@ const NavBar = () => {
     return (
         <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
-                <Link to="/"></Link>
-                <Navbar.Brand href="/">LOGO</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>LOGO</Navbar.Brand>
+                </Link>
                 <h1>MovieMaestro</h1>
-                <Navbar.Brand href="/profile">profile</Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand>profile</Navbar.Brand>
+                </Link>
             </Container>
         </Navbar>
     );
 }
-
 export default NavBar;
