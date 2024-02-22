@@ -14,6 +14,7 @@ function RegisterLogin() {
     const [password, setPassword] = useState("")
     const { api, LoggedIn } = useContext(Context)
     const [isLoggedIn, setLoggedIn] = LoggedIn
+    const [failedLogin, setFailedLogin] = useState(false)
 
     const nav = useNavigate()
 
@@ -41,13 +42,11 @@ function RegisterLogin() {
                 nav('/login')
             } else {
                 await loginUser({ email: email, password: password })
-                await setLoggedIn(true)
-                nav('/')
             }
         } catch (error) {
             console.log("Error:", error)
         }
-        }
+    }
 
 
     async function addUser(name, email, password) {
@@ -76,8 +75,18 @@ function RegisterLogin() {
             body: JSON.stringify(credentials)
         })
             .then(data => data.json())
-            .then(data => sessionStorage.setItem("token", data.accessToken))
-            // .then(() => setLoggedIn(true))
+            .then(data => {
+                if (data.status === "Successful Login") {
+                    setLoggedIn(true)
+                    setFailedLogin(false)
+                    sessionStorage.setItem("token", data.accessToken)
+                    nav('/')
+                } else {
+                    throw new Error("Incorrect login details")
+                    setFailedLogin(true)
+                }
+            })
+            .catch((err) => console.log(err))
     }
 
     return (
