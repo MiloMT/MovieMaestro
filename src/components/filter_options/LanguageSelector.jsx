@@ -7,14 +7,14 @@ const LanguageSelector = ({ language, setLanguage }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("")
+    const [selectValue, setSelectValue] = useState("en")
 
     useEffect(() => setLanguage(selectValue), [selectValue]);
 
     return (
         <select
         onChange={(event) => setSelectValue(event.target.value)}
-        defaultValue={language}
+        value={selectValue}
         >
         {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
             <option key={lan.iso_639_1} value={lan.iso_639_1}>

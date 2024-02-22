@@ -7,14 +7,14 @@ const ProviderSelector = ({ provider, setProvider }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("")
+    const [selectValue, setSelectValue] = useState("8")
 
     useEffect(() => setProvider(selectValue), [selectValue]);
 
     return (
         <select
         onChange={(event) => setSelectValue(event.target.value)}
-        defaultValue={provider}
+        value={selectValue}
         >
         {apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
             <option key={prov.provider_id} value={prov.provider_id}>
