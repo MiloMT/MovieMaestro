@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import { Context } from './App';
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+import { Context } from './App'
 
 
 function RegisterLogin() {

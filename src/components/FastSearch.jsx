@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import GenreSelector from "./GenreSelector";
-import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react"
+import Accordion from "react-bootstrap/Accordion"
+import GenreSelector from "./GenreSelector"
+import Button from "react-bootstrap/Button"
+import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
 
 function FastSearch() {

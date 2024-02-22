@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "./App.jsx"
 
 const GenreSelector = ({ setGenre, genreList }) => {

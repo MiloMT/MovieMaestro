@@ -1,17 +1,17 @@
 // Library Imports
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import React, { useState, useEffect } from "react"
 // Style Imports
-import "../styles/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/App.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 // Component Imports
-import Home from "../views/Home";
-import Login from "../views/Login";
-import Movie from "../views/Movie";
-import Profile from "../views/Profile";
-import NavBar from "./Navbar";
-import Footer from "./Footer";
-import { fetchDefaults } from "../utils/fetchDefaults";
+import Home from "../views/Home"
+import Login from "../views/Login"
+import Movie from "../views/Movie"
+import Profile from "../views/Profile"
+import NavBar from "./Navbar"
+import Footer from "./Footer"
+import { fetchDefaults } from "../utils/fetchDefaults"
 
 const Context = React.createContext()
 
@@ -43,10 +43,10 @@ function App() {
                 <BrowserRouter>
                     <NavBar />
                     <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/movie" element={<Movie />} />
-                    <Route path="/profile" element={<Profile />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/movie" element={<Movie />} />
+                        <Route path="/profile" element={<Profile />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>

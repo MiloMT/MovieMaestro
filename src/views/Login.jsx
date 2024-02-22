@@ -5,7 +5,7 @@ import RegisterLogin from '../components/RegisterLogin'
 const Login = () => {
     return (
         <>
-        <RegisterLogin />
+            <RegisterLogin />
         </>
     )
 }

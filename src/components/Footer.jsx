@@ -1,7 +1,7 @@
-import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Logo from "../assets/TMDBLogo.svg";
-import { Container } from "react-bootstrap";
+import React from "react"
+import Navbar from "react-bootstrap/Navbar"
+import Logo from "../assets/TMDBLogo.svg"
+import { Container } from "react-bootstrap"
 
 const Footer = () => {
     return (

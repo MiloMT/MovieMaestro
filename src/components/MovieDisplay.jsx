@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import OtherMovies from "./OtherMovies.jsx";
+import React, { useContext, useState, useEffect } from "react"
+import OtherMovies from "./OtherMovies.jsx"
 import { Context } from "./App.jsx"
 
 const MovieDisplay = () => {

@@ -5,7 +5,7 @@ import ProfileDetails from '../components/ProfileDetails'
 const Profile = () => {
     return (
         <>
-        <ProfileDetails />
+            <ProfileDetails />
         </>
     )
 }

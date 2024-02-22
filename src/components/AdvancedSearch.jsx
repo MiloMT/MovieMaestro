@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import GenreSelector from "./filter_options/GenreSelector";
-import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-import { Context } from "./App";
+import React, { useState, useContext } from "react"
+import Accordion from "react-bootstrap/Accordion"
+import GenreSelector from "./filter_options/GenreSelector"
+import Button from "react-bootstrap/Button"
+import { useNavigate } from "react-router-dom"
+import { Context } from "./App"
 
 function AdvancedSearch() {
     // Context States
