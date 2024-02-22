@@ -40,7 +40,7 @@ function FastSearch() {
             <Accordion.Body>
                 <div>
                     <h6>Select a Genre</h6>
-                    <GenreSelector genre={genre} setGenre={setGenre} />
+                    <GenreSelector setGenre={setGenre} />
                 </div>
                 <Button onClick={MovieRequest} variant="primary">
                     Search Movie

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../App.jsx"
 
-const ProviderSelector = ({ provider, setProvider }) => {
+const ProviderSelector = ({ setProvider }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api

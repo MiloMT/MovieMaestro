@@ -55,19 +55,19 @@ function AdvancedSearch() {
             <Accordion.Body>
                 <div>
                     <h6>Select a Genre</h6>
-                    <GenreSelector genre={genre} setGenre={setGenre} />
+                    <GenreSelector setGenre={setGenre} />
                 </div>
                 <div>
                     <h6>Select a Language</h6>
-                    <LanguageSelector language={language} setLanguage={setLanguage} />
+                    <LanguageSelector setLanguage={setLanguage} />
                 </div>
                 <div>
                     <h6>Select a Region</h6>
-                    <RegionSelector region={region} setRegion={setRegion} />
+                    <RegionSelector setRegion={setRegion} />
                 </div>
                 <div>
                     <h6>Select a Provider</h6>
-                    <ProviderSelector provider={provider} setProvider={setProvider} />
+                    <ProviderSelector setProvider={setProvider} />
                 </div>
                 <Button onClick={MovieRequest} variant="primary">
                     Search Movie
