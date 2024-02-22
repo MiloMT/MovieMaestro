@@ -27,7 +27,10 @@ function App() {
       { isBusy ? (
         <h1>Loading...</h1>
       ) : (
-        <Context.Provider value={[ apiDefaults, setApiDefaults, isLoggedIn, setLoggedIn ]}>
+        <Context.Provider value={{ 
+          api: [apiDefaults, setApiDefaults], 
+          LoggedIn: [isLoggedIn, setLoggedIn] 
+          }}>
           <BrowserRouter>
             <NavBar />
             <Routes>

@@ -3,7 +3,8 @@ import { Context } from "./App.jsx"
 
 const GenreSelector = ({ setGenre, genreList }) => {
   const [selectValue, setSelectValue] = useState("")
-  const [apiDefaults, setApiDefaults] = useContext(Context)
+  const { api, isLoggedIn } = useContext(Context)
+  const [apiDefaults, setApiDefaults] = api
 
   useEffect(() => setGenre(selectValue), [selectValue]);
 
@@ -12,7 +13,7 @@ const GenreSelector = ({ setGenre, genreList }) => {
       onChange={(event) => setSelectValue(event.target.value)}
       value={selectValue}
     >
-      {apiDefaults.genreList.map((gen) => (
+      {apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
         <option key={gen.id} value={gen.id}>
           {" "}
           {gen.name}{" "}
