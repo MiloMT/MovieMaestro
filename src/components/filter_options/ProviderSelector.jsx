@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Select from "react-select"
 import { Context } from "../App.jsx"
 
 const ProviderSelector = ({ provider, setProvider }) => {

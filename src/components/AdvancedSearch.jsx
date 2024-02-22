@@ -1,12 +1,14 @@
 import React, { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { Context } from "./App"
+// Bootstrap Components
 import Accordion from "react-bootstrap/Accordion"
+import Button from "react-bootstrap/Button"
+// Filter Components
 import GenreSelector from "./filter_options/GenreSelector"
 import LanguageSelector from "./filter_options/LanguageSelector"
 import ProviderSelector from "./filter_options/ProviderSelector"
 import RegionSelector from "./filter_options/RegionSelector"
-import Button from "react-bootstrap/Button"
-import { useNavigate } from "react-router-dom"
-import { Context } from "./App"
 
 function AdvancedSearch() {
     // Context States
