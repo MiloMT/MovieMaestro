@@ -44,9 +44,9 @@ async function fetchDefaults(setApiDefaults, setBusy) {
 
     setApiDefaults(({
         genreList: genreData.genres,
-        languageList: languageData,
-        regionList: regionData.results,
-        providerList: providerData.results,
+        languageList: languageData.sort((a, b) => a.english_name.localeCompare(b.english_name)),
+        regionList: regionData.results.sort((a, b) => a.english_name.localeCompare(b.english_name)),
+        providerList: providerData.results.sort((a, b) => a.provider_name.localeCompare(b.provider_name)),
     }))
 
     setBusy(false)

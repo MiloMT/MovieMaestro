@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react"
 import Accordion from "react-bootstrap/Accordion"
 import GenreSelector from "./filter_options/GenreSelector"
+import LanguageSelector from "./filter_options/LanguageSelector"
+import ProviderSelector from "./filter_options/ProviderSelector"
+import RegionSelector from "./filter_options/RegionSelector"
 import Button from "react-bootstrap/Button"
 import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
@@ -10,13 +13,19 @@ function AdvancedSearch() {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [movies, setMovies] = movieList
     // Component States
-    const [genre, setGenre] = useState("");
+    const [genre, setGenre] = useState("28");
+    const [language, setLanguage] = useState("en");
+    const [provider, setProvider] = useState("8");
+    const [region, setRegion] = useState("AU");
+    const [adult, setAdult] = useState("false")
     // Object Initialization
     const navigate = useNavigate();
 
     function MovieRequest() {
-        fetch(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`,
+        
+        const url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${language}&page=1&sort_by=popularity.desc&watch_region=${region}&with_genres=${genre}&with_watch_providers=${provider}`
+
+        fetch( url,
         {
             method: "GET",
             headers: {
@@ -39,7 +48,10 @@ function AdvancedSearch() {
             <Accordion.Header>Advanced Search</Accordion.Header>
             <Accordion.Body>
             <p>Select a Genre</p>
-            <GenreSelector setGenre={setGenre} />
+            <GenreSelector genre={genre} setGenre={setGenre} />
+            <LanguageSelector language={language} setLanguage={setLanguage} />
+            <RegionSelector region={region} setRegion={setRegion} />
+            <ProviderSelector provider={provider} setProvider={setProvider} />
             <Button onClick={MovieRequest} variant="primary">
                 Search Movie
             </Button>{" "}

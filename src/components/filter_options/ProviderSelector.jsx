@@ -2,24 +2,24 @@ import React, { useContext, useEffect, useState } from "react";
 import Select from "react-select"
 import { Context } from "../App.jsx"
 
-const GenreSelector = ({ genre, setGenre }) => {
+const ProviderSelector = ({ provider, setProvider }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
     const [selectValue, setSelectValue] = useState("")
 
-    useEffect(() => setGenre(selectValue), [selectValue]);
+    useEffect(() => setProvider(selectValue), [selectValue]);
 
     return (
         <select
         onChange={(event) => setSelectValue(event.target.value)}
-        defaultValue={selectValue}
+        defaultValue={provider}
         >
-        {apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
-            <option key={gen.id} value={gen.id}>
+        {apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
+            <option key={prov.provider_id} value={prov.provider_id}>
             {" "}
-            {gen.name}{" "}
+            {prov.provider_name}{" "}
             </option>
         ))}
         </select>
@@ -27,4 +27,4 @@ const GenreSelector = ({ genre, setGenre }) => {
     );
 };
 
-export default GenreSelector;
+export default ProviderSelector;
