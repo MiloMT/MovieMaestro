@@ -1,5 +1,4 @@
 async function fetchDefaults(setApiDefaults, setBusy) {
-
     const responsesJSON = await Promise.all([
         // Fetching genres
         fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", {
@@ -52,5 +51,6 @@ async function fetchDefaults(setApiDefaults, setBusy) {
 
     setBusy(false)
 }
+
 
 export { fetchDefaults }

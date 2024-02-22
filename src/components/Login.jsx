@@ -1,15 +1,16 @@
 import React, { useState, useContext } from "react";
 
 const Login = () => {
+    // Component States
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log({ email, password });
         setPassword("")
         setEmail("")
     };
-
 
     return (
             <Form onSubmit={handleSubmit}>
