@@ -13,8 +13,9 @@ import { fetchDefaults } from "../utils/fetchDefaults";
 const Context = React.createContext()
 
 function App() {
-  const [apiDefaults, setApiDefaults] = useState({})
-  const [movies, setMovies] = useState([])
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [apiDefaults, setApiDefaults] = useState([])
+  let [movies, setMovies] = useState([])
   const [isBusy, setBusy] = useState(true)
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
       { isBusy ? (
         <h1>Loading...</h1>
       ) : (
-        <Context.Provider value={[ apiDefaults, setApiDefaults ]}>
+        <Context.Provider value={[ apiDefaults, setApiDefaults, isLoggedIn, setLoggedIn ]}>
           <BrowserRouter>
             <NavBar />
             <Routes>

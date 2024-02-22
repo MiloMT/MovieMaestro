@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Context } from './App';
 
 
 function RegisterLogin() {
@@ -11,10 +12,10 @@ function RegisterLogin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    // const [users, setUsers] = useState([])
+    const [isLoggedIn, setLoggedIn] = useContext(Context)
 
     const nav = useNavigate()
-    
+
     const handleName = (e) => {
         setName(e.target.value)
     }
@@ -26,30 +27,34 @@ function RegisterLogin() {
     }
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        if (action === "Register") {
-            console.log({
-                name,
-                email,
-                password
-            })
-            // nav('/')
-            addUser(name, email)
-        } else {
-            console.log({
-                email,
-                password
-            })
-            // nav('/')
+        try {
+            if (action === "Register") {
+                console.log({
+                    name,
+                    email,
+                    password
+                })
+                await addUser(name, email, password)
+                nav('/login')
+            } else {
+                await loginUser({ email: email, password: password })
+                setLoggedIn(true)
+                nav('/')
+            }
+        } catch (error) {
+            console.log("Error:", error)
         }
-    }
+        }
 
-    async function addUser(name, email) {
+
+    async function addUser(name, email, password) {
 
         const newEntry = {
             name: name,
-            email: email
+            email: email,
+            password: password
         }
         const res = await fetch('https://moviemaestro-api.onrender.com/users', {
             method: 'POST',
@@ -58,8 +63,20 @@ function RegisterLogin() {
             },
             body: JSON.stringify(newEntry)
         })
-        // const data = await res.json()
-        // console.log(data)
+        const data = await res.json()
+        console.log(data)
+    }
+    async function loginUser(credentials) {
+        return await fetch('https://moviemaestro-api.onrender.com/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+            .then(data => data.json())
+            .then(data => sessionStorage.setItem("token", data.accessToken))
+            // .then(() => setLoggedIn(true))
     }
 
     return (
@@ -82,5 +99,6 @@ function RegisterLogin() {
         </Form>
     );
 }
+
 
 export default RegisterLogin;
