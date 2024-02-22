@@ -38,11 +38,13 @@ function FastSearch() {
         <Accordion.Item eventKey="0">
             <Accordion.Header>Fast Search</Accordion.Header>
             <Accordion.Body>
-            <p>Select a Genre</p>
-            <GenreSelector setGenre={setGenre} />
-            <Button onClick={MovieRequest} variant="primary">
-                Search Movie
-            </Button>{" "}
+                <div>
+                    <h6>Select a Genre</h6>
+                    <GenreSelector setGenre={setGenre} />
+                </div>
+                <Button onClick={MovieRequest} variant="primary">
+                    Search Movie
+                </Button>{" "}
             </Accordion.Body>
         </Accordion.Item>
         </Accordion>

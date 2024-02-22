@@ -1,9 +1,14 @@
 import React, { useState, useContext } from "react"
-import Accordion from "react-bootstrap/Accordion"
-import GenreSelector from "./filter_options/GenreSelector"
-import Button from "react-bootstrap/Button"
 import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
+// Bootstrap Components
+import Accordion from "react-bootstrap/Accordion"
+import Button from "react-bootstrap/Button"
+// Filter Components
+import GenreSelector from "./filter_options/GenreSelector"
+import LanguageSelector from "./filter_options/LanguageSelector"
+import ProviderSelector from "./filter_options/ProviderSelector"
+import RegionSelector from "./filter_options/RegionSelector"
 
 function AdvancedSearch() {
     // Context States
@@ -11,12 +16,22 @@ function AdvancedSearch() {
     const [movies, setMovies] = movieList
     // Component States
     const [genre, setGenre] = useState("");
+    const [language, setLanguage] = useState("");
+    const [provider, setProvider] = useState("");
+    const [region, setRegion] = useState("");
+    const [adult, setAdult] = useState("false")
     // Object Initialization
     const navigate = useNavigate();
 
     function MovieRequest() {
-        fetch(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`,
+        console.log(region)
+        console.log(language)
+        console.log(genre)
+        console.log(provider)
+
+        const url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${language}&page=1&sort_by=popularity.desc&watch_region=${region}&with_genres=${genre}&with_watch_providers=${provider}`
+
+        fetch( url,
         {
             method: "GET",
             headers: {
@@ -38,11 +53,25 @@ function AdvancedSearch() {
         <Accordion.Item eventKey="0">
             <Accordion.Header>Advanced Search</Accordion.Header>
             <Accordion.Body>
-            <p>Select a Genre</p>
-            <GenreSelector setGenre={setGenre} />
-            <Button onClick={MovieRequest} variant="primary">
-                Search Movie
-            </Button>{" "}
+                <div>
+                    <h6>Select a Genre</h6>
+                    <GenreSelector setGenre={setGenre} />
+                </div>
+                <div>
+                    <h6>Select a Language</h6>
+                    <LanguageSelector setLanguage={setLanguage} />
+                </div>
+                <div>
+                    <h6>Select a Region</h6>
+                    <RegionSelector setRegion={setRegion} />
+                </div>
+                <div>
+                    <h6>Select a Provider</h6>
+                    <ProviderSelector setProvider={setProvider} />
+                </div>
+                <Button onClick={MovieRequest} variant="primary">
+                    Search Movie
+                </Button>{" "}
             </Accordion.Body>
         </Accordion.Item>
         </Accordion>

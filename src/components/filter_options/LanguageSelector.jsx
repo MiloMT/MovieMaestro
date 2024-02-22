@@ -1,24 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../App.jsx"
 
-const GenreSelector = ({ setGenre }) => {
+const LanguageSelector = ({ setLanguage }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("28")
+    const [selectValue, setSelectValue] = useState("en")
 
-    useEffect(() => setGenre(selectValue), [selectValue]);
+    useEffect(() => setLanguage(selectValue), [selectValue]);
 
     return (
         <select
         onChange={(event) => setSelectValue(event.target.value)}
         value={selectValue}
         >
-        {apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
-            <option key={gen.id} value={gen.id}>
+        {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
+            <option key={lan.iso_639_1} value={lan.iso_639_1}>
             {" "}
-            {gen.name}{" "}
+            {lan.english_name}{" "}
             </option>
         ))}
         </select>
@@ -26,4 +26,4 @@ const GenreSelector = ({ setGenre }) => {
     );
 };
 
-export default GenreSelector;
+export default LanguageSelector;
