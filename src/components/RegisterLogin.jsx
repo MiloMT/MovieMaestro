@@ -12,7 +12,8 @@ function RegisterLogin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isLoggedIn, setLoggedIn] = useContext(Context)
+    const { api, LoggedIn } = useContext(Context)
+    const [isLoggedIn, setLoggedIn] = LoggedIn
 
     const nav = useNavigate()
 
@@ -40,7 +41,7 @@ function RegisterLogin() {
                 nav('/login')
             } else {
                 await loginUser({ email: email, password: password })
-                setLoggedIn(true)
+                await setLoggedIn(true)
                 nav('/')
             }
         } catch (error) {
