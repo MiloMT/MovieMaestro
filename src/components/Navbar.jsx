@@ -1,18 +1,20 @@
-import { useContext } from "react";
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useContext } from "react"
+import Container from 'react-bootstrap/Container'
+import Navbar from 'react-bootstrap/Navbar'
+import "bootstrap/dist/css/bootstrap.min.css"
 import { Link } from "react-router-dom"
 import { Context } from "./App.jsx"
 import Button from "react-bootstrap/Button"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 
 
 const NavBar = () => {
-    const { api, LoggedIn, loggedUser } = useContext(Context)
+    // Context States
+    const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [isLoggedIn, setLoggedIn] = LoggedIn
     const [user, setUser] = loggedUser
+    // Object initialization
     const nav = useNavigate();
 
     function logout() {

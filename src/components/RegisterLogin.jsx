@@ -1,21 +1,22 @@
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import { Context } from './App';
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+import { Context } from './App'
 
 
 function RegisterLogin() {
-
+    // Context State
+    const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
+    const [isLoggedIn, setLoggedIn] = LoggedIn
+    // Component State
     const [action, setAction] = useState("Register")
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const { api, LoggedIn, loggedUser } = useContext(Context)
-    const [isLoggedIn, setLoggedIn] = LoggedIn
     const [failedLogin, setFailedLogin] = useState(false)
-
+    // Object Initialization
     const nav = useNavigate()
 
     const handleName = (e) => {

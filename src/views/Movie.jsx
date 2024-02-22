@@ -1,16 +1,15 @@
 import React from 'react'
-import MovieDisplay from '../components/MovieDisplay';
-import OtherMovies from '../components/OtherMovies';
+import MovieDisplay from '../components/MovieDisplay'
 
 
-const Movie = ({movies, genreList}) => {
-  return (
-    <>
-      <div>Movie</div>
-      <MovieDisplay movies={movies} genreList={genreList} />
-      
-    </>
-  );
+const Movie = () => {
+    return (
+        <>
+            <div>Movie</div>
+            <MovieDisplay />
+        </>
+    );
 }
+
 
 export default Movie

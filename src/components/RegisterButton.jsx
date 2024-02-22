@@ -1,5 +1,6 @@
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+
 
 function RegisterButton() {
     return (
@@ -11,5 +12,6 @@ function RegisterButton() {
         </>
     );
 }
+
 
 export default RegisterButton;
