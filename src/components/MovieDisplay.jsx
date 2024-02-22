@@ -3,7 +3,7 @@ import OtherMovies from "./OtherMovies.jsx";
 import { Context } from "./App.jsx"
 
 const MovieDisplay = ({ movies }) => {
-  const { api, isLoggedIn } = useContext(Context)
+  const { api, isLoggedIn, loggedUser } = useContext(Context)
   const [apiDefaults, setApiDefaults] = api
   const [selectedMovies, setSelectedMovies] = useState([])
   const [movieIndex, setMovieIndex] = useState([0])
