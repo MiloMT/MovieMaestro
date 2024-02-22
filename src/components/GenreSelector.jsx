@@ -3,7 +3,7 @@ import { Context } from "./App.jsx"
 
 const GenreSelector = ({ setGenre, genreList }) => {
   const [selectValue, setSelectValue] = useState("")
-  const { api, LoggedIn } = useContext(Context)
+  const { api, LoggedIn, loggedUser } = useContext(Context)
   const [apiDefaults, setApiDefaults] = api
 
   useEffect(() => setGenre(selectValue), [selectValue]);

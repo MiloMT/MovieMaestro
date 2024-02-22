@@ -13,6 +13,7 @@ import { fetchDefaults } from "../utils/fetchDefaults";
 const Context = React.createContext()
 
 function App() {
+  const [user, setUser] = useState(null)
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [apiDefaults, setApiDefaults] = useState([])
   let [movies, setMovies] = useState([])
@@ -29,7 +30,8 @@ function App() {
       ) : (
         <Context.Provider value={{ 
           api: [apiDefaults, setApiDefaults], 
-          LoggedIn: [isLoggedIn, setLoggedIn] 
+          LoggedIn: [isLoggedIn, setLoggedIn],
+          loggedUser: [user, setUser] 
           }}>
           <BrowserRouter>
             <NavBar />

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import { Context } from "./App"
 
 const ProfileDetails = () => {
-  const [user, setUser] = useState(null);
+  const { api, LoggedIn, loggedUser } = useContext(Context);
+  const [user, setUser] = loggedUser
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");

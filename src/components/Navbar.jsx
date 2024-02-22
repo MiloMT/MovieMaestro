@@ -5,14 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom"
 import { Context } from "./App.jsx"
 import Button from "react-bootstrap/Button"
+import { useNavigate } from "react-router-dom";
+
+
 
 const NavBar = () => {
-    const { api, LoggedIn } = useContext(Context)
+    const { api, LoggedIn, loggedUser } = useContext(Context)
     const [isLoggedIn, setLoggedIn] = LoggedIn
+    const [user, setUser] = loggedUser
+    const nav = useNavigate();
 
     function logout() {
         setLoggedIn(false)
         sessionStorage.removeItem("token")
+        setUser(null)
+        nav("/")
+
     }
 
     return (

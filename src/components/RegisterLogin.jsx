@@ -12,7 +12,7 @@ function RegisterLogin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const { api, LoggedIn } = useContext(Context)
+    const { api, LoggedIn, loggedUser } = useContext(Context)
     const [isLoggedIn, setLoggedIn] = LoggedIn
     const [failedLogin, setFailedLogin] = useState(false)
 
