@@ -39,24 +39,18 @@ const MovieDisplay = () => {
         console.log("User not logged in!")
         return;
       }
-      const movieToAdd = {
-        watchList: [
-          selectedMovies[movieIndex]]
-        }
-      console.log(movieToAdd)
+      
       const user = jwtDecode(sessionStorage.getItem("token"));
 
-      fetch(
-        `https://moviemaestro-api.onrender.com/users/${user.id}`,
-        {
-          method: "PUT",
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(movieToAdd),
-        }
-      )
+      fetch(`https://moviemaestro-api.onrender.com/users/${user.id}/watchList`, {
+        method: "PATCH",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json; charset=UTF-8",
+          "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(selectedMovies[movieIndex]),
+      })
         .then((res) => res.json())
         .then((data) => console.log(data));
       
