@@ -20,7 +20,8 @@ function EditProfile() {
     const [provider, setProvider] = useState("");
     const [language, setLanguage] = useState("");
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("");
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -39,12 +40,13 @@ function EditProfile() {
 
         const updateEntry = {
             name: name,
-            email: email
+            email: email,
+            password: password
         }
         console.log(updateEntry)
         // id?
         // const res = await fetch('https://moviemaestro-api.onrender.com/users/?', {
-        //     method: 'PUT',
+        //     method: 'PATCH',
         //     headers: {
         //         'Content-Type': 'application/json'
         //     },

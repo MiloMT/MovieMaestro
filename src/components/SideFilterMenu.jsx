@@ -20,10 +20,11 @@ function Responsive() {
                     <Offcanvas.Title>Search Movie</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <p className="mb-0">
+                    {/* Check p later  */}
+                    {/* <p className="mb-0"> */}
                         <FastSearch />
                         <AdvancedSearch />
-                    </p>
+                    {/* </p> */}
                 </Offcanvas.Body>
             </Offcanvas>
         </>
