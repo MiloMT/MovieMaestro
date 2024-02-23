@@ -1,9 +1,13 @@
 import React, { useState, useContext } from "react"
-import Accordion from "react-bootstrap/Accordion"
-import GenreSelector from "./GenreSelector"
-import Button from "react-bootstrap/Button"
 import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
+// Bootstrap Components
+import Accordion from "react-bootstrap/Accordion"
+import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
+// Filter Components
+import GenreSelector from "./filter_options/GenreSelector"
+
 
 function FastSearch() {
     // Context States
@@ -35,20 +39,22 @@ function FastSearch() {
 
     return (
         <Accordion>
-        <Accordion.Item eventKey="0">
-            <Accordion.Header>Fast Search</Accordion.Header>
-            <Accordion.Body>
-                <div>
-                    <h6>Select a Genre</h6>
-                    <GenreSelector setGenre={setGenre} />
-                </div>
-                <Button onClick={MovieRequest} variant="primary">
-                    Search Movie
-                </Button>{" "}
-            </Accordion.Body>
-        </Accordion.Item>
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Fast Search</Accordion.Header>
+                <Accordion.Body>
+                    <Form>
+                        <GenreSelector setGenre={setGenre} />
+                        <Form.Group className="button" controlId="submitButton">
+                            <Button onClick={MovieRequest} variant="primary">
+                                Search Movie
+                            </Button>{" "}
+                        </Form.Group>
+                    </Form>
+                </Accordion.Body>
+            </Accordion.Item>
         </Accordion>
     );
 }
+
 
 export default FastSearch;
