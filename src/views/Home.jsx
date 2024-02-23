@@ -3,14 +3,18 @@ import FastSearch from '../components/FastSearch'
 import AdvancedSearch from '../components/AdvancedSearch'
 import RegisterButton from '../components/RegisterButton'
 
+import Stack from "react-bootstrap/Stack"
+
 
 const Home = () => {
     return (
         <>
             <div>Home</div>
-            <FastSearch />
-            <AdvancedSearch />
-            <RegisterButton />
+            <Stack gap={3}>
+                <FastSearch />
+                <AdvancedSearch />
+                <RegisterButton />
+            </Stack>
         </>
     );
 }
