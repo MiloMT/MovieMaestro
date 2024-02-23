@@ -1,16 +1,20 @@
 import React, { useContext, useState, useEffect } from "react"
 import OtherMovies from "./OtherMovies.jsx"
 import { Context } from "./App.jsx"
+import  Button  from "react-bootstrap/Button";
+import { jwtDecode } from "jwt-decode";
 
 const MovieDisplay = () => {
     // Context States
-    const { api, isLoggedIn, loggedUser, movieList } = useContext(Context)
+    const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     const [movies, setMovies] = movieList
+    const [isLoggedIn, setLoggedIn] = LoggedIn
     // Component States
     const [selectedMovies, setSelectedMovies] = useState([])
     const [movieIndex, setMovieIndex] = useState([0])
     const [isBusy, setBusy] = useState(true)
+    
 
     useEffect(() => {
         selectMovies()
@@ -30,37 +34,74 @@ const MovieDisplay = () => {
         }
     }
 
+    const handleAddWatchedList = () => {
+      if (!isLoggedIn || !loggedUser) {
+        console.log("User not logged in!")
+        return;
+      }
+      const movieToAdd = {
+        watchList: [
+          selectedMovies[movieIndex]]
+        }
+      console.log(movieToAdd)
+      const user = jwtDecode(sessionStorage.getItem("token"));
+
+      fetch(
+        `https://moviemaestro-api.onrender.com/users/${user.id}`,
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(movieToAdd),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      
+    }
+
     return (
-        <>
-        { isBusy ? (
-            <h1>Loading...</h1>
+      <>
+        {isBusy ? (
+          <h1>Loading...</h1>
         ) : (
-        <>
+          <>
             <div>
-            <h2>Movie Display</h2>
-            {selectedMovies !== null && movies && movies.length > 0 && (
+              <h2>Movie Display</h2>
+              {selectedMovies !== null && movies && movies.length > 0 && (
                 <div className="movie-details">
-                <img
+                  <img
                     src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
                     alt="Movie Poster Image"
                     style={{ width: "300px", height: "400px" }}
-                />
-                <h4>Title: {selectedMovies[movieIndex].title}</h4>
-                <h6>Overview: {selectedMovies[movieIndex].overview}</h6>
-                <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
-                <p>
+                  />
+                  <h4>Title: {selectedMovies[movieIndex].title}</h4>
+                  <h6>Overview: {selectedMovies[movieIndex].overview}</h6>
+                  <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
+                  <p>
                     Genres:{" "}
                     {selectedMovies[movieIndex].genre_ids
-                    .map((id) => apiDefaults.genreList.find((obj) => obj.id === id).name)
-                    .join(", ")}
-                </p>
+                      .map(
+                        (id) =>
+                          apiDefaults.genreList.find((obj) => obj.id === id)
+                            .name
+                      )
+                      .join(", ")}
+                  </p>
+                  <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
+                  <Button variant="outline-primary">Watch Later</Button>
                 </div>
-            )}
+              )}
             </div>
-            <OtherMovies selectedMovies={selectedMovies} setMovieIndex={setMovieIndex} />
-        </>
+            <OtherMovies
+              selectedMovies={selectedMovies}
+              setMovieIndex={setMovieIndex}
+            />
+          </>
         )}
-        </>
+      </>
     );
 };
 
