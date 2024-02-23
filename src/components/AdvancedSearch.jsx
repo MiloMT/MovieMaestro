@@ -4,11 +4,13 @@ import { Context } from "./App"
 // Bootstrap Components
 import Accordion from "react-bootstrap/Accordion"
 import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
 // Filter Components
 import GenreSelector from "./filter_options/GenreSelector"
 import LanguageSelector from "./filter_options/LanguageSelector"
 import ProviderSelector from "./filter_options/ProviderSelector"
 import RegionSelector from "./filter_options/RegionSelector"
+
 
 function AdvancedSearch() {
     // Context States
@@ -48,17 +50,22 @@ function AdvancedSearch() {
             <Accordion.Item eventKey="0">
                 <Accordion.Header>Advanced Search</Accordion.Header>
                 <Accordion.Body>
-                    <GenreSelector setGenre={setGenre} />
-                    <LanguageSelector setLanguage={setLanguage} />
-                    <RegionSelector setRegion={setRegion} />
-                    <ProviderSelector setProvider={setProvider} />
-                    <Button onClick={MovieRequest} variant="primary">
-                        Search Movie
-                    </Button>{" "}
+                    <Form>
+                        <GenreSelector setGenre={setGenre} />
+                        <LanguageSelector setLanguage={setLanguage} />
+                        <RegionSelector setRegion={setRegion} />
+                        <ProviderSelector setProvider={setProvider} />
+                        <Form.Group className="button" controlId="submitButton">
+                            <Button onClick={MovieRequest} variant="primary">
+                                Search Movie
+                            </Button>{" "}
+                        </Form.Group>
+                    </Form>
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
     );
 }
+
 
 export default AdvancedSearch;
