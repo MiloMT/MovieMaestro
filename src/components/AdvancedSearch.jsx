@@ -11,6 +11,8 @@ import LanguageSelector from "./filter_options/LanguageSelector"
 import ProviderSelector from "./filter_options/ProviderSelector"
 import RegionSelector from "./filter_options/RegionSelector"
 
+import dotenv from "dotenv"
+
 
 function AdvancedSearch() {
     // Context States
@@ -33,8 +35,7 @@ function AdvancedSearch() {
             method: "GET",
             headers: {
             accept: "application/json",
-            Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhY2NkNDA5NDQ3MGU3YmFhNjZmYTg0MjljYmU3OTM3YiIsInN1YiI6IjY1YzVkODg5OGUyMGM1MDE2NDMzMTM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OBGleiES5kWMJQmgbRAvnzsSEGmJvHcx-tBkr454SoY",
+            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
             },
         }
         )

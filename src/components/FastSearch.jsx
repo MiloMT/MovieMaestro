@@ -8,6 +8,8 @@ import Form from "react-bootstrap/Form"
 // Filter Components
 import GenreSelector from "./filter_options/GenreSelector"
 
+import dotenv from "dotenv"
+
 
 function FastSearch() {
     // Context States
@@ -25,8 +27,7 @@ function FastSearch() {
             method: "GET",
             headers: {
             accept: "application/json",
-            Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhY2NkNDA5NDQ3MGU3YmFhNjZmYTg0MjljYmU3OTM3YiIsInN1YiI6IjY1YzVkODg5OGUyMGM1MDE2NDMzMTM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OBGleiES5kWMJQmgbRAvnzsSEGmJvHcx-tBkr454SoY",
+            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
             },
         }
         )
