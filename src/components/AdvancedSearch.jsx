@@ -11,8 +11,6 @@ import LanguageSelector from "./filter_options/LanguageSelector"
 import ProviderSelector from "./filter_options/ProviderSelector"
 import RegionSelector from "./filter_options/RegionSelector"
 
-import dotenv from "dotenv"
-
 
 function AdvancedSearch() {
     // Context States

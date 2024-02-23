@@ -8,8 +8,6 @@ import Form from "react-bootstrap/Form"
 // Filter Components
 import GenreSelector from "./filter_options/GenreSelector"
 
-import dotenv from "dotenv"
-
 
 function FastSearch() {
     // Context States
