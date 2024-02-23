@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../App.jsx"
+// React Bootstrap imports
+import Form from "react-bootstrap/Form"
 
 const LanguageSelector = ({ setLanguage }) => {
     // Context States
@@ -11,18 +13,20 @@ const LanguageSelector = ({ setLanguage }) => {
     useEffect(() => setLanguage(selectValue), [selectValue]);
 
     return (
-        <select
-        onChange={(event) => setSelectValue(event.target.value)}
-        value={selectValue}
-        >
-        {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
-            <option key={lan.iso_639_1} value={lan.iso_639_1}>
-            {" "}
-            {lan.english_name}{" "}
-            </option>
-        ))}
-        </select>
-        
+        <div>
+            <h6>Select a Language</h6>
+            <Form.Select 
+                onChange={(event) => setSelectValue(event.target.value)}
+                value={selectValue}
+            >
+                {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
+                    <option key={lan.iso_639_1} value={lan.iso_639_1}>
+                    {" "}
+                    {lan.english_name}{" "}
+                    </option>
+                ))}
+            </Form.Select>
+        </div>
     );
 };
 

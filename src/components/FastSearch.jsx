@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import Accordion from "react-bootstrap/Accordion"
-import GenreSelector from "./GenreSelector"
+import GenreSelector from "./filter_options/GenreSelector"
 import Button from "react-bootstrap/Button"
 import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
@@ -35,18 +35,15 @@ function FastSearch() {
 
     return (
         <Accordion>
-        <Accordion.Item eventKey="0">
-            <Accordion.Header>Fast Search</Accordion.Header>
-            <Accordion.Body>
-                <div>
-                    <h6>Select a Genre</h6>
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Fast Search</Accordion.Header>
+                <Accordion.Body>
                     <GenreSelector setGenre={setGenre} />
-                </div>
-                <Button onClick={MovieRequest} variant="primary">
-                    Search Movie
-                </Button>{" "}
-            </Accordion.Body>
-        </Accordion.Item>
+                    <Button onClick={MovieRequest} variant="primary">
+                        Search Movie
+                    </Button>{" "}
+                </Accordion.Body>
+            </Accordion.Item>
         </Accordion>
     );
 }

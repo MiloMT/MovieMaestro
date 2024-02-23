@@ -24,11 +24,6 @@ function AdvancedSearch() {
     const navigate = useNavigate();
 
     function MovieRequest() {
-        console.log(region)
-        console.log(language)
-        console.log(genre)
-        console.log(provider)
-
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${language}&page=1&sort_by=popularity.desc&watch_region=${region}&with_genres=${genre}&with_watch_providers=${provider}`
 
         fetch( url,
@@ -50,30 +45,18 @@ function AdvancedSearch() {
 
     return (
         <Accordion>
-        <Accordion.Item eventKey="0">
-            <Accordion.Header>Advanced Search</Accordion.Header>
-            <Accordion.Body>
-                <div>
-                    <h6>Select a Genre</h6>
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Advanced Search</Accordion.Header>
+                <Accordion.Body>
                     <GenreSelector setGenre={setGenre} />
-                </div>
-                <div>
-                    <h6>Select a Language</h6>
                     <LanguageSelector setLanguage={setLanguage} />
-                </div>
-                <div>
-                    <h6>Select a Region</h6>
                     <RegionSelector setRegion={setRegion} />
-                </div>
-                <div>
-                    <h6>Select a Provider</h6>
                     <ProviderSelector setProvider={setProvider} />
-                </div>
-                <Button onClick={MovieRequest} variant="primary">
-                    Search Movie
-                </Button>{" "}
-            </Accordion.Body>
-        </Accordion.Item>
+                    <Button onClick={MovieRequest} variant="primary">
+                        Search Movie
+                    </Button>{" "}
+                </Accordion.Body>
+            </Accordion.Item>
         </Accordion>
     );
 }
