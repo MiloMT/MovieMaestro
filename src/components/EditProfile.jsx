@@ -9,7 +9,6 @@ import RegionSelector from "./filter_options/RegionSelector"
 import { Context } from "./App"
 
 
-
 function EditProfile() {
     // Context State
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
@@ -21,7 +20,6 @@ function EditProfile() {
     const [region, setRegion] = useState("")
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -51,7 +49,6 @@ function EditProfile() {
         // console.log(data)
         
     }
-
 
     return (
         <>
@@ -96,7 +93,8 @@ function EditProfile() {
                 </Offcanvas.Body>
             </Offcanvas>
         </>
-    );
+    )
 }
 
-export default EditProfile;
+
+export default EditProfile
