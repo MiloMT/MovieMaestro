@@ -41,7 +41,6 @@ function EditProfile() {
         const updateEntry = {
             name: name,
             email: email,
-            password: password
         }
         console.log(updateEntry)
         // id?
