@@ -18,30 +18,28 @@ function AdvancedSearch() {
     const [movies, setMovies] = movieList
     // Component States
     const [genre, setGenre] = useState("");
-    const [language, setLanguage] = useState("");
-    const [provider, setProvider] = useState("");
-    const [region, setRegion] = useState("");
+    const [language, setLanguage] = useState("")
+    const [provider, setProvider] = useState("")
+    const [region, setRegion] = useState("")
     const [adult, setAdult] = useState("false")
     // Object Initialization
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     function MovieRequest() {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${language}&page=1&sort_by=popularity.desc&watch_region=${region}&with_genres=${genre}&with_watch_providers=${provider}`
 
-        fetch( url,
-            {
-                method: "GET",
-                headers: {
+        fetch( url, {
+            method: "GET",
+            headers: {
                 accept: "application/json",
                 Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
-                },
-            }
-        )
+            },
+        })
         .then((res) => res.json())
         .then((data) => {
-            setMovies(data.results);
+            setMovies(data.results)
         })
-        .then(() => navigate("/movie"));
+        .then(() => navigate("/movie"))
     }
 
     return (
@@ -63,8 +61,8 @@ function AdvancedSearch() {
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
-    );
+    )
 }
 
 
-export default AdvancedSearch;
+export default AdvancedSearch

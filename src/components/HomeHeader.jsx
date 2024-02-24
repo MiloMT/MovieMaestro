@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+
 
 const Header = () => {
     return (
@@ -6,7 +7,8 @@ const Header = () => {
             <h1>Stuck Doom Scrolling?</h1>
             <h1>Let us choose for you!</h1>
         </>
-    );
-};
+    )
+}
 
-export default Header;
+
+export default Header

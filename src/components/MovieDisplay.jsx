@@ -43,15 +43,14 @@ const MovieDisplay = () => {
         fetch(`https://moviemaestro-api.onrender.com/users/${user.id}/watchList`, {
             method: "PATCH",
             headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json; charset=UTF-8",
-            "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
+                "Accept": "application/json",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
             },
             body: JSON.stringify(selectedMovies[movieIndex]),
         })
         .then((res) => res.json())
         .then((data) => console.log(data))
-      
     }
 
     const handleAddWishList = () => {
@@ -100,8 +99,8 @@ const MovieDisplay = () => {
                 </p>
                 {isLoggedIn &&
                     <>
-                        <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
-                        <Button variant="outline-primary">Watch Later</Button>
+                    <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
+                    <Button variant="outline-primary">Watch Later</Button>
                     </>
                 }
                 </div>

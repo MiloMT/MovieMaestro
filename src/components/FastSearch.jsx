@@ -14,27 +14,25 @@ function FastSearch() {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [movies, setMovies] = movieList
     // Component States
-    let [genre, setGenre] = useState("");
+    let [genre, setGenre] = useState("")
     // Object Initialization
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     function MovieRequest() {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`
 
-        fetch( url,
-            {
-                method: "GET",
-                headers: {
+        fetch( url, {
+            method: "GET",
+            headers: {
                 accept: "application/json",
                 Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
-                },
-            }
-        )
+            },
+        })
         .then((res) => res.json())
         .then((data) => {
-            setMovies(data.results);
+            setMovies(data.results)
         })
-        .then(() => navigate("/movie"));
+        .then(() => navigate("/movie"))
     }
 
     return (
@@ -53,8 +51,8 @@ function FastSearch() {
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
-    );
+    )
 }
 
 
-export default FastSearch;
+export default FastSearch

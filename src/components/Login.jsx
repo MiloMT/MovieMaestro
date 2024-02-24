@@ -2,18 +2,18 @@ import React, { useState } from "react"
 
 const Login = () => {
     // Component States
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log({ email, password });
+        e.preventDefault()
+        console.log({ email, password })
         setPassword("")
         setEmail("")
-    };
+    }
 
     return (
-            <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <div className={action === "Login" ? "submit gray" : "submit"} onClick={() => { setAction('Register') }}>Register</div>
             <div className={action === "Register" ? "submit gray" : "submit"} onClick={() => { setAction('Login') }}>Login</div>
             {action === "Login" ? <div></div> : <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
