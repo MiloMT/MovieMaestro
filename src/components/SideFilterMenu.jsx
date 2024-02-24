@@ -1,21 +1,23 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import FastSearch from './FastSearch';
-import AdvancedSearch from './AdvancedSearch';
+import { useState } from 'react'
+// Bootstrap Components
+import Button from 'react-bootstrap/Button'
+import Offcanvas from 'react-bootstrap/Offcanvas'
+// Component Imports
+import FastSearch from './FastSearch'
+import AdvancedSearch from './AdvancedSearch'
+
 
 function Responsive() {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // Component States
+    const [show, setShow] = useState(false)
     
     return (
         <>
-            <Button  variant="primary" className="d-lg-none" onClick={handleShow}>
-            Search Movie
+            <Button  variant="primary" className="d-lg-none" onClick={() => setShow(true)}>
+                Search Movie
             </Button>
 
-            <Offcanvas show={show} onHide={handleClose} responsive="lg">
+            <Offcanvas show={show} onHide={() => setShow(false)} responsive="lg">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Search Movie</Offcanvas.Title>
                 </Offcanvas.Header>
@@ -28,7 +30,8 @@ function Responsive() {
                 </Offcanvas.Body>
             </Offcanvas>
         </>
-    );
+    )
 }
 
-export default Responsive;
+
+export default Responsive
