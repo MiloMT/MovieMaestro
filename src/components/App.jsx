@@ -35,10 +35,10 @@ function App() {
                 <h1>Loading...</h1>
             ) : (
                 <Context.Provider value={{ 
-                api: [apiDefaults, setApiDefaults], 
-                LoggedIn: [isLoggedIn, setLoggedIn],
-                loggedUser: [user, setUser],
-                movieList: [movies, setMovies]
+                    api: [apiDefaults, setApiDefaults], 
+                    LoggedIn: [isLoggedIn, setLoggedIn],
+                    loggedUser: [user, setUser],
+                    movieList: [movies, setMovies]
                 }}>
                 <BrowserRouter>
                     <NavBar />

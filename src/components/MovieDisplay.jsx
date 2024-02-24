@@ -59,9 +59,9 @@ const MovieDisplay = () => {
         fetch(`https://moviemaestro-api.onrender.com/users/${user.id}/wishList`, {
             method: "PATCH",
             headers: {
-                Accept: "application/json",
+                "Accept": "application/json",
                 "Content-Type": "application/json; charset=UTF-8",
-                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
             },
             body: JSON.stringify(selectedMovies[movieIndex]),
         })
@@ -70,49 +70,47 @@ const MovieDisplay = () => {
     }
 
     return (
-    <>
-        {isBusy ? (
-        <h1>Loading...</h1>
-        ) : (
         <>
-            <div>
-            <h2>Movie Display</h2>
-            {selectedMovies !== null && movies && movies.length > 0 && (
-                <div className="movie-details">
-                <img
-                    src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
-                    alt="Movie Poster Image"
-                    style={{ width: "300px", height: "400px" }}
-                />
-                <h4>Title: {selectedMovies[movieIndex].title}</h4>
-                <h6>Overview: {selectedMovies[movieIndex].overview}</h6>
-                <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
-                <p>
-                    Genres:{" "}
-                    {selectedMovies[movieIndex].genre_ids
-                    .map(
-                        (id) =>
-                        apiDefaults.genreList.find((obj) => obj.id === id)
-                            .name
-                    )
-                    .join(", ")}
-                </p>
-                {isLoggedIn &&
-                    <>
-                    <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
-                    <Button variant="outline-primary">Watch Later</Button>
-                    </>
-                }
-                </div>
+            {isBusy ? (
+                <h1>Loading...</h1>
+            ) : (
+                <>
+                    <h2>Movie Display</h2>
+                    {selectedMovies !== null && movies && movies.length > 0 && (
+                        <div className="movie-details">
+                            <img
+                                src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
+                                alt="Movie Poster Image"
+                                style={{ width: "300px", height: "400px" }}
+                            />
+                            <h4>Title: {selectedMovies[movieIndex].title}</h4>
+                            <h6>Overview: {selectedMovies[movieIndex].overview}</h6>
+                            <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
+                            <p>
+                                Genres:{" "}
+                                {selectedMovies[movieIndex].genre_ids
+                                .map(
+                                    (id) =>
+                                    apiDefaults.genreList.find((obj) => obj.id === id)
+                                        .name
+                                )
+                                .join(", ")}
+                            </p>
+                            {isLoggedIn &&
+                                <>
+                                <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
+                                <Button variant="outline-primary">Watch Later</Button>
+                                </>
+                            }
+                        </div>
+                    )}
+                    <OtherMovies
+                        selectedMovies={selectedMovies}
+                        setMovieIndex={setMovieIndex}
+                    />
+                </>
             )}
-            </div>
-            <OtherMovies
-                selectedMovies={selectedMovies}
-                setMovieIndex={setMovieIndex}
-            />
         </>
-        )}
-    </>
     )
 }
 
