@@ -2,6 +2,7 @@ import React from 'react'
 import FastSearch from '../components/FastSearch'
 import AdvancedSearch from '../components/AdvancedSearch'
 import RegisterButton from '../components/RegisterButton'
+import Header from '../components/HomeHeader';
 
 import Stack from "react-bootstrap/Stack"
 
@@ -9,7 +10,7 @@ import Stack from "react-bootstrap/Stack"
 const Home = () => {
     return (
         <>
-            <div>Home</div>
+            <Header />
             <Stack gap={3}>
                 <FastSearch />
                 <AdvancedSearch />
