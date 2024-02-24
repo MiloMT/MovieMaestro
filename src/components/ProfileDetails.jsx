@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Context } from "./App"
 import { fetchUserDetails } from "../utils/fetchUserDetails"
+import EditProfile from "./EditProfile"
 
 const ProfileDetails = () => {
     // Context State
