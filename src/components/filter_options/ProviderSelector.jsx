@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
@@ -11,10 +11,11 @@ const ProviderSelector = ({ setProvider }) => {
     // Component States
     const [selectValue, setSelectValue] = useState("8")
 
-    useEffect(() => setProvider(selectValue), [selectValue]);
+    // Hooks
+    useEffect(() => setProvider(selectValue), [selectValue])
 
     return (
-        <Form.Group className="mb-3" controlId="formProvider">
+        <Form.Group controlId="formProvider">
             <FloatingLabel label="Streaming Provider">
                 <Form.Select
                     onChange={(event) => setSelectValue(event.target.value)}
@@ -22,14 +23,14 @@ const ProviderSelector = ({ setProvider }) => {
                 >
                     {apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
                         <option key={prov.provider_id} value={prov.provider_id}>
-                        {" "}
-                        {prov.provider_name}{" "}
+                            {prov.provider_name}
                         </option>
                     ))}
                 </Form.Select>
             </FloatingLabel>
         </Form.Group>
-    );
-};
+    )
+}
 
-export default ProviderSelector;
+
+export default ProviderSelector

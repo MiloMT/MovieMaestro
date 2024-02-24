@@ -1,11 +1,12 @@
 import React from 'react'
-import RegisterLogin from '../components/RegisterLogin'
+// Component Imports
+import RegisterLoginSwitch from '../components/RegisterLoginSwitch'
 
 
 const Login = () => {
     return (
         <>
-            <RegisterLogin />
+            <RegisterLoginSwitch />
         </>
     )
 }

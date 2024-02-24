@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
@@ -11,10 +11,11 @@ const RegionSelector = ({ setRegion }) => {
     // Component States
     const [selectValue, setSelectValue] = useState("AU")
 
-    useEffect(() => setRegion(selectValue), [selectValue]);
+    // Hooks
+    useEffect(() => setRegion(selectValue), [selectValue])
 
     return (
-        <Form.Group className="mb-3" controlId="formRegion">
+        <Form.Group controlId="formRegion">
             <FloatingLabel label="Region">
                 <Form.Select
                     onChange={(event) => setSelectValue(event.target.value)}
@@ -22,14 +23,14 @@ const RegionSelector = ({ setRegion }) => {
                 >
                     {apiDefaults.regionList && apiDefaults.regionList.map((reg) => (
                         <option key={reg.iso_3166_1} value={reg.iso_3166_1}>
-                        {" "}
-                        {reg.english_name}{" "}
+                            {reg.english_name}
                         </option>
                     ))}
                 </Form.Select>
             </FloatingLabel>
         </Form.Group>
-    );
-};
+    )
+}
 
-export default RegionSelector;
+
+export default RegionSelector

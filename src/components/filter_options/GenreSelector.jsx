@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
@@ -11,10 +11,11 @@ const GenreSelector = ({ setGenre }) => {
     // Component States
     const [selectValue, setSelectValue] = useState("28")
 
-    useEffect(() => setGenre(selectValue), [selectValue]);
+    // Hooks
+    useEffect(() => setGenre(selectValue), [selectValue])
 
     return (
-        <Form.Group className="mb-3" controlId="formGenre">
+        <Form.Group controlId="formGenre">
             <FloatingLabel label="Genre">
                 <Form.Select 
                     onChange={(event) => setSelectValue(event.target.value)}
@@ -28,7 +29,8 @@ const GenreSelector = ({ setGenre }) => {
                 </Form.Select>
             </FloatingLabel> 
         </Form.Group>
-    );
-};
+    )
+}
 
-export default GenreSelector;
+
+export default GenreSelector
