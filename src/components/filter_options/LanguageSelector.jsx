@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
@@ -11,10 +11,11 @@ const LanguageSelector = ({ setLanguage }) => {
     // Component States
     const [selectValue, setSelectValue] = useState("en")
 
-    useEffect(() => setLanguage(selectValue), [selectValue]);
+    // Hooks
+    useEffect(() => setLanguage(selectValue), [selectValue])
 
     return (
-        <Form.Group className="mb-3" controlId="formLanguage">
+        <Form.Group controlId="formLanguage">
             <FloatingLabel label="Language">
                 <Form.Select 
                     onChange={(event) => setSelectValue(event.target.value)}
@@ -22,14 +23,14 @@ const LanguageSelector = ({ setLanguage }) => {
                 >
                     {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
                         <option key={lan.iso_639_1} value={lan.iso_639_1}>
-                        {" "}
-                        {lan.english_name}{" "}
+                            {lan.english_name}
                         </option>
                     ))}
                 </Form.Select>
             </FloatingLabel>
         </Form.Group>
-    );
-};
+    )
+}
 
-export default LanguageSelector;
+
+export default LanguageSelector
