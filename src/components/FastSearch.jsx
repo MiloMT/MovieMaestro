@@ -19,15 +19,16 @@ function FastSearch() {
     const navigate = useNavigate();
 
     function MovieRequest() {
-        fetch(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`,
-        {
-            method: "GET",
-            headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
-            },
-        }
+        const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`
+
+        fetch( url,
+            {
+                method: "GET",
+                headers: {
+                accept: "application/json",
+                Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+                },
+            }
         )
         .then((res) => res.json())
         .then((data) => {

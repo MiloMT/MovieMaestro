@@ -29,13 +29,13 @@ function AdvancedSearch() {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=${adult}&include_video=false&language=${language}&page=1&sort_by=popularity.desc&watch_region=${region}&with_genres=${genre}&with_watch_providers=${provider}`
 
         fetch( url,
-        {
-            method: "GET",
-            headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
-            },
-        }
+            {
+                method: "GET",
+                headers: {
+                accept: "application/json",
+                Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+                },
+            }
         )
         .then((res) => res.json())
         .then((data) => {
