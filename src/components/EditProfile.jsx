@@ -1,34 +1,30 @@
 import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Context } from "./App"
 import Form from 'react-bootstrap/Form';
+import { Row } from 'react-bootstrap';
 import ProviderSelector from "./filter_options/ProviderSelector"
 import LanguageSelector from "./filter_options/LanguageSelector"
-import { Row } from 'react-bootstrap';
+import RegionSelector from "./filter_options/RegionSelector"
+import { Context } from "./App"
+
 
 
 function EditProfile() {
     // Context State
-    // const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
-    // const [user, setUser] = loggedUser
+    const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
+    const [user, setUser] = loggedUser
 
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const [provider, setProvider] = useState("");
-    const [language, setLanguage] = useState("");
-    const [name, setName] = useState("");
+    const [show, setShow] = useState(false)
+    const [provider, setProvider] = useState("")
+    const [language, setLanguage] = useState("")
+    const [region, setRegion] = useState("")
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("")
 
-    const handleName = (e) => {
-        setName(e.target.value)
-    }
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
-    }
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     const handleCancel = () => {
         setName("");
@@ -70,15 +66,28 @@ function EditProfile() {
                 <Offcanvas.Body>
                     <Form onSubmit={handleSubmit}>
                         <h2>Profile Details</h2>
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
-                            <Form.Control type="name" value={name} onChange={e => handleName(e)} placeholder="Name" />
-                            </Form.Group>
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                            <Form.Control type="email" value={email} onChange={e => handleEmail(e)} placeholder="Email" />
+                        <Form.Group as={Row}>
+                            <Form.Label htmlFor="nameField">Name</Form.Label>
+                            <Form.Control 
+                                type="name" 
+                                id="nameField"
+                                value={name} 
+                                onChange={e => setName(e.target.value)} 
+                                placeholder={user.name}
+                            />
                         </Form.Group>
-                        <p>Streaming Platform: </p>
+                        <Form.Group as={Row}>
+                            <Form.Label htmlFor="emailField">Email</Form.Label>
+                            <Form.Control 
+                                type="email" 
+                                id="emailField"
+                                value={email} 
+                                onChange={e => setEmail(e.target.value)} 
+                                placeholder={user.email}
+                            />
+                        </Form.Group>
                         <ProviderSelector setProvider={setProvider}/>
-                        <p>Language: </p>
+                        <RegionSelector setRegion={setRegion} />
                         <LanguageSelector setLanguage={setLanguage} />
                         <div></div>
                         <Button type="submit" variant="warning">Save</Button>{' '}

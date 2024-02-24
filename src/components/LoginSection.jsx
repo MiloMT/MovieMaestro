@@ -58,7 +58,6 @@ const LoginSection = () => {
                 <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
             </Form.Group>
             <Button variant="link">Forgot password?</Button>
-            <div></div>
             <button type="submit">Login</button>
         </Form>
     )
