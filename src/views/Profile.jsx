@@ -20,8 +20,8 @@ const Profile = () => {
     useEffect(() => {
         const token = sessionStorage.getItem("token")
 
-        if (!token) {
-            console.error("Token not found in session storage")
+        if (!token || !isLoggedIn) {
+            console.error("This page requires an active login")
             setLoggedIn(false)
             navigate("/login")
             return
