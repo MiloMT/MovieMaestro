@@ -9,6 +9,7 @@ import RegionSelector from "./filter_options/RegionSelector"
 import { Context } from "./App"
 
 
+
 function EditProfile() {
     // Context State
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
@@ -24,31 +25,41 @@ function EditProfile() {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
+
     const handleCancel = () => {
         setName("");
         setEmail("");
+        setPassword("");
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+            if (!isLoggedIn || !loggedUser) {
+                console.log("User not logged in!");
+                return;
+            }
+
+        const user = jwtDecode(sessionStorage.getItem("token"));
 
         const updateEntry = {
             name: name,
             email: email,
+            password: password
         }
         console.log(updateEntry)
-        // id?
-        // const res = await fetch('https://moviemaestro-api.onrender.com/users/?', {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(updateEntry)
-        // })
-        // const data = await res.json()
-        // console.log(data)
-        
-    }
+
+        fetch(`https://moviemaestro-api.onrender.com/users/${user.id}`, {
+            method: "PATCH",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(updateEntry),
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+}
 
     return (
         <>
