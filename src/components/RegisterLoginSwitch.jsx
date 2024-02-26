@@ -12,7 +12,7 @@ function RegisterLoginSwitch() {
             <div onClick={() => { setAction('Register') }}>Register</div>
             <div onClick={() => { setAction('Login') }}>Login</div>
             {action === "Register" ? (
-                <RegisterSection />
+                <RegisterSection setAction={setAction} />
             ) : (
                 <LoginSection />
             )}
