@@ -2,6 +2,10 @@ import React, { useContext, useState, useEffect } from "react"
 import { Context } from "./App.jsx"
 import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
+import Container from "react-bootstrap/Container"
+import Stack from "react-bootstrap/Stack"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import  Button  from "react-bootstrap/Button"
 // Component Imports
 import OtherMovies from "./OtherMovies.jsx"
@@ -27,7 +31,7 @@ const MovieDisplay = () => {
     const selectMovies = () => {
         if (movies && movies.length > 0) {
             const movieList = []
-            while (movieList.length < 5) {
+            while (movieList.length < 4) {
                 const randomIndex = Math.floor(Math.random() * movies.length)
                 if (!movieList.includes(movies[randomIndex])) {
                     movieList.push(movies[randomIndex])
@@ -75,39 +79,51 @@ const MovieDisplay = () => {
                 <h1>Loading...</h1>
             ) : (
                 <>
-                    <h2>Movie Display</h2>
-                    {selectedMovies !== null && movies && movies.length > 0 && (
-                        <div className="movie-details">
-                            <img
-                                src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
-                                alt="Movie Poster Image"
-                                style={{ width: "300px", height: "400px" }}
-                            />
-                            <h4>Title: {selectedMovies[movieIndex].title}</h4>
-                            <h6>Overview: {selectedMovies[movieIndex].overview}</h6>
-                            <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
-                            <p>
-                                Genres:{" "}
-                                {selectedMovies[movieIndex].genre_ids
-                                .map(
-                                    (id) =>
-                                    apiDefaults.genreList.find((obj) => obj.id === id)
-                                        .name
-                                )
-                                .join(", ")}
-                            </p>
-                            {isLoggedIn &&
-                                <>
-                                <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
-                                <Button variant="outline-primary" onClick={handleAddWishList}>Watch Later</Button>
-                                </>
-                            }
-                        </div>
-                    )}
-                    <OtherMovies
-                        selectedMovies={selectedMovies}
-                        setMovieIndex={setMovieIndex}
-                    />
+                    <Stack gap={5}>
+                        {selectedMovies !== null && movies && movies.length > 0 && (
+                            <Row>
+                                <Col md="auto">
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
+                                        alt="Movie Poster Image"
+                                    />
+                                </Col>
+                                <Col>
+                                    <Stack gap={3}>
+                                        <h4>{selectedMovies[movieIndex].title}</h4>
+                                        <h6>{selectedMovies[movieIndex].overview}</h6>
+                                        <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
+                                        <p>
+                                            Genres:{" "}
+                                            {selectedMovies[movieIndex].genre_ids
+                                            .map(
+                                                (id) =>
+                                                apiDefaults.genreList.find((obj) => obj.id === id)
+                                                    .name
+                                            )
+                                            .join(", ")}
+                                        </p>
+                                        {isLoggedIn &&
+                                            <>
+                                                <Row md={2}>
+                                                    <Col>
+                                                        <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
+                                                    </Col>
+                                                    <Col>
+                                                        <Button variant="outline-primary">Watch Later</Button>
+                                                    </Col>
+                                                </Row>
+                                            </>
+                                        }
+                                    </Stack>
+                                </Col>
+                            </Row>
+                        )}
+                        <OtherMovies
+                            selectedMovies={selectedMovies}
+                            setMovieIndex={setMovieIndex}
+                        />
+                    </Stack>
                 </>
             )}
         </>

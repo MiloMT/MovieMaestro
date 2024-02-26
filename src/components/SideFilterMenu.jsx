@@ -7,7 +7,7 @@ import FastSearch from './FastSearch'
 import AdvancedSearch from './AdvancedSearch'
 
 
-function Responsive() {
+function SideFilterMenu() {
     // Component States
     const [show, setShow] = useState(false)
     
@@ -22,11 +22,8 @@ function Responsive() {
                     <Offcanvas.Title>Search Movie</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    {/* Check p later  */}
-                    {/* <p className="mb-0"> */}
-                        <FastSearch />
-                        <AdvancedSearch />
-                    {/* </p> */}
+                    <FastSearch />
+                    <AdvancedSearch />
                 </Offcanvas.Body>
             </Offcanvas>
         </>
@@ -34,4 +31,4 @@ function Responsive() {
 }
 
 
-export default Responsive
+export default SideFilterMenu
