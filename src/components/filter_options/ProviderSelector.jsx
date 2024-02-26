@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
-import FloatingLabel from "react-bootstrap/FloatingLabel"
+import Select from "react-select"
+
 
 const ProviderSelector = ({ setProvider }) => {
     // Context States
@@ -16,18 +17,16 @@ const ProviderSelector = ({ setProvider }) => {
 
     return (
         <Form.Group controlId="formProvider">
-            <FloatingLabel label="Streaming Provider">
-                <Form.Select
-                    onChange={(event) => setSelectValue(event.target.value)}
-                    value={selectValue}
-                >
-                    {apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
-                        <option key={prov.provider_id} value={prov.provider_id}>
-                            {prov.provider_name}
-                        </option>
-                    ))}
-                </Form.Select>
-            </FloatingLabel>
+            <Form.Label>Streaming Providers</Form.Label>
+            <Select 
+                isMulti
+                onChange={(array) => setSelectValue(array.map(prov => prov.value).join("%7C"))}
+                defaultValue={{value: 8, label: "Netflix"}}
+                options={
+                apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
+                    { value: prov.provider_id, label: prov.provider_name}
+                ))
+            } />
         </Form.Group>
     )
 }

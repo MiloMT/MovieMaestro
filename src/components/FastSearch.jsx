@@ -5,6 +5,7 @@ import { Context } from "./App"
 import Accordion from "react-bootstrap/Accordion"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
+import Stack from "react-bootstrap/Stack"
 // Filter Components
 import GenreSelector from "./filter_options/GenreSelector"
 
@@ -41,12 +42,14 @@ function FastSearch() {
                 <Accordion.Header>Fast Search</Accordion.Header>
                 <Accordion.Body>
                     <Form>
-                        <GenreSelector setGenre={setGenre} />
-                        <Form.Group className="button" controlId="submitButton">
-                            <Button onClick={MovieRequest} variant="primary">
-                                Search Movie
-                            </Button>{" "}
-                        </Form.Group>
+                        <Stack gap={3}>
+                            <GenreSelector setGenre={setGenre} />
+                            <Form.Group className="button" controlId="submitButton">
+                                <Button onClick={MovieRequest} variant="primary">
+                                    Search Movie
+                                </Button>{" "}
+                            </Form.Group>
+                        </Stack>
                     </Form>
                 </Accordion.Body>
             </Accordion.Item>
