@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Row from "react-bootstrap/Row"
 
 
-const RegisterSection = () => {
+const RegisterSection = ({ setAction }) => {
     // Component States
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -23,16 +23,13 @@ const RegisterSection = () => {
             },
             body: JSON.stringify(newEntry)
         })
-
-        const data = await res.json()
-        console.log(data)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             await addUser(name, email, password)
-            nav('/login')
+            setAction('Login')
         } catch (error) {
             console.log("Error:", error)
         }
