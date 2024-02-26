@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
-import FloatingLabel from "react-bootstrap/FloatingLabel"
+import Select from "react-select"
+
 
 const LanguageSelector = ({ setLanguage }) => {
     // Context States
@@ -16,18 +17,15 @@ const LanguageSelector = ({ setLanguage }) => {
 
     return (
         <Form.Group controlId="formLanguage">
-            <FloatingLabel label="Language">
-                <Form.Select 
-                    onChange={(event) => setSelectValue(event.target.value)}
-                    value={selectValue}
-                >
-                    {apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
-                        <option key={lan.iso_639_1} value={lan.iso_639_1}>
-                            {lan.english_name}
-                        </option>
-                    ))}
-                </Form.Select>
-            </FloatingLabel>
+            <Form.Label>Language</Form.Label>
+            <Select 
+                onChange={(event) => setSelectValue(event.value)}
+                defaultValue={{value: "en", label: "English"}}
+                options={
+                apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
+                    { value: lan.iso_639_1, label: lan.english_name}
+                ))
+            } />
         </Form.Group>
     )
 }

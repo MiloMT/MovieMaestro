@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { Context } from "../App.jsx"
 // React Bootstrap imports
 import Form from "react-bootstrap/Form"
-import FloatingLabel from "react-bootstrap/FloatingLabel"
+import Select from "react-select"
+
 
 const GenreSelector = ({ setGenre }) => {
     // Context States
@@ -16,18 +17,15 @@ const GenreSelector = ({ setGenre }) => {
 
     return (
         <Form.Group controlId="formGenre">
-            <FloatingLabel label="Genre">
-                <Form.Select 
-                    onChange={(event) => setSelectValue(event.target.value)}
-                    value={selectValue}
-                >
-                    {apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
-                        <option key={gen.id} value={gen.id}>
-                            {gen.name}
-                        </option>
-                    ))}
-                </Form.Select>
-            </FloatingLabel> 
+            <Form.Label>Genre</Form.Label>
+            <Select 
+                onChange={(event) => setSelectValue(event.value)}
+                defaultValue={{value: 28, label: "Action"}}
+                options={
+                apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
+                    { value: gen.id, label: gen.name}
+                ))
+            } />
         </Form.Group>
     )
 }
