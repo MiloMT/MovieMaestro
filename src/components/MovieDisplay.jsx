@@ -106,8 +106,14 @@ const MovieDisplay = () => {
                                         </p>
                                         {isLoggedIn &&
                                             <>
-                                                <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
-                                                <Button variant="outline-primary">Watch Later</Button>
+                                                <Row md={2}>
+                                                    <Col>
+                                                        <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
+                                                    </Col>
+                                                    <Col>
+                                                        <Button variant="outline-primary">Watch Later</Button>
+                                                    </Col>
+                                                </Row>
                                             </>
                                         }
                                     </Stack>
