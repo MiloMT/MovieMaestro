@@ -7,6 +7,7 @@ import { fetchUserDetails } from "../utils/fetchUserDetails.jsx"
 import { Context } from '../components/App.jsx'
 
 
+
 const Profile = () => {
     // Context State
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
