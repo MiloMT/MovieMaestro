@@ -16,10 +16,10 @@ const Movie = () => {
         <>
             <Container>
                 <Row>
-                    <Col md={8}>
+                    <Col lg={8} md={12}>
                         <MovieDisplay />
                     </Col>
-                    <Col md={4}>
+                    <Col lg={4} md={12}>
                         <Stack gap={3}>
                             <FastSearch />
                             <AdvancedSearch />

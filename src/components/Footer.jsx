@@ -18,12 +18,12 @@ const Footer = () => {
                         </Navbar.Brand>
                     </Col>
                     <Col md="auto">
-                        <p className="tmdb-attribution">
+                        <p className="tmdb-attribution mobile-hide">
                             This product uses the TMDB API but is not endorsed or certified by TMDB.
                         </p>
                     </Col>
                     <Col>
-                        <Navbar.Brand className="footer-names">
+                        <Navbar.Brand className="footer-names mobile-hide">
                             <p>Created by: Myles, Yoshi, Mitch</p>
                         </Navbar.Brand>
                     </Col>

@@ -22,6 +22,7 @@ const ProviderSelector = ({ setProvider }) => {
                 isMulti
                 onChange={(array) => setSelectValue(array.map(prov => prov.value).join("%7C"))}
                 defaultValue={{value: 8, label: "Netflix"}}
+                className="select-box"
                 options={
                 apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
                     { value: prov.provider_id, label: prov.provider_name}

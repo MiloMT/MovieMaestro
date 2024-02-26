@@ -21,6 +21,7 @@ const LanguageSelector = ({ setLanguage }) => {
             <Select 
                 onChange={(event) => setSelectValue(event.value)}
                 defaultValue={{value: "en", label: "English"}}
+                className="select-box"
                 options={
                 apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
                     { value: lan.iso_639_1, label: lan.english_name}

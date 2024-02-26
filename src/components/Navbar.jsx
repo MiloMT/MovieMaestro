@@ -35,7 +35,7 @@ const NavBar = () => {
                         <img src={logo} style={{height:"65px"}} />
                     </Navbar.Brand>
                 </Link>
-                <h1>MovieMaestro</h1>
+                <h1 className="mobile-hide">MovieMaestro</h1>
                 {/* Render is conditional on whether use is logged in */}
                 { isLoggedIn ? (
                     <>

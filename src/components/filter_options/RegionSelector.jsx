@@ -21,6 +21,7 @@ const RegionSelector = ({ setRegion }) => {
             <Select 
                 onChange={(event) => setSelectValue(event.value)}
                 defaultValue={{value: "AU", label: "Australia"}}
+                className="select-box"
                 options={
                 apiDefaults.regionList && apiDefaults.regionList.map((reg) => (
                     { value: reg.iso_3166_1, label: reg.english_name}
