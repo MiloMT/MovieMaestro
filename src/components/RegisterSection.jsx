@@ -1,6 +1,11 @@
 import React, { useState } from "react"
-import Form from 'react-bootstrap/Form'
+// Bootstrap Components
+import Container from "react-bootstrap/Container"
+import Stack from "react-bootstrap/Stack"
 import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 
 
 const RegisterSection = ({ setAction }) => {
@@ -37,16 +42,38 @@ const RegisterSection = ({ setAction }) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group as={Row} controlId="formPlaintextName">
-                <Form.Control type="name" value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
-            </Form.Group>
-            <Form.Group as={Row} controlId="formPlaintextEmail">
-                <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
-            </Form.Group>
-            <Form.Group as={Row} controlId="formPlaintextPassword">
-                <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
-            </Form.Group>
-            <button type="submit">Create Account</button>
+            <Stack gap={3}>
+                <Row>
+                    <Form.Control 
+                        type="name" 
+                        value={name} 
+                        onChange={e => setName(e.target.value)} 
+                        placeholder="Name" 
+                    />
+                </Row>
+                <Row>
+                    <Form.Control 
+                        type="email" 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} 
+                        placeholder="Email" 
+                    />
+                </Row>
+                <Row>
+                    <Form.Control 
+                        type="password" 
+                        value={password} 
+                        onChange={e => setPassword(e.target.value)} 
+                        placeholder="Password" 
+                    />
+                </Row>
+                <Row>
+                    <Button type="submit" variant="primary">
+                        Create Account
+                    </Button>
+                </Row>
+            </Stack>
+            
         </Form>
     )
 }
