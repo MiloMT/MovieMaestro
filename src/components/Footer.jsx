@@ -1,7 +1,8 @@
 import React from "react"
 // Bootstrap Components
 import Navbar from "react-bootstrap/Navbar"
-import { Container } from "react-bootstrap"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
 // Image import
 import Logo from "../assets/TMDBLogo.svg"
 
@@ -9,17 +10,23 @@ import Logo from "../assets/TMDBLogo.svg"
 const Footer = () => {
     return (
         <>
-            <Navbar sticky="bottom" className="bg-body-tertiary">
-                <Navbar.Brand href="https://www.themoviedb.org/">
-                    <img src={Logo} alt="TMDB Logo" className="tmdb-logo" />
-                </Navbar.Brand>
-                <p className="tmdb-attribution">
-                    This product uses the TMDB API but is not endorsed or certified by TMDB.
-                </p>
+            <Navbar fixed="bottom" className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand className="footer-names">
-                        <p>Created by: Myles, Yoshi, Mitch</p>
-                    </Navbar.Brand>
+                    <Col md="auto">
+                        <Navbar.Brand href="https://www.themoviedb.org/">
+                            <img src={Logo} alt="TMDB Logo" className="tmdb-logo" />
+                        </Navbar.Brand>
+                    </Col>
+                    <Col md="auto">
+                        <p className="tmdb-attribution">
+                            This product uses the TMDB API but is not endorsed or certified by TMDB.
+                        </p>
+                    </Col>
+                    <Col>
+                        <Navbar.Brand className="footer-names">
+                            <p>Created by: Myles, Yoshi, Mitch</p>
+                        </Navbar.Brand>
+                    </Col>
                 </Container>
             </Navbar>
         </>
