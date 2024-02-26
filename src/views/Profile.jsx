@@ -5,6 +5,8 @@ import ProfileDetails from '../components/ProfileDetails'
 import EditProfile from '../components/EditProfile.jsx'
 import { fetchUserDetails } from "../utils/fetchUserDetails.jsx"
 import { Context } from '../components/App.jsx'
+import WatchedList from '../components/WatchedList.jsx'
+import WishList from '../components/WishList.jsx'
 
 
 const Profile = () => {
@@ -38,6 +40,8 @@ const Profile = () => {
                 <>
                     <ProfileDetails />
                     <EditProfile />
+                    <WatchedList />
+                    <WishList />
                 </>
             )}
         </>

@@ -99,7 +99,7 @@ const MovieDisplay = () => {
                             {isLoggedIn &&
                                 <>
                                 <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
-                                <Button variant="outline-primary">Watch Later</Button>
+                                <Button variant="outline-primary" onClick={handleAddWishList}>Watch Later</Button>
                                 </>
                             }
                         </div>

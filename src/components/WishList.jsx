@@ -3,20 +3,21 @@ import { Card } from "react-bootstrap";
 import { Context } from "./App";
 import "../styles/WatchedList.css";
 
-const WatchedList = () => {
+const WishList = () => {
   const { loggedUser } = useContext(Context);
   const user = loggedUser[0];
+  {console.log(user)}
 
   // Check if the user and watchList are defined before rendering
-  if (!user || !user.watchList || user.watchList.length === 0) {
-    return <div>There are no movies in your watched movies list</div>;
+  if (!user || !user.wishList || user.wishList.length === 0) {
+    return <div>No movies in your wish list</div>;
   }
 
   return (
     <>
-      <h3>Watched list</h3>
+      <h3>Wish list</h3>
       <div className="watched-container">
-        {user.watchList.map((movie, index) => (
+        {user.wishList.map((movie, index) => (
           <div key={index} className="watched-card-container">
             <Card className="watched-card" style={{ maxHeight: 600 }}>
               <Card.Img
@@ -36,4 +37,4 @@ const WatchedList = () => {
   );
 };
 
-export default WatchedList;
+export default WishList;
