@@ -86,7 +86,6 @@ const MovieDisplay = () => {
                                     <img
                                         src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
                                         alt="Movie Poster Image"
-                                        style={{ width: "300px", height: "400px" }}
                                     />
                                 </Col>
                                 <Col>

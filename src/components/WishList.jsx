@@ -5,20 +5,23 @@ import "../styles/WatchedList.css";
 import Button from "react-bootstrap/Button";
 import { jwtDecode } from "jwt-decode";
 
-const WatchedList = () => {
+const WishList = () => {
   const { loggedUser } = useContext(Context);
   const user = loggedUser[0];
   const setUser = loggedUser[1];
+  {
+    console.log(user);
+  }
 
   // Check if the user and watchList are defined before rendering
-  if (!user || !user.watchList || user.watchList.length === 0) {
-    return <div>There are no movies in your watched movies list</div>;
+  if (!user || !user.wishList || user.wishList.length === 0) {
+    return <div>No movies in your wish list</div>;
   }
 
   const removeMovie = async (movie) => {
     const user = jwtDecode(sessionStorage.getItem("token"));
     const response = await fetch(
-      `https://moviemaestro-api.onrender.com/users/${user.id}/watchList`,
+      `https://moviemaestro-api.onrender.com/users/${user.id}/wishList`,
       {
         method: "DELETE",
         headers: {
@@ -26,7 +29,7 @@ const WatchedList = () => {
           "Content-Type": "application/json; charset=UTF-8",
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
-        body: JSON.stringify(movie), // Send the title of the movie to be removed
+        body: JSON.stringify(movie),
       }
     );
     const updatedUser = await response.json();
@@ -35,9 +38,9 @@ const WatchedList = () => {
 
   return (
     <>
-      <h3>Watched list</h3>
+      <h3>Wish list</h3>
       <div className="watched-container">
-        {user.watchList.map((movie, index) => (
+        {user.wishList.map((movie, index) => (
           <div key={index} className="watched-card-container">
             <Card className="watched-card" style={{ maxHeight: 600 }}>
               <Card.Img
@@ -60,4 +63,4 @@ const WatchedList = () => {
   );
 };
 
-export default WatchedList;
+export default WishList;
