@@ -3,6 +3,7 @@ import React from "react"
 import Row from "react-bootstrap/Row"
 import Card from "react-bootstrap/Card"
 import CardGroup from "react-bootstrap/CardGroup"
+import Button from "react-bootstrap/Button"
 
 
 const OtherMovies = ({ setMovieIndex, selectedMovies }) => {
@@ -15,12 +16,13 @@ const OtherMovies = ({ setMovieIndex, selectedMovies }) => {
                             key={index}
                             onClick={() => setMovieIndex(index)}
                             style={{ padding: 0 }}
+                            as={Button}
                         >
                             <Card.Img
                                 variant="top"
                                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                             />
-                            <Card.Footer>{movie.title}</Card.Footer>
+                            <Card.Body>{movie.title}</Card.Body>
                         </Card>
                     ))}
                 </CardGroup>
