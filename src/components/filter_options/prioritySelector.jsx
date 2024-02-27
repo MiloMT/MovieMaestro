@@ -6,7 +6,10 @@ import Select from "react-select"
 
 const PrioritySelector = ({ setPriority }) => {
     // Component States
-    const [selectValue, setSelectValue] = useState("popularity.desc")
+    const [selectValue, setSelectValue] = useState({
+        "value": "popularity.desc",
+        "label": "Popularity"
+      })
 
     // Hooks
     useEffect(() => setPriority(selectValue), [selectValue])
@@ -15,7 +18,7 @@ const PrioritySelector = ({ setPriority }) => {
         <Form.Group controlId="formRegion">
             <Form.Label>Search by</Form.Label>
             <Select 
-                onChange={(event) => setSelectValue(event.value)}
+                onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{ value: "popularity.desc", label: "Popularity"}}
                 className="select-box"
                 options= {[

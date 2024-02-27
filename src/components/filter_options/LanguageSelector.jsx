@@ -10,7 +10,10 @@ const LanguageSelector = ({ setLanguage }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("en")
+    const [selectValue, setSelectValue] = useState({
+        "value": "en",
+        "label": "English"
+      })
 
     // Hooks
     useEffect(() => setLanguage(selectValue), [selectValue])
@@ -19,7 +22,7 @@ const LanguageSelector = ({ setLanguage }) => {
         <Form.Group controlId="formLanguage">
             <Form.Label>Language</Form.Label>
             <Select 
-                onChange={(event) => setSelectValue(event.value)}
+                onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{value: "en", label: "English"}}
                 className="select-box"
                 options={
