@@ -5,15 +5,28 @@ import Form from "react-bootstrap/Form"
 import Select from "react-select"
 
 
+function getDefault(user, isLoggedIn) {
+    if (sessionStorage.getItem("token") && isLoggedIn) {
+        return user.region
+    } else {
+        return {
+            "value": "AU",
+            "label": "Australia"
+          }
+    }
+}
+
 const RegionSelector = ({ setRegion }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
+    const [user, setUser] = loggedUser
+    const [isLoggedIn, setLoggedIn] = LoggedIn
+
+    const regionDefault = getDefault(user, isLoggedIn)
+
     // Component States
-    const [selectValue, setSelectValue] = useState({
-        "value": "AU",
-        "label": "Australia"
-      })
+    const [selectValue, setSelectValue] = useState(regionDefault)
 
     // Hooks
     useEffect(() => setRegion(selectValue), [selectValue])
@@ -23,7 +36,7 @@ const RegionSelector = ({ setRegion }) => {
             <Form.Label>Region</Form.Label>
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
-                defaultValue={{value: "AU", label: "Australia"}}
+                defaultValue={regionDefault}
                 className="select-box"
                 options={
                 apiDefaults.regionList && apiDefaults.regionList.map((reg) => (

@@ -9,9 +9,6 @@ const WishList = () => {
   const { loggedUser } = useContext(Context);
   const user = loggedUser[0];
   const setUser = loggedUser[1];
-  {
-    console.log(user);
-  }
 
   // Check if the user and watchList are defined before rendering
   if (!user || !user.wishList || user.wishList.length === 0) {

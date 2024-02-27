@@ -9,6 +9,7 @@ const GenreSelector = ({ setGenre }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
+
     // Component States
     const [selectValue, setSelectValue] = useState({
         "value": 28,

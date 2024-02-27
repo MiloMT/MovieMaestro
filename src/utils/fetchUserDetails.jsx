@@ -1,10 +1,10 @@
 import { jwtDecode } from "jwt-decode"
 
-async function fetchUserDetails(token, setBusy, setUser) {
+function fetchUserDetails(token, setBusy, setUser) {
 
     try {
         const userObj = jwtDecode(sessionStorage.getItem("token"))
-        const res = await fetch(
+        fetch (
             `https://moviemaestro-api.onrender.com/users/${userObj.id}`, {
                 method: "GET",
                 headers: {
@@ -13,13 +13,9 @@ async function fetchUserDetails(token, setBusy, setUser) {
                 },
             }
         )
-        if (res.ok) {
-            const userData = await res.json()
-            setUser(userData)
-            setBusy(false)
-        } else {
-            console.error("Failed to fetch user details", res.statusText)
-        }
+        .then((res) => res.json())
+        .then((data) => setUser(data))
+        .then(() => setBusy(false))
     } catch (error) {
         console.error("Error fetching user details", error)
 }}

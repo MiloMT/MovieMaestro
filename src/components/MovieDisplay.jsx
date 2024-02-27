@@ -20,7 +20,7 @@ const MovieDisplay = () => {
     const [selectedMovies, setSelectedMovies] = useState([])
     const [movieIndex, setMovieIndex] = useState([0])
     const [isBusy, setBusy] = useState(true)
-    
+
     // Updates the movie list to re-render when movies state updated
     useEffect(() => {
         selectMovies()
