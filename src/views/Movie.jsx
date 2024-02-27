@@ -15,6 +15,7 @@ const Movie = () => {
     return (
         <>
             <Container>
+                <Row>
                     <Col lg={8} md={12}>
                         <MovieDisplay />
                     </Col>
@@ -25,6 +26,7 @@ const Movie = () => {
                             {/* <SideFilterMenu /> */}
                         </Stack>
                     </Col>
+                </Row>
             </Container>
         </>
     )
