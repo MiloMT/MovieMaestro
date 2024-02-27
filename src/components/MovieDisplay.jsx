@@ -79,19 +79,20 @@ const MovieDisplay = () => {
         setUser(data)
     }
 
-    const handleAddWishList = () => {
-        const user = jwtDecode(sessionStorage.getItem("token"))
 
-        fetch(`https://moviemaestro-api.onrender.com/users/${user.id}/wishList`, {
-            method: "PATCH",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json; charset=UTF-8",
-                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-            },
-            body: JSON.stringify(selectedMovies[movieIndex]),
-        })
-    }
+  const handleAddWishList = () => {
+    const user = jwtDecode(sessionStorage.getItem("token"));
+
+    fetch(`https://moviemaestro-api.onrender.com/users/${user.id}/wishList`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(selectedMovies[movieIndex]),
+    });
+  };
 
     return (
         <>
@@ -169,4 +170,5 @@ const MovieDisplay = () => {
     )
 }
 
-export default MovieDisplay
+export default MovieDisplay;
+
