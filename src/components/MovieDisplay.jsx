@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Context } from "./App.jsx";
-import { jwtDecode } from "jwt-decode";
+import React, { useContext, useState, useEffect } from "react"
+import { Context } from "./App.jsx"
+import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
 import Stack from "react-bootstrap/Stack"
 import Col from "react-bootstrap/Col"
@@ -58,7 +58,7 @@ const MovieDisplay = () => {
             }
             setSelectedMovies(movieList)
         }
-    };
+    }
 
     const handleAddWatchedList = async () => {
         const user = jwtDecode(sessionStorage.getItem("token"))
@@ -78,7 +78,6 @@ const MovieDisplay = () => {
         const data = await response.json()
         setUser(data)
     }
-  };
 
     const handleAddWishList = () => {
         const user = jwtDecode(sessionStorage.getItem("token"))
@@ -167,8 +166,7 @@ const MovieDisplay = () => {
                 </>
             )}
         </>
-    );
-};
+    )
+}
 
-export default MovieDisplay;
-export default MovieDisplay;
+export default MovieDisplay
