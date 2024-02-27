@@ -10,7 +10,7 @@ const OtherMovies = ({ setMovieIndex, selectedMovies }) => {
     return (
         <>
             <Row>
-                <CardGroup>
+                <CardGroup className="mobile-hide">
                     {selectedMovies.map((movie, index) => (
                         <Card 
                             key={index}

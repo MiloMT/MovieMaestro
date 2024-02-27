@@ -21,6 +21,7 @@ const GenreSelector = ({ setGenre }) => {
             <Select 
                 onChange={(event) => setSelectValue(event.value)}
                 defaultValue={{value: 28, label: "Action"}}
+                className="select-box"
                 options={
                 apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
                     { value: gen.id, label: gen.name}

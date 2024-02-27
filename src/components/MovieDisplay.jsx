@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react"
 import { Context } from "./App.jsx"
 import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
-import Container from "react-bootstrap/Container"
 import Stack from "react-bootstrap/Stack"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
@@ -53,8 +52,6 @@ const MovieDisplay = () => {
             },
             body: JSON.stringify(selectedMovies[movieIndex]),
         })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
     }
 
     const handleAddWishList = () => {
@@ -69,8 +66,6 @@ const MovieDisplay = () => {
             },
             body: JSON.stringify(selectedMovies[movieIndex]),
         })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
     }
 
     return (
@@ -81,8 +76,8 @@ const MovieDisplay = () => {
                 <>
                     <Stack gap={5}>
                         {selectedMovies !== null && movies && movies.length > 0 && (
-                            <Row>
-                                <Col md="auto">
+                            <Row className="selected-movie">
+                                <Col md={"auto"}>
                                     <img
                                         src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
                                         alt="Movie Poster Image"
@@ -111,7 +106,7 @@ const MovieDisplay = () => {
                                                         <Button variant="outline-primary" onClick={handleAddWatchedList}>Watched</Button>
                                                     </Col>
                                                     <Col>
-                                                        <Button variant="outline-primary">Watch Later</Button>
+                                                        <Button variant="outline-primary" onClick={handleAddWishList}>Watch Later</Button>
                                                     </Col>
                                                 </Row>
                                             </>
