@@ -97,6 +97,16 @@
     height: 220px;
 }
 
+.active {
+    color: #343a40;
+    cursor: pointer;
+}
+
+.inactive {
+    color: #adb5bd;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .movie-image {
         margin-bottom: 3rem;
