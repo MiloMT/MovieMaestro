@@ -89,9 +89,6 @@ const LoginSection = () => {
                     />
                 </Row>
                 <Row>
-                    <Button variant="link">Forgot password?</Button>
-                </Row>
-                <Row>
                     <Button type="submit" variant="primary">Login</Button>
                 </Row>
             </Stack>

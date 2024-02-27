@@ -153,7 +153,10 @@ const MovieDisplay = () => {
                                             <Row md={2}>
                                                 <Col>
                                                     {inWatchedList ? (
-                                                    <Button variant="outline-success">Added</Button>
+                                                    <Button 
+                                                        variant="outline-success"
+                                                        className="button-full"
+                                                    >Added</Button>
                                                     ) : (
                                                     <Button
                                                         variant="outline-primary"
@@ -161,6 +164,7 @@ const MovieDisplay = () => {
                                                             handleAddWatchedList()
                                                             setInWatchedList(true)
                                                         }}
+                                                        className="button-full"
                                                     >
                                                         Watched
                                                     </Button>
@@ -168,7 +172,10 @@ const MovieDisplay = () => {
                                                 </Col>
                                                 <Col>
                                                     {inWishList ? (
-                                                    <Button variant="outline-success">Added</Button>
+                                                    <Button 
+                                                        variant="outline-success"
+                                                        className="button-full"
+                                                    >Added</Button>
                                                     ) : (
                                                     <Button
                                                         variant="outline-primary"
@@ -176,6 +183,7 @@ const MovieDisplay = () => {
                                                             handleAddWishList()
                                                             setInWishList(true)
                                                         }}
+                                                        className="button-full"
                                                     >
                                                         Watch Later
                                                     </Button>
