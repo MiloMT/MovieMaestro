@@ -4,16 +4,27 @@ import { Context } from "../App.jsx"
 import Form from "react-bootstrap/Form"
 import Select from "react-select"
 
+function getDefault(user) {
+    if (sessionStorage.getItem("token")) {
+        return user.language
+    } else {
+        return {
+            "value": "en",
+            "label": "English"
+          }
+    }
+}
 
 const LanguageSelector = ({ setLanguage }) => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
+    const [user, setUser] = loggedUser
+
+    const languageDefault = getDefault(user)
+
     // Component States
-    const [selectValue, setSelectValue] = useState({
-        "value": "en",
-        "label": "English"
-      })
+    const [selectValue, setSelectValue] = useState(languageDefault)
 
     // Hooks
     useEffect(() => setLanguage(selectValue), [selectValue])
