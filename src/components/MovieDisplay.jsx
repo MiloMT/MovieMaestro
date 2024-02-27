@@ -1,198 +1,201 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Context } from "./App.jsx";
-import { jwtDecode } from "jwt-decode";
+import React, { useContext, useState, useEffect } from "react"
+import { Context } from "./App.jsx"
+import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
-import Stack from "react-bootstrap/Stack";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import Stack from "react-bootstrap/Stack"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
+import Button from "react-bootstrap/Button"
 // Component Imports
-import OtherMovies from "./OtherMovies.jsx";
+import OtherMovies from "./OtherMovies.jsx"
 
 const MovieDisplay = () => {
-  // Context States
-  const { api, LoggedIn, loggedUser, movieList } = useContext(Context);
-  const [apiDefaults, setApiDefaults] = api;
-  const [movies, setMovies] = movieList;
-  const [isLoggedIn, setLoggedIn] = LoggedIn;
-  const [user, setUser] = loggedUser;
-  // Component States
-  const [selectedMovies, setSelectedMovies] = useState([]);
-  const [movieIndex, setMovieIndex] = useState([0]);
-  const [isBusy, setBusy] = useState(true);
-  const [inWatchedList, setInWatchedList] = useState(false);
-  const [inWishList, setInWishList] = useState(false);
+    // Context States
+    const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
+    const [apiDefaults, setApiDefaults] = api
+    const [movies, setMovies] = movieList
+    const [isLoggedIn, setLoggedIn] = LoggedIn
+    const [user, setUser] = loggedUser
+    // Component States
+    const [selectedMovies, setSelectedMovies] = useState([])
+    const [movieIndex, setMovieIndex] = useState([0])
+    const [isBusy, setBusy] = useState(true)
+    const [inWatchedList, setInWatchedList] = useState(false)
+    const [inWishList, setInWishList] = useState(false)
 
-  // Updates the movie list to re-render when movies state updated
-  useEffect(() => {
-    selectMovies();
-    setBusy(false);
-  }, [movies]);
+    // Updates the movie list to re-render when movies state updated
+    useEffect(() => {
+        selectMovies()
+        setBusy(false)
+    }, [movies])
 
-  useEffect(() => {
-    if (selectedMovies.length !== 0 && isLoggedIn) {
-      setInWatchedList(false);
-      setInWishList(false);
-      checkWatchedList();
-      checkWishList();
-    }
-  }, [movieIndex, selectedMovies]);
-
-  const checkWatchedList = () => {
-    if (user) {
-      if (
-        user.watchList.some(
-          (movies) => movies.title === selectedMovies[movieIndex].title
-        )
-      ) {
-        setInWatchedList(true);
-      }
-    }
-  };
-
-  const checkWishList = () => {
-    if (user) {
-      if (
-        user.wishList.some(
-          (movies) => movies.title === selectedMovies[movieIndex].title
-        )
-      ) {
-        setInWishList(true);
-      }
-    }
-  };
-
-  const selectMovies = () => {
-    if (movies && movies.length > 0) {
-      const movieList = [];
-      while (movieList.length < 4) {
-        const randomIndex = Math.floor(Math.random() * movies.length);
-        if (!movieList.includes(movies[randomIndex])) {
-          movieList.push(movies[randomIndex]);
+    useEffect(() => {
+        if (selectedMovies.length !== 0 && isLoggedIn) {
+            setInWatchedList(false)
+            setInWishList(false)
+            checkWatchedList()
+            checkWishList()
         }
-      }
-      setSelectedMovies(movieList);
-    }
-  };
+    }, [movieIndex, selectedMovies])
 
-  const handleAddWatchedList = async () => {
-    const user = jwtDecode(sessionStorage.getItem("token"));
+    const checkWatchedList = () => {
+        if (user) {
+            if (user.watchList.some(
+                (movies) => movies.title === selectedMovies[movieIndex].title
+            )) 
+                { setInWatchedList(true) }
+        }
+    };
 
-    const response = await fetch(
-      `https://moviemaestro-api.onrender.com/users/${user.id}/watchList`,
-      {
-        method: "PATCH",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-        },
-        body: JSON.stringify(selectedMovies[movieIndex]),
-      }
-    );
-    const data = await response.json();
-    setUser(data);
-  };
+    const checkWishList = () => {
+        if (user) {
+            if (user.wishList.some(
+                (movies) => movies.title === selectedMovies[movieIndex].title
+            )) 
+                { setInWishList(true) }
+        }
+    };
 
-  const handleAddWishList = async () => {
-    const user = jwtDecode(sessionStorage.getItem("token"));
+    const selectMovies = () => {
+        if (movies && movies.length > 0) {
+            const movieList = []
+            while (movieList.length < 4) {
+                const randomIndex = Math.floor(Math.random() * movies.length)
+                if (!movieList.includes(movies[randomIndex])) {
+                    movieList.push(movies[randomIndex])
+                }
+            }
+            setSelectedMovies(movieList)
+        }
+    };
 
-    const response = await fetch(
-      `https://moviemaestro-api.onrender.com/users/${user.id}/wishList`,
-      {
-        method: "PATCH",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-        },
-        body: JSON.stringify(selectedMovies[movieIndex]),
-      }
-    );
-    const data = await response.json();
-    setUser(data);
-  };
+    const handleAddWatchedList = async () => {
+        const user = jwtDecode(sessionStorage.getItem("token"));
 
-  return (
-    <>
-      {isBusy ? (
-        <h1>Loading...</h1>
-      ) : (
+        const response = await fetch(
+            `https://moviemaestro-api.onrender.com/users/${user.id}/watchList`,
+            {
+                method: "PATCH",
+                headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                },
+                body: JSON.stringify(selectedMovies[movieIndex]),
+            }
+        )
+        const data = await response.json()
+        setUser(data)
+    };
+
+    const handleAddWishList = async () => {
+        const user = jwtDecode(sessionStorage.getItem("token"))
+
+        const response = await fetch(
+            `https://moviemaestro-api.onrender.com/users/${user.id}/wishList`,
+            {
+                method: "PATCH",
+                headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                },
+                body: JSON.stringify(selectedMovies[movieIndex]),
+            }
+        );
+        const data = await response.json()
+        setUser(data)
+    };
+
+    return (
         <>
-          <Stack gap={5}>
-            {selectedMovies !== null && movies && movies.length > 0 && (
-              <Row className="selected-movie">
-                <Col md={"auto"}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
-                    alt="Movie Poster Image"
-                    style={{ height: "400px" }}
-                  />
-                </Col>
-                <Col>
-                  <Stack gap={3}>
-                    <h4>{selectedMovies[movieIndex].title}</h4>
-                    <h6>{selectedMovies[movieIndex].overview}</h6>
-                    <p>Rating: {selectedMovies[movieIndex].vote_average}</p>
-                    <p>
-                      Genres:{" "}
-                      {selectedMovies[movieIndex].genre_ids
-                        .map(
-                          (id) =>
-                            apiDefaults.genreList.find((obj) => obj.id === id)
-                              .name
-                        )
-                        .join(", ")}
-                    </p>
-                    {isLoggedIn && (
-                      <>
-                        <Row md={2}>
-                          <Col>
-                            {inWatchedList ? (
-                              <Button variant="outline-success">Added</Button>
-                            ) : (
-                              <Button
-                                variant="outline-primary"
-                                onClick={() => {
-                                  handleAddWatchedList();
-                                  setInWatchedList(true);
-                                }}
-                              >
-                                Watched
-                              </Button>
-                            )}
-                          </Col>
-                          <Col>
-                            {inWishList ? (
-                              <Button variant="outline-success">Added</Button>
-                            ) : (
-                              <Button
-                                variant="outline-primary"
-                                onClick={() => {
-                                  handleAddWishList();
-                                  setInWishList(true);
-                                }}
-                              >
-                                Watch Later
-                              </Button>
-                            )}
-                          </Col>
-                        </Row>
-                      </>
-                    )}
-                  </Stack>
-                </Col>
-              </Row>
+            {isBusy ? (
+                <h1>Loading...</h1>
+            ) : (
+                <>
+                    <Stack gap={5}>
+                        {selectedMovies !== null && movies && movies.length > 0 && (
+                            <Row>
+                                <Col md={"auto"}>
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/original${selectedMovies[movieIndex].poster_path}`}
+                                        alt="Movie Poster Image"
+                                        className="movie-image"
+                                    />
+                                </Col>
+                                <Col>
+                                    <Stack gap={3} className="movie-info">
+                                        <h4>{selectedMovies[movieIndex].title}</h4>
+                                        <p>{selectedMovies[movieIndex].overview}</p>
+                                        <Row>
+                                            <Col>
+                                                <h6>Rating</h6>
+                                                <p>{selectedMovies[movieIndex].vote_average}</p>
+                                            </Col>
+                                            <Col>
+                                                <h6>Release Date</h6>
+                                                <p>{selectedMovies[movieIndex].release_date}</p>
+                                            </Col>
+                                            <Col>
+                                                <h6>Genres</h6>
+                                                <p>
+                                                {selectedMovies[movieIndex].genre_ids
+                                                .map(
+                                                    (id) =>
+                                                    apiDefaults.genreList.find((obj) => obj.id === id)
+                                                        .name
+                                                )
+                                                .join(", ")}
+                                                </p>
+                                            </Col>
+                                        </Row>
+                                        {isLoggedIn && (
+                                            <Row md={2}>
+                                                <Col>
+                                                    {inWatchedList ? (
+                                                    <Button variant="outline-success">Added</Button>
+                                                    ) : (
+                                                    <Button
+                                                        variant="outline-primary"
+                                                        onClick={() => {
+                                                            handleAddWatchedList()
+                                                            setInWatchedList(true)
+                                                        }}
+                                                    >
+                                                        Watched
+                                                    </Button>
+                                                    )}
+                                                </Col>
+                                                <Col>
+                                                    {inWishList ? (
+                                                    <Button variant="outline-success">Added</Button>
+                                                    ) : (
+                                                    <Button
+                                                        variant="outline-primary"
+                                                        onClick={() => {
+                                                            handleAddWishList()
+                                                            setInWishList(true)
+                                                        }}
+                                                    >
+                                                        Watch Later
+                                                    </Button>
+                                                    )}
+                                                </Col>
+                                            </Row>
+                                        )}
+                                    </Stack>
+                                </Col>
+                            </Row>
+                        )}
+                        <OtherMovies
+                            selectedMovies={selectedMovies}
+                            setMovieIndex={setMovieIndex}
+                        />
+                    </Stack>
+                </>
             )}
-            <OtherMovies
-              selectedMovies={selectedMovies}
-              setMovieIndex={setMovieIndex}
-            />
-          </Stack>
         </>
-      )}
-    </>
-  );
+    );
 };
 
 export default MovieDisplay;

@@ -37,11 +37,15 @@ const Movie = () => {
                         <MovieDisplay />
                     </Col>
                     <Col lg={4} md={12}>
-                        <Stack gap={3}>
-                            <FastSearch />
-                            <AdvancedSearch />
+                        <div className="tablet-hide">
+                            <Stack gap={3}>
+                                <FastSearch  />
+                                <AdvancedSearch/>
+                            </Stack>
+                        </div>
+                        <div className="tablet-show">
                             <SideFilterMenu />
-                        </Stack>
+                        </div>
                     </Col>
                 </Row>
             </Container>

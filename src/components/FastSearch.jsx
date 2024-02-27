@@ -10,7 +10,7 @@ import Stack from "react-bootstrap/Stack"
 import GenreSelector from "./filter_options/GenreSelector"
 
 
-function FastSearch() {
+function FastSearch({ onHide = null }) {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [movies, setMovies] = movieList
@@ -45,7 +45,13 @@ function FastSearch() {
                         <Stack gap={3}>
                             <GenreSelector setGenre={setGenre} />
                             <Form.Group className="button" controlId="submitButton">
-                                <Button onClick={MovieRequest} variant="primary">
+                                <Button onClick={() => {
+                                    MovieRequest()
+                                    if (onHide) {
+                                        onHide()
+                                    }
+                                }} 
+                                variant="primary">
                                     Search Movie
                                 </Button>{" "}
                             </Form.Group>

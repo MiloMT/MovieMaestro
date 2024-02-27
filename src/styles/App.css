@@ -61,25 +61,62 @@
     text-align: left;
 }
 
-.selected-movie {
-    border-width: 1px;
+.movie-image {
+    height: 400px;
     border-radius: 0.375em;
-    border-color: rgba(0, 0, 0, 0.175);
-    border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.movie-info {
+    text-align: left;
 }
 
 .card-group {
     margin-bottom: 3rem;
 }
 
+.card-body {
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.tablet-show {
+    visibility: hidden;
+}
+
+.mobile-show {
+    display: none;
+}
+
+.button-full {
+    width: 100%;
+}
+
+.card-img-top {
+    height: 220px;
+}
+
 @media (max-width: 768px) {
+    .movie-image {
+        margin-bottom: 3rem;
+    }
+    
     .tablet-hide {
         display: none;
+    }
+
+    .tablet-show {
+        visibility: visible;
     }
 }
 
 @media (max-width: 576px) {
     .mobile-hide {
         display: none;
+    }
+
+    .mobile-show {
+        display: relative;
     }
 }

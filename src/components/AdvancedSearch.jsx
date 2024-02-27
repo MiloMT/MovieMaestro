@@ -14,7 +14,7 @@ import RegionSelector from "./filter_options/RegionSelector"
 import PrioritySelector from "./filter_options/prioritySelector"
 
 
-function AdvancedSearch() {
+function AdvancedSearch({ onHide = null }) {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [movies, setMovies] = movieList
@@ -66,7 +66,13 @@ function AdvancedSearch() {
                             <ProviderSelector setProvider={setProvider} />
                             <PrioritySelector setPriority={setPriority} />
                             <Form.Group className="button" controlId="submitButton">
-                                <Button onClick={MovieRequest} variant="primary">
+                                <Button onClick={() => {
+                                    MovieRequest()
+                                    if (onHide) {
+                                        onHide()
+                                    }
+                                }} 
+                                variant="primary">
                                     Search Movie
                                 </Button>{" "}
                             </Form.Group>
