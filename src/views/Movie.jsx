@@ -33,6 +33,7 @@ const Movie = () => {
         <>
             <Container>
                 <Row>
+                <Row>
                     <Col lg={8} md={12}>
                         <MovieDisplay />
                     </Col>
@@ -47,6 +48,7 @@ const Movie = () => {
                             <SideFilterMenu />
                         </div>
                     </Col>
+                </Row>
                 </Row>
             </Container>
         </>
