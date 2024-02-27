@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
 import Container from "react-bootstrap/Container"
 import Stack from "react-bootstrap/Stack"
@@ -8,7 +9,6 @@ import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
-import { fetchUserDetails } from "../utils/fetchUserDetails"
 import { Context } from './App'
 
 
@@ -39,9 +39,19 @@ const LoginSection = () => {
                 setLoggedIn(true)
                 setFailedLogin(false)
                 sessionStorage.setItem("token", data.accessToken)
-                fetchUserDetails(sessionStorage.getItem("token"), setBusy, setUser)
-                nav('/')
-                
+                const userObj = jwtDecode(sessionStorage.getItem("token"))
+                fetch (
+                    `https://moviemaestro-api.onrender.com/users/${userObj.id}`, {
+                        method: "GET",
+                        headers: {
+                            Accept: "application/json",
+                            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                        },
+                    }
+                )
+                .then((res) => res.json())
+                .then((data) => setUser(data))
+                .then(() => nav('/'))
             } else {
                 throw new Error("Incorrect login details")
                 setFailedLogin(true)
