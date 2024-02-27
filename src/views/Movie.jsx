@@ -23,7 +23,7 @@ const Movie = () => {
                         <Stack gap={3}>
                             <FastSearch />
                             <AdvancedSearch />
-                            {/* <SideFilterMenu /> */}
+                            <SideFilterMenu />
                         </Stack>
                     </Col>
                 </Row>
