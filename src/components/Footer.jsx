@@ -18,7 +18,7 @@ const Footer = () => {
                         </Navbar.Brand>
                     </Col>
                     <Col md="auto">
-                        <p className="tmdb-attribution mobile-hide">
+                        <p className="tmdb-attribution tablet-hide">
                             This product uses the TMDB API but is not endorsed or certified by TMDB.
                         </p>
                     </Col>

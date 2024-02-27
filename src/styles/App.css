@@ -66,10 +66,19 @@
     border-radius: 0.375em;
     border-color: rgba(0, 0, 0, 0.175);
     border: 1px solid rgba(0, 0, 0, 0.175);
-    padding: 0.5rem;
 }
 
-@media (max-width: 480px) {
+.card-group {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .tablet-hide {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
     .mobile-hide {
         display: none;
     }
