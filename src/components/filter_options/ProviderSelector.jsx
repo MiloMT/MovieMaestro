@@ -10,7 +10,9 @@ const ProviderSelector = ({ setProvider }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("8")
+    const [selectValue, setSelectValue] = useState([{
+        "value": "8", "label": "Netflix"
+    }])
 
     // Hooks
     useEffect(() => setProvider(selectValue), [selectValue])
@@ -20,7 +22,7 @@ const ProviderSelector = ({ setProvider }) => {
             <Form.Label>Streaming Providers</Form.Label>
             <Select 
                 isMulti
-                onChange={(array) => setSelectValue(array.map(prov => prov.value).join("%7C"))}
+                onChange={(array) => setSelectValue(array)}
                 defaultValue={{value: 8, label: "Netflix"}}
                 className="select-box"
                 options={

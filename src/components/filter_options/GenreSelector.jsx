@@ -10,7 +10,10 @@ const GenreSelector = ({ setGenre }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("28")
+    const [selectValue, setSelectValue] = useState({
+        "value": 28,
+        "label": "Action"
+      })
 
     // Hooks
     useEffect(() => setGenre(selectValue), [selectValue])
@@ -19,7 +22,7 @@ const GenreSelector = ({ setGenre }) => {
         <Form.Group controlId="formGenre">
             <Form.Label>Genre</Form.Label>
             <Select 
-                onChange={(event) => setSelectValue(event.value)}
+                onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{value: 28, label: "Action"}}
                 className="select-box"
                 options={

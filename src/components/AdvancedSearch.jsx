@@ -29,11 +29,11 @@ function AdvancedSearch() {
 
     function MovieRequest() {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&page=1` + 
-            `&language=${language}` +
-            `&watch_region=${region}` +
-            `&with_genres=${genre}` +
-            `&with_watch_providers=${provider}` +
-            `&sort_by=${priority}`
+            `&language=${language.value}` +
+            `&watch_region=${region.value}` +
+            `&with_genres=${genre.value}` +
+            `&with_watch_providers=${provider.map(prov => prov.value).join("%7C")}` +
+            `&sort_by=${priority.value}`
 
         fetch( url, {
             method: "GET",

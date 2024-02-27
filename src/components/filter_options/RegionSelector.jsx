@@ -10,7 +10,10 @@ const RegionSelector = ({ setRegion }) => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [apiDefaults, setApiDefaults] = api
     // Component States
-    const [selectValue, setSelectValue] = useState("AU")
+    const [selectValue, setSelectValue] = useState({
+        "value": "AU",
+        "label": "Australia"
+      })
 
     // Hooks
     useEffect(() => setRegion(selectValue), [selectValue])
@@ -19,7 +22,7 @@ const RegionSelector = ({ setRegion }) => {
         <Form.Group controlId="formRegion">
             <Form.Label>Region</Form.Label>
             <Select 
-                onChange={(event) => setSelectValue(event.value)}
+                onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{value: "AU", label: "Australia"}}
                 className="select-box"
                 options={
