@@ -32,13 +32,12 @@ const ProviderSelector = ({ setProvider }) => {
     useEffect(() => setProvider(selectValue), [selectValue])
 
     return (
-        <Form.Group controlId="formProvider">
-            <Form.Label>Streaming Providers</Form.Label>
+        <Form.Group controlId="formProvider" className="selector">
+            <Form.Label className="selector-label">Streaming Providers</Form.Label>
             <Select 
                 isMulti
                 onChange={(array) => setSelectValue(array)}
                 defaultValue={providerDefault}
-                className="select-box"
                 options={
                 apiDefaults.providerList && apiDefaults.providerList.map((prov) => (
                     { value: prov.provider_id, label: prov.provider_name}

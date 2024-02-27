@@ -15,12 +15,11 @@ const PrioritySelector = ({ setPriority }) => {
     useEffect(() => setPriority(selectValue), [selectValue])
 
     return (
-        <Form.Group controlId="formRegion">
-            <Form.Label>Search by</Form.Label>
+        <Form.Group controlId="formRegion" className="selector">
+            <Form.Label className="selector-label">Search by</Form.Label>
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{ value: "popularity.desc", label: "Popularity"}}
-                className="select-box"
                 options= {[
                     { value: "popularity.desc", label: "Popularity"},
                     { value: "primary_release_date.desc", label: "Release Date"},

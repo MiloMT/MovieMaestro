@@ -48,7 +48,7 @@ const NavBar = () => {
                     </>
                 ) : (
                     <Link to="/login">
-                        <Navbar.Brand>login</Navbar.Brand>
+                        <Navbar.Brand>LOGIN</Navbar.Brand>
                     </Link>
                 )}
             </Container>

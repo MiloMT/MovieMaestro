@@ -32,12 +32,11 @@ const LanguageSelector = ({ setLanguage }) => {
     useEffect(() => setLanguage(selectValue), [selectValue])
 
     return (
-        <Form.Group controlId="formLanguage">
-            <Form.Label>Language</Form.Label>
+        <Form.Group controlId="formLanguage" className="selector">
+            <Form.Label className="selector-label">Language</Form.Label>
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
                 defaultValue={languageDefault}
-                className="select-box"
                 options={
                 apiDefaults.languageList && apiDefaults.languageList.map((lan) => (
                     { value: lan.iso_639_1, label: lan.english_name}

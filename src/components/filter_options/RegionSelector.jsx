@@ -32,12 +32,11 @@ const RegionSelector = ({ setRegion }) => {
     useEffect(() => setRegion(selectValue), [selectValue])
 
     return (
-        <Form.Group controlId="formRegion">
-            <Form.Label>Region</Form.Label>
+        <Form.Group controlId="formRegion" className="selector">
+            <Form.Label className="selector-label">Region</Form.Label>
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
                 defaultValue={regionDefault}
-                className="select-box"
                 options={
                 apiDefaults.regionList && apiDefaults.regionList.map((reg) => (
                     { value: reg.iso_3166_1, label: reg.english_name}

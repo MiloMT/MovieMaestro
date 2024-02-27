@@ -13,12 +13,21 @@
 }
 
 .tmdb-attribution {
-    margin-top: 15px;
+    font-size: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    text-align: left;
 }
 
 .footer-names {
     display: flex;
-    margin-left: 75%;
+    justify-content: end;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.footer-names p {
+    margin-bottom: 0;
 }
 
 .logo {
@@ -27,27 +36,6 @@
     will-change: filter;
     transition: filter 300ms;
 }
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
-}
 
 .card {
     padding: 2em;
@@ -55,10 +43,6 @@
 
 .read-the-docs {
     color: #888;
-}
-
-.select-box {
-    text-align: left;
 }
 
 .movie-image {
@@ -105,6 +89,15 @@
 .inactive {
     color: #adb5bd;
     cursor: pointer;
+}
+
+.selector {
+    text-align: left;
+}
+
+.selector-label {
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
