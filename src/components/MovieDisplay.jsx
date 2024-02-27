@@ -33,7 +33,7 @@ const MovieDisplay = () => {
             setInWatchedList(false)
             checkWatchedList()
         }
-    }, [movieIndex])
+    }, [movieIndex, selectedMovies])
 
     const checkWatchedList = () => {
         if (user) {
