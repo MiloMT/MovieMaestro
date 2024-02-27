@@ -9,6 +9,7 @@ import WatchedList from '../components/WatchedList.jsx'
 import WishList from '../components/WishList.jsx'
 
 
+
 const Profile = () => {
     // Context State
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)

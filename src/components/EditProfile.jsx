@@ -7,6 +7,7 @@ import ProviderSelector from "./filter_options/ProviderSelector"
 import LanguageSelector from "./filter_options/LanguageSelector"
 import RegionSelector from "./filter_options/RegionSelector"
 import { Context } from "./App"
+import { useNavigate } from 'react-router-dom'
 
 
 function EditProfile() {
@@ -14,7 +15,7 @@ function EditProfile() {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [user, setUser] = loggedUser
     const [isLoggedIn, setLoggedIn] = LoggedIn
-    const [apiDefaults, setApiDefaults] = api
+
 
     const [show, setShow] = useState(false)
     const [provider, setProvider] = useState("")
@@ -24,8 +25,11 @@ function EditProfile() {
     const [email, setEmail] = useState("")
 
 
+
     const handleClose = () => {setShow(false)}
     const handleShow = () => setShow(true)
+    const navigate = useNavigate()
+
 
 
     const handleCancel = () => {
@@ -69,6 +73,7 @@ function EditProfile() {
                 })
             }  
         }
+
 
 
     return (
