@@ -20,12 +20,11 @@ const GenreSelector = ({ setGenre }) => {
     useEffect(() => setGenre(selectValue), [selectValue])
 
     return (
-        <Form.Group controlId="formGenre">
-            <Form.Label>Genre</Form.Label>
+        <Form.Group controlId="formGenre" className="selector">
+            <Form.Label className="selector-label">Genre</Form.Label>
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{value: 28, label: "Action"}}
-                className="select-box"
                 options={
                 apiDefaults.genreList && apiDefaults.genreList.map((gen) => (
                     { value: gen.id, label: gen.name}

@@ -17,7 +17,7 @@ const Footer = () => {
                             <img src={Logo} alt="TMDB Logo" className="tmdb-logo" />
                         </Navbar.Brand>
                     </Col>
-                    <Col md="auto">
+                    <Col md="4">
                         <p className="tmdb-attribution tablet-hide">
                             This product uses the TMDB API but is not endorsed or certified by TMDB.
                         </p>

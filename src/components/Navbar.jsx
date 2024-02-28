@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from "react-bootstrap/Button"
+import Col from "react-bootstrap/Col"
+import Stack from "react-bootstrap/Stack"
 // Component Imports
 import logo from "../assets/logo.png"
 import profile from "../assets/profile.png"
@@ -30,27 +32,34 @@ const NavBar = () => {
     return (
         <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
-                <Link to="/">
-                    <Navbar.Brand>
-                        <img src={logo} style={{height:"65px"}} />
-                    </Navbar.Brand>
-                </Link>
-                <h1 className="mobile-hide">MovieMaestro</h1>
-                {/* Render is conditional on whether use is logged in */}
-                { isLoggedIn ? (
-                    <>
-                        <Link to="/profile">
-                            <Navbar.Brand>
-                                <img src={profile} style={{height:"35px"}} />
-                            </Navbar.Brand>
-                        </Link>
-                        <Button onClick={logout}>Logout</Button>
-                    </>
-                ) : (
-                    <Link to="/login">
-                        <Navbar.Brand>login</Navbar.Brand>
+                <Col style={{display: "flex", justifyContent: "start"}}>
+                    <Link to="/">
+                        <Navbar.Brand>
+                            <img src={logo} style={{height:"65px"}} />
+                        </Navbar.Brand>
                     </Link>
-                )}
+                </Col>
+                <Col>
+                    <h1 className="mobile-hide">MovieMaestro</h1>
+                </Col>
+                {/* Render is conditional on whether use is logged in */}
+                <Col style={{display: "flex", justifyContent: "end"}}>
+                    { isLoggedIn ? (
+                        <>
+                            <Stack direction="horizontal" gap={2}>
+                                <Link to="/profile">
+                                    <Button onClick={() => nav("/profile")}>
+                                        PROFILE
+                                        {/* <img src={profile} style={{height:"20px"}} /> */}
+                                    </Button>
+                                </Link>
+                                <Button onClick={logout}>LOGOUT</Button>
+                            </Stack>
+                        </>
+                    ) : (
+                        <Button onClick={() => nav("/login")}>LOGIN</Button>
+                    )}
+                </Col>
             </Container>
         </Navbar>
     )
