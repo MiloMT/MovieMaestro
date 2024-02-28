@@ -67,4 +67,4 @@ const NavBar = () => {
 }
 
 
-export { NavBar, Context }
+export default NavBar
