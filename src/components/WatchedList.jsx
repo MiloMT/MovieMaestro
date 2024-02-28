@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-import { Card } from "react-bootstrap";
-import { Context } from "./App";
-import "../styles/WatchedList.css";
-import Button from "react-bootstrap/Button";
-import { jwtDecode } from "jwt-decode";
+import React, { useContext } from "react"
+import { Card } from "react-bootstrap"
+import { Context } from "./App"
+import Button from "react-bootstrap/Button"
+import { jwtDecode } from "jwt-decode"
 
 const WatchedList = () => {
   const { loggedUser } = useContext(Context);
@@ -39,19 +38,16 @@ const WatchedList = () => {
       <div className="watched-container">
         {user.watchList.map((movie, index) => (
           <div key={index} className="watched-card-container">
-            <Card className="watched-card" style={{ maxHeight: 600 }}>
-              <Card.Img
-                variant="top"
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-              />
-              <Card.Body className="watched-card-body">
-                <Card.Title className="watched-card-title">
-                  {movie.title}
-                </Card.Title>
+            <Card style={{ padding: 0 }}>
+                <Card.Img
+                    variant="top"
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    style={{ height: "200px" }}
+                />
+                <Card.Body>{movie.title}</Card.Body>
                 <Button variant="danger" onClick={() => removeMovie(movie)}>
-                  Remove
+                    Remove
                 </Button>
-              </Card.Body>
             </Card>
           </div>
         ))}
