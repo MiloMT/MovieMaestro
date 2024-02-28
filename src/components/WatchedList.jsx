@@ -11,7 +11,7 @@ const WatchedList = () => {
 
     // Check if the user and watchList are defined before rendering
     if (!user || !user.watchList || user.watchList.length === 0) {
-        return <div>There are no movies in your watched movies list</div>;
+        return <div>Search movies to add to your watch list.</div>;
     }
 
     const removeMovie = async (movie) => {
@@ -44,7 +44,7 @@ const WatchedList = () => {
                             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                             style={{ height: "200px" }}
                         />
-                        <Card.Body>{movie.title}</Card.Body>
+                        <Card.Body style={{ display: "flex", flexWrap: "wrap" }}>{movie.title}</Card.Body>
                         <Button variant="danger" onClick={() => removeMovie(movie)}>
                             Remove
                         </Button>

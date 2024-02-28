@@ -11,7 +11,7 @@ const WishList = () => {
 
     // Check if the user and watchList are defined before rendering
     if (!user || !user.wishList || user.wishList.length === 0) {
-        return <div>No movies in your wish list</div>
+        return <div>Search movies to add to your wish list.</div>
     }
 
     const removeMovie = async (movie) => {

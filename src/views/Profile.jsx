@@ -44,30 +44,28 @@ const Profile = () => {
             { isBusy ? (
                 <h1>Loading...</h1>
             ) : (
-                <Container>
-                    <Row>
-                        <Col lg={4} md={12}>
-                            <Stack gap={3} style={{ marginBottom: "2rem" }}>
-                                {action === "View" ? (
-                                    <>
-                                        <ProfileDetails />
-                                        <Button variant="primary" onClick={() => setAction("Edit")}>
-                                            Edit Profile
-                                        </Button>
-                                    </>
-                                ) : (
-                                    <EditProfile setAction={setAction} />
-                                )}
-                            </Stack>  
-                        </Col>
-                        <Col lg={7} md={12}>
-                            <Stack gap={3}>
-                                <WatchedList />
-                                <WishList />
-                            </Stack>
-                        </Col>
-                    </Row>
-                </Container>
+                <Row style={{ width: "100%" }}>
+                    <Col lg={4} md={12}>
+                        <Stack gap={3} style={{ marginBottom: "2rem" }}>
+                            {action === "View" ? (
+                                <>
+                                    <ProfileDetails />
+                                    <Button variant="primary" onClick={() => setAction("Edit")}>
+                                        Edit Profile
+                                    </Button>
+                                </>
+                            ) : (
+                                <EditProfile setAction={setAction} />
+                            )}
+                        </Stack>  
+                    </Col>
+                    <Col lg={8} md={12}>
+                        <Stack gap={3}>
+                            <WatchedList />
+                            <WishList />
+                        </Stack>
+                    </Col>
+                </Row>
             )}
         </>
     )
