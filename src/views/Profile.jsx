@@ -11,7 +11,6 @@ import ProfileDetails from '../components/ProfileDetails'
 import EditProfile from '../components/EditProfile.jsx'
 import WatchedList from '../components/WatchedList.jsx'
 import WishList from '../components/WishList.jsx'
-import { fetchUserDetails } from "../utils/fetchUserDetails.jsx"
 import { Context } from '../components/App.jsx'
 
 
@@ -36,8 +35,8 @@ const Profile = () => {
             navigate("/login")
             return
         }
-        
-        fetchUserDetails(token, setBusy, setUser)
+
+        setBusy(false)
     }, [])
 
     return (
