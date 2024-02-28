@@ -77,10 +77,6 @@
     width: 100%;
 }
 
-.card-img-top {
-    height: 220px;
-}
-
 .active {
     color: #343a40;
     cursor: pointer;
