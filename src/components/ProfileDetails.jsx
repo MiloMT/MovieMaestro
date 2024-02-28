@@ -8,7 +8,7 @@ const ProfileDetails = () => {
     const [user, setUser] = loggedUser
 
     return (
-        <div style={{textAlign: "left"}}>
+        <div style={{ textAlign: "left" }}>
             <h1>{user.name}</h1>
             <h3>{user.email}</h3>
             <hr />
@@ -18,10 +18,18 @@ const ProfileDetails = () => {
             ))}
             <hr />
             <h4>Preferred Language</h4>
-            <p>{user.language.label} ({user.language.value})</p>
+            {user.language ? (
+                <p>{user.language.label} ({user.language.value})</p>
+            ) : (
+                <p>Please select a language</p>
+            )}
             <hr />
             <h4>Preferred Region</h4>
-            <p>{user.region.label} ({user.region.value})</p>
+            {user.region ? (
+                <p>{user.region.label} ({user.region.value})</p>
+            ) : (
+                <p>Please select a region</p>
+            )}
         </div>
     )
 }

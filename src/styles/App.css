@@ -3,7 +3,7 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-    padding: 100px 0;
+    padding: 100px 1rem;
 }
 
 .tmdb-logo {
@@ -99,11 +99,15 @@
 .watched-container {
     overflow-x: auto;
     white-space: nowrap;
+    max-width: calc(100vw - 1.5rem);
+    text-align: left;
 }
 
 .watched-card-container {
     display: inline-block;
     margin-right: 10px;
+    max-width: 135px;
+    white-space: wrap;
 }
 
 @media (max-width: 768px) {

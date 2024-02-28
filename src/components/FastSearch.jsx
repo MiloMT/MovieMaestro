@@ -34,6 +34,7 @@ function FastSearch({ onHide = null }) {
             setMovies(data.results)
         })
         .then(() => navigate("/movie"))
+        .then(() => window.scrollTo(0, 0))
     }
 
     return (

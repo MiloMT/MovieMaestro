@@ -11,7 +11,7 @@ const WishList = () => {
 
     // Check if the user and watchList are defined before rendering
     if (!user || !user.wishList || user.wishList.length === 0) {
-        return <div>No movies in your wish list</div>
+        return <div>Search movies to add to your wish list.</div>
     }
 
     const removeMovie = async (movie) => {
@@ -34,24 +34,24 @@ const WishList = () => {
 
     return (
         <>
-        <h3>Wish list</h3>
-        <div className="watched-container">
-            {user.wishList.map((movie, index) => (
-                <div key={index} className="watched-card-container">
-                    <Card style={{ padding: 0 }}>
-                        <Card.Img
-                            variant="top"
-                            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                            style={{ height: "200px" }}
-                        />
-                        <Card.Body>{movie.title}</Card.Body>
-                        <Button variant="danger" onClick={() => removeMovie(movie)}>
-                            Remove
-                        </Button>
-                    </Card>
-                </div>    
-            ))}
-        </div>
+            <h3 style={{ textAlign: "left" }}>Wish list</h3>
+            <div className="watched-container">
+                {user.wishList.map((movie, index) => (
+                    <div key={index} className="watched-card-container">
+                        <Card style={{ padding: 0 }}>
+                            <Card.Img
+                                variant="top"
+                                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                                style={{ height: "200px" }}
+                            />
+                            <Card.Body>{movie.title}</Card.Body>
+                            <Button variant="danger" onClick={() => removeMovie(movie)}>
+                                Remove
+                            </Button>
+                        </Card>
+                    </div>    
+                ))}
+            </div>
         </>
     )
 }

@@ -51,6 +51,7 @@ function AdvancedSearch({ onHide = null }) {
             }
         })
         .then(() => navigate("/movie"))
+        .then(() => window.scrollTo(0, 0))
     }
 
     return (
