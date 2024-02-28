@@ -13,6 +13,7 @@ import NavBar from "./Navbar"
 import Footer from "./Footer"
 import { fetchDefaults } from "../utils/fetchDefaults"
 
+
 const Context = React.createContext()
 
 function App() {
@@ -30,30 +31,32 @@ function App() {
     }, [])
 
     return (
-        <>
-            { isBusy ? (
-                <h1>Loading...</h1>
-            ) : (
-                <Context.Provider value={{ 
-                    api: [apiDefaults, setApiDefaults], 
-                    LoggedIn: [isLoggedIn, setLoggedIn],
-                    loggedUser: [user, setUser],
-                    movieList: [movies, setMovies]
-                }}>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/movie" element={<Movie />} />
-                        <Route path="/profile" element={<Profile />} />
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
-                </Context.Provider>
-            )}
-        </>
-    )
+      <>
+        {isBusy ? (
+          <h1>Loading...</h1>
+        ) : (
+          <Context.Provider
+            value={{
+              api: [apiDefaults, setApiDefaults],
+              LoggedIn: [isLoggedIn, setLoggedIn],
+              loggedUser: [user, setUser],
+              movieList: [movies, setMovies],
+            }}
+          >
+            <BrowserRouter>
+                <NavBar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/movie" element={<Movie />} />
+                <Route path="/profile" element={<Profile />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </Context.Provider>
+        )}
+      </>
+    );
 }
 
 export { App, Context }

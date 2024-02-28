@@ -14,6 +14,7 @@ import logo from "../assets/logo.png"
 import profile from "../assets/profile.png"
 
 
+
 const NavBar = () => {
     // Context States
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
@@ -30,7 +31,7 @@ const NavBar = () => {
     }
 
     return (
-        <Navbar fixed="top" className="bg-body-tertiary">
+        <Navbar data-testid="navbar" fixed="top" className="bg-body-tertiary">
             <Container>
                 <Col style={{display: "flex", justifyContent: "start"}}>
                     <Link to="/">
@@ -66,4 +67,4 @@ const NavBar = () => {
 }
 
 
-export default NavBar
+export { NavBar, Context }
