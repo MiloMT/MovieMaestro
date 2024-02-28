@@ -34,24 +34,24 @@ const WishList = () => {
 
     return (
         <>
-        <h3>Wish list</h3>
-        <div className="watched-container">
-            {user.wishList.map((movie, index) => (
-                <div key={index} className="watched-card-container">
-                    <Card style={{ padding: 0 }}>
-                        <Card.Img
-                            variant="top"
-                            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                            style={{ height: "200px" }}
-                        />
-                        <Card.Body>{movie.title}</Card.Body>
-                        <Button variant="danger" onClick={() => removeMovie(movie)}>
-                            Remove
-                        </Button>
-                    </Card>
-                </div>    
-            ))}
-        </div>
+            <h3 style={{ textAlign: "left" }}>Wish list</h3>
+            <div className="watched-container">
+                {user.wishList.map((movie, index) => (
+                    <div key={index} className="watched-card-container">
+                        <Card style={{ padding: 0 }}>
+                            <Card.Img
+                                variant="top"
+                                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                                style={{ height: "200px" }}
+                            />
+                            <Card.Body>{movie.title}</Card.Body>
+                            <Button variant="danger" onClick={() => removeMovie(movie)}>
+                                Remove
+                            </Button>
+                        </Card>
+                    </div>    
+                ))}
+            </div>
         </>
     )
 }

@@ -46,8 +46,8 @@ const Profile = () => {
             ) : (
                 <Container>
                     <Row>
-                        <Col lg={4}>
-                            <Stack gap={3}>
+                        <Col lg={4} md={12}>
+                            <Stack gap={3} style={{ marginBottom: "2rem" }}>
                                 {action === "View" ? (
                                     <>
                                         <ProfileDetails />
@@ -60,7 +60,7 @@ const Profile = () => {
                                 )}
                             </Stack>  
                         </Col>
-                        <Col lg={7}>
+                        <Col lg={7} md={12}>
                             <Stack gap={3}>
                                 <WatchedList />
                                 <WishList />

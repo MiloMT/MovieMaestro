@@ -99,11 +99,13 @@
 .watched-container {
     overflow-x: auto;
     white-space: nowrap;
+    max-width: calc(100vw - 1.5rem);
 }
 
 .watched-card-container {
     display: inline-block;
     margin-right: 10px;
+    max-width: 135px;
 }
 
 @media (max-width: 768px) {
