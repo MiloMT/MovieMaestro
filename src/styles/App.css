@@ -96,6 +96,16 @@
     font-size: 0.8rem;
 }
 
+.watched-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.watched-card-container {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 @media (max-width: 768px) {
     .movie-image {
         margin-bottom: 3rem;

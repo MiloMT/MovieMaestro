@@ -26,6 +26,8 @@ const LoginSection = () => {
     const nav = useNavigate()
 
     async function loginUser(credentials) {
+        setBusy(true)
+
         return await fetch('https://moviemaestro-api.onrender.com/users/login', {
             method: 'POST',
             headers: {
@@ -51,10 +53,12 @@ const LoginSection = () => {
                 )
                 .then((res) => res.json())
                 .then((data) => setUser(data))
+                .then(() => setBusy(false))
                 .then(() => nav('/'))
             } else {
-                throw new Error("Incorrect login details")
+                setBusy(false)
                 setFailedLogin(true)
+                throw new Error("Incorrect login details")
             }
         })
         .catch((err) => console.log(err))
@@ -88,8 +92,15 @@ const LoginSection = () => {
                         placeholder="Password" 
                     />
                 </Row>
+                {failedLogin &&
+                    <h6>Incorrect details, please try again.</h6>
+                }
                 <Row>
-                    <Button type="submit" variant="primary">Login</Button>
+                    {isBusy ? (
+                        <Button variant="secondary">Loading...</Button>
+                    ) : (
+                        <Button type="submit" variant="primary">Login</Button>
+                    )}
                 </Row>
             </Stack>
         </Form>

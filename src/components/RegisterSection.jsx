@@ -13,8 +13,11 @@ const RegisterSection = ({ setAction }) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [isBusy, setBusy] = useState(false)
 
     async function addUser(name, email, password) {
+        setBusy(true)
+
         const newEntry = {
             name: name,
             email: email,
@@ -34,8 +37,10 @@ const RegisterSection = ({ setAction }) => {
         e.preventDefault()
         try {
             await addUser(name, email, password)
+            setBusy(false)
             setAction('Login')
         } catch (error) {
+            setBusy(false)
             console.log("Error:", error)
         }
     }
@@ -68,9 +73,11 @@ const RegisterSection = ({ setAction }) => {
                     />
                 </Row>
                 <Row>
-                    <Button type="submit" variant="primary">
-                        Create Account
-                    </Button>
+                    {isBusy ? (
+                        <Button variant="secondary">Loading...</Button>
+                    ) : (
+                        <Button type="submit" variant="primary">Create Account</Button>
+                    )}
                 </Row>
             </Stack>
             
