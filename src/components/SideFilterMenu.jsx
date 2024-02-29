@@ -14,13 +14,13 @@ function SideFilterMenu() {
     
     return (
         <>
-            <Button  variant="primary" className="d-lg-none button-full" onClick={() => setShow(true)}>
+            <Button data-testid="search-button"  variant="primary" className="d-lg-none button-full" onClick={() => setShow(true)}>
                 Search Movie
             </Button>
 
             <Offcanvas show={show} onHide={() => setShow(false)} responsive="lg">
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Search Movie</Offcanvas.Title>
+                <Offcanvas.Header data-testid="close-button" closeButton>
+                    <Offcanvas.Title data-testid="search-button" >Search Movie</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Stack gap={3}>

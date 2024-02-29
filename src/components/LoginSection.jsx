@@ -78,6 +78,7 @@ const LoginSection = () => {
             <Stack gap={3}>
                 <Row>
                     <Form.Control 
+                        data-testid='email'
                         type="email" 
                         value={email} 
                         onChange={e => setEmail(e.target.value)} 
@@ -86,6 +87,7 @@ const LoginSection = () => {
                 </Row>
                 <Row>
                     <Form.Control 
+                        data-testid='password'
                         type="password" 
                         value={password} 
                         onChange={e => setPassword(e.target.value)} 
@@ -97,7 +99,7 @@ const LoginSection = () => {
                 }
                 <Row>
                     {isBusy ? (
-                        <Button variant="secondary">Loading...</Button>
+                        <Button type="button" variant="secondary">Loading...</Button>
                     ) : (
                         <Button type="submit" variant="primary">Login</Button>
                     )}
