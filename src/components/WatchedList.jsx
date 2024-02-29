@@ -25,7 +25,7 @@ const WatchedList = () => {
             "Content-Type": "application/json; charset=UTF-8",
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
             },
-            body: JSON.stringify(movie), // Send the title of the movie to be removed
+            body: JSON.stringify(movie),
         }
         );
         const updatedUser = await response.json();
@@ -56,4 +56,4 @@ const WatchedList = () => {
     )
 }
 
-export default WatchedList;
+export default WatchedList

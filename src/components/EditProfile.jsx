@@ -6,7 +6,6 @@ import ProviderSelector from "./filter_options/ProviderSelector"
 import LanguageSelector from "./filter_options/LanguageSelector"
 import RegionSelector from "./filter_options/RegionSelector"
 import { Context } from "./App"
-import { useNavigate } from 'react-router-dom'
 
 
 function EditProfile({ setAction }) {
@@ -35,6 +34,8 @@ function EditProfile({ setAction }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        // If some fields not adjusted, then it will use their previous setting. 
+        // Will also not run if nothing has been edited
         if (email !=="" || name !=="" || provider !=="" || region !=="" || language !=="") {
             const updatedEntry = {
                 name: name == "" ? user.name : name,
@@ -62,6 +63,7 @@ function EditProfile({ setAction }) {
                 setRegion("")
                 setLanguage("")
             })
+            // Change component on submit
             .then(() => setSelectValue("View"))
         }  
     }
@@ -101,10 +103,10 @@ function EditProfile({ setAction }) {
                     <Button className="button-full" type="submit">Save</Button>{' '}
                     <Button className="button-full" onClick={() => {
                         handleCancel()
+                        // Changes component back to viewing details
                         setSelectValue("View")
                     }} variant="secondary">Cancel</Button>{' '}
                 </Stack>
-                
             </Form>
         </>
     )

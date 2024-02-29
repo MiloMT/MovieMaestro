@@ -24,6 +24,7 @@ function SideFilterMenu() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Stack gap={3}>
+                        {/* Passes on hide functions so that components can trigger hide */}
                         <FastSearch onHide={() => setShow(false)} />
                         <AdvancedSearch onHide={() => setShow(false)} />
                     </Stack>

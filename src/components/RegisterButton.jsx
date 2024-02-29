@@ -12,6 +12,7 @@ function RegisterButton() {
     const [isLoggedIn, setLoggedIn] = LoggedIn
     return (
         <>
+            {/* Conditional display on logged in status */}
             {!isLoggedIn ? (
                 <Stack gap={3}>
                     <Row>

@@ -31,25 +31,27 @@ function App() {
 
     return (
         <>
+            {/* During initial defaults fetch, will display loading screen */}
             { isBusy ? (
                 <h1>Loading...</h1>
             ) : (
+                // Context passed through to entire app
                 <Context.Provider value={{ 
                     api: [apiDefaults, setApiDefaults], 
                     LoggedIn: [isLoggedIn, setLoggedIn],
                     loggedUser: [user, setUser],
                     movieList: [movies, setMovies]
                 }}>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/movie" element={<Movie />} />
-                        <Route path="/profile" element={<Profile />} />
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
+                    <BrowserRouter>
+                        <NavBar />
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/movie" element={<Movie />} />
+                            <Route path="/profile" element={<Profile />} />
+                        </Routes>
+                        <Footer />
+                    </BrowserRouter>
                 </Context.Provider>
             )}
         </>

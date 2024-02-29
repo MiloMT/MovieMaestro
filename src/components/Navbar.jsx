@@ -22,6 +22,7 @@ const NavBar = () => {
     // Object initialization
     const nav = useNavigate();
 
+    // Clears user data on logout
     function logout() {
         setLoggedIn(false)
         sessionStorage.removeItem("token")
@@ -50,7 +51,6 @@ const NavBar = () => {
                                 <Link to="/profile">
                                     <Button onClick={() => nav("/profile")}>
                                         PROFILE
-                                        {/* <img src={profile} style={{height:"20px"}} /> */}
                                     </Button>
                                 </Link>
                                 <Button onClick={logout}>LOGOUT</Button>

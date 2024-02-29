@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react"
 import { Context } from "./App"
-import ProviderSelector from "./filter_options/ProviderSelector"
 
 const ProfileDetails = () => {
     // Context State
@@ -18,6 +17,7 @@ const ProfileDetails = () => {
             ))}
             <hr />
             <h4>Preferred Language</h4>
+            {/* Default display handling if user doesn't have language set */}
             {user.language ? (
                 <p>{user.language.label} ({user.language.value})</p>
             ) : (
@@ -25,6 +25,7 @@ const ProfileDetails = () => {
             )}
             <hr />
             <h4>Preferred Region</h4>
+            {/* Default display handling if user doesn't have region set */}
             {user.region ? (
                 <p>{user.region.label} ({user.region.value})</p>
             ) : (
