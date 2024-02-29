@@ -19,7 +19,7 @@ function SideFilterMenu() {
             </Button>
 
             <Offcanvas show={show} onHide={() => setShow(false)} responsive="lg">
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header data-testid="close-button" closeButton>
                     <Offcanvas.Title data-testid="search-button" >Search Movie</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
