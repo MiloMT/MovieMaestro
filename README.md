@@ -1,5 +1,7 @@
 # MovieMaestro
 
+# Part A
+
 ## R1	Description of your website
 ### Purpose
 Do you ever struggle to pick a movie you want to watch? Do you spend hours scrolling through different streaming platforms just to settle on a movie that isn't what you felt like watching? Well say no more! MovieMaestro is an application that saves you time and helps you identify what you want to watch, quickly! By using a variety of Filters, MovieMaestro will select a movie for you to watch so you can go to your streaming platform after and put it straight on! 
@@ -119,3 +121,75 @@ For our project we've used Github projects, a kanban style option, to organise o
 *Progress - 16/02/24*
 ![Github Project Progress 260214](./docs/GithubProject_240216.png)
 
+# Part B
+
+## R8   Evidence of User Testing
+
+User testing was completed on the application by each member of the development team receiving their own rubric of the user stories and assigning notes and personal results as to how each aspect of the initial user stories was achieved. Features that weren't implemented due to time constraints were captured within these tests to give an accurate representation of what was achieved in comparison with initial objectives.
+
+![Myles User Tests](./docs/UserTests_Myles.pdf)
+
+![Mitch User Tests](./docs/UserTests_Mitch.pdf)
+
+![Yoshi User Tests](./docs/UserTests_Yoshi.pdf)
+
+## R9   Formal Testing Framework
+
+Formal testing was also completed on the application through the use of testing libraries. For the front end, this was completed through the use of the react testing library and was completed across front end components. The results of which can be seen below:
+
+![Front End Testing](./docs/FrontEndTests.png)
+
+For the back-end, this was achieved using supertest / jest and each route was carefully unit tested for standard and edge cases to ensure maximum functionality.
+
+![Back End Testing](./docs/BackEndTests.png)
+
+## R10
+
+[Github Repository Front End](https://github.com/MiloMT/MovieMaestro)  
+[Github Repository Back End](https://github.com/MiloMT/MovieMaestro-API)  
+[Deployed Front End](https://moviemaestro.netlify.app/)
+[Deployed Back End](https://moviemaestro-api.onrender.com/)
+[Github Project](https://github.com/users/MiloMT/projects/4)
+
+## R13	Project Planning
+
+Initial meetings were held to capture as many of the initial components and requirements in individual tests so that these can be tracked and assigned to team members as the development process was underway. These tasks were split into front end and back end to seperate the development map for each of these sides of the project.
+
+*Progress - 20/02/24 - Front End*
+![Github Project Progress Front End 260220](./docs/GithubProject_FrontEnd_240220.png)
+
+*Progress - 20/02/24 - Back End*
+![Github Project Progress Back End 260220](./docs/GithubProject_BackEnd_240220.png)
+
+*Progress - 21/02/24 - Front End*
+![Github Project Progress Front End 260221](./docs/GithubProject_FrontEnd_240221.png)
+
+*Progress - 21/02/24 - Back End*
+![Github Project Progress Back End 260221](./docs/GithubProject_BackEnd_240221.png)
+
+*Progress - 22/02/24 - Front End*
+![Github Project Progress Front End 260222](./docs/GithubProject_FrontEnd_240222.png)
+
+*Progress - 22/02/24 - Back End*
+![Github Project Progress Back End 260222](./docs/GithubProject_BackEnd_240222.png)
+
+*Progress - 23/02/24 - Front End*
+![Github Project Progress Front End 260223](./docs/GithubProject_FrontEnd_240223.png)
+
+*Progress - 23/02/24 - Back End*
+![Github Project Progress Back End 260223](./docs/GithubProject_BackEnd_240223.png)
+
+*Progress - 23/02/26 - Front End*
+![Github Project Progress Front End 260226](./docs/GithubProject_FrontEnd_240226.png)
+
+*Progress - 23/02/27 - Front End*
+![Github Project Progress Front End 260227](./docs/GithubProject_FrontEnd_240227.png)
+
+*Progress - 23/02/28 - Front End*
+![Github Project Progress Front End 260228](./docs/GithubProject_FrontEnd_240228.png)
+
+*Progress - 23/02/29 - Front End*
+![Github Project Progress Front End 260229](./docs/GithubProject_FrontEnd_240229.png)
+
+*Progress - 23/02/29 - Back End*
+![Github Project Progress Back End 260229](./docs/GithubProject_BackEnd_240229.png)

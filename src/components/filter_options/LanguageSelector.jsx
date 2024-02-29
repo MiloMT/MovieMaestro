@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form"
 import Select from "react-select"
 
 
+// Retrieves default settings if user logged in
 function getDefault(user, isLoggedIn) {
     if (sessionStorage.getItem("token") && isLoggedIn) {
         return user.language

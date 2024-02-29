@@ -21,6 +21,7 @@ const Movie = () => {
     // Object Initialization
     const navigate = useNavigate()
 
+    // If directly navigated to movie page without searching, directs back to home
     useEffect(() => {
         if (movies.length == 0) {
             console.error("No movies to display, navigating back to home")
@@ -38,12 +39,14 @@ const Movie = () => {
                         <MovieDisplay />
                     </Col>
                     <Col lg={4} md={12}>
+                        {/* Only show normal drop downs on larger screen sizes */}
                         <div className="tablet-hide">
                             <Stack gap={3}>
                                 <FastSearch  />
                                 <AdvancedSearch/>
                             </Stack>
                         </div>
+                        {/* Only show side menu on smaller screen sizes */}
                         <div className="tablet-show">
                             <SideFilterMenu />
                         </div>

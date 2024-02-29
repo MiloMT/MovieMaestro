@@ -29,6 +29,7 @@ const MovieDisplay = () => {
         setBusy(false)
     }, [movies])
 
+    // On state change, checks lists for button displays when logged in
     useEffect(() => {
         if (selectedMovies.length !== 0 && isLoggedIn) {
             setInWatchedList(false)
@@ -56,6 +57,7 @@ const MovieDisplay = () => {
         }
     };
 
+    // Takes movie array from initial fetch and retrieves 4 random ones
     const selectMovies = () => {
         if (movies && movies.length > 0) {
             const movieList = []
@@ -149,6 +151,7 @@ const MovieDisplay = () => {
                                                 </p>
                                             </Col>
                                         </Row>
+                                        {/* Buttons only show if user is logged in */}
                                         {isLoggedIn && (
                                             <Row md={2}>
                                                 <Col>
@@ -203,7 +206,7 @@ const MovieDisplay = () => {
                 </>
             )}
         </>
-    );
-};
+    )
+}
 
-export default MovieDisplay;
+export default MovieDisplay

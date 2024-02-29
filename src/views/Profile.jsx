@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 // Bootstrap Components
-import Container from "react-bootstrap/Container"
 import Stack from "react-bootstrap/Stack"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -19,13 +18,13 @@ const Profile = () => {
     // Context State
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
     const [isLoggedIn, setLoggedIn] = LoggedIn
-    const [user, setUser] = loggedUser
     // Component State
     const [isBusy, setBusy] = useState(true)
     const [action, setAction] = useState("View")
     // Object Initialization
     const navigate = useNavigate()
 
+    // If direct navigation to profile without token or login, directs to login route
     useEffect(() => {
         const token = sessionStorage.getItem("token")
 
@@ -47,6 +46,7 @@ const Profile = () => {
                 <Row style={{ width: "100%" }}>
                     <Col lg={4} md={12}>
                         <Stack gap={3} style={{ marginBottom: "2rem" }}>
+                            {/* Swaps between view and edit mode for details */}
                             {action === "View" ? (
                                 <>
                                     <ProfileDetails />

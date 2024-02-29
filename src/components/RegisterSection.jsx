@@ -38,6 +38,7 @@ const RegisterSection = ({ setAction }) => {
         try {
             await addUser(name, email, password)
             setBusy(false)
+            // Changes to login component after successful registration
             setAction('Login')
         } catch (error) {
             setBusy(false)
@@ -73,6 +74,7 @@ const RegisterSection = ({ setAction }) => {
                     />
                 </Row>
                 <Row>
+                    {/* Gives user feedback by changing button if waiting on registration */}
                     {isBusy ? (
                         <Button variant="secondary">Loading...</Button>
                     ) : (
