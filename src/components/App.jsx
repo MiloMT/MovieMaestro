@@ -13,6 +13,7 @@ import NavBar from "./Navbar"
 import Footer from "./Footer"
 import { fetchDefaults } from "../utils/fetchDefaults"
 
+
 const Context = React.createContext()
 
 function App() {
