@@ -18,7 +18,7 @@ const Home = () => {
                 <Stack gap={5}>
                     <Row>
                         <Col md={12}>
-                            <Header />
+                            <Header data-testid="test-header" />
                         </Col>
                     </Row>
                     <Row>
