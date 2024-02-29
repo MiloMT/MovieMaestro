@@ -97,7 +97,7 @@ const LoginSection = () => {
                 }
                 <Row>
                     {isBusy ? (
-                        <Button variant="secondary">Loading...</Button>
+                        <Button type="button" variant="secondary">Loading...</Button>
                     ) : (
                         <Button type="submit" variant="primary">Login</Button>
                     )}
