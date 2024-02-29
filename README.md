@@ -127,11 +127,11 @@ For our project we've used Github projects, a kanban style option, to organise o
 
 User testing was completed on the application by each member of the development team receiving their own rubric of the user stories and assigning notes and personal results as to how each aspect of the initial user stories was achieved. Features that weren't implemented due to time constraints were captured within these tests to give an accurate representation of what was achieved in comparison with initial objectives.
 
-![Myles User Tests](./docs/UserTests_Myles.pdf)
+[Myles User Tests](./docs/UserTests_Myles.pdf)
 
-![Mitch User Tests](./docs/UserTests_Mitch.pdf)
+[Mitch User Tests](./docs/UserTests_Mitch.pdf)
 
-![Yoshi User Tests](./docs/UserTests_Yoshi.pdf)
+[Yoshi User Tests](./docs/UserTests_Yoshi.pdf)
 
 ## R9   Formal Testing Framework
 
@@ -143,15 +143,19 @@ For the back-end, this was achieved using supertest / jest and each route was ca
 
 ![Back End Testing](./docs/BackEndTests.png)
 
-## R10
+## R10  Deployed Site
+
+[Deployed Front End](https://moviemaestro.netlify.app/)  
+[Deployed Back End](https://moviemaestro-api.onrender.com/)  
+
+## R11  Github Repositories
 
 [Github Repository Front End](https://github.com/MiloMT/MovieMaestro)  
-[Github Repository Back End](https://github.com/MiloMT/MovieMaestro-API)  
-[Deployed Front End](https://moviemaestro.netlify.app/)
-[Deployed Back End](https://moviemaestro-api.onrender.com/)
-[Github Project](https://github.com/users/MiloMT/projects/4)
+[Github Repository Back End](https://github.com/MiloMT/MovieMaestro-API)   
 
 ## R13	Project Planning
+
+[Github Project](https://github.com/users/MiloMT/projects/4)  
 
 Initial meetings were held to capture as many of the initial components and requirements in individual tests so that these can be tracked and assigned to team members as the development process was underway. These tasks were split into front end and back end to seperate the development map for each of these sides of the project.
 
