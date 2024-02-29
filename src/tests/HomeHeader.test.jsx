@@ -17,7 +17,6 @@ describe('Home Header component', () => {
     test('renders the header component', () => {
         customRender(<Header />, mockContextValue)
         
-        // expect(container).toBeInTheDocument()
         const HeaderText1 = screen.getByText('Stuck Doom Scrolling?')
         expect(HeaderText1).toBeInTheDocument()
         const HeaderText2 = screen.getByText('Let us choose for you!')
