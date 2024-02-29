@@ -8,7 +8,7 @@ const ProfileDetails = () => {
     const [user, setUser] = loggedUser
 
     return (
-        <div style={{ textAlign: "left" }}>
+        <div data-testid="profile-details" style={{ textAlign: "left" }}>
             <h1>{user.name}</h1>
             <h3>{user.email}</h3>
             <hr />

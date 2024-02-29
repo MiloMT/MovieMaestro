@@ -36,7 +36,7 @@ const NavBar = () => {
                 <Col style={{display: "flex", justifyContent: "start"}}>
                     <Link to="/">
                         <Navbar.Brand>
-                            <img src={logo} style={{height:"65px"}} />
+                            <img src={logo} alt="nav-logo" style={{height:"65px"}} />
                         </Navbar.Brand>
                     </Link>
                 </Col>
