@@ -1,7 +1,7 @@
 import { test, expect } from "vitest";
 import FastSearch from "../components/FastSearch";
 import customRender from "./utils/customRender";
-import { screen, fireEvent, waitFor } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 const mockContextValue = {

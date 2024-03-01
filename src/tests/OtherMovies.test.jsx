@@ -28,7 +28,7 @@ describe("OtherMovies tests", () => {
       <OtherMovies selectedMovies={movies} setMovieIndex={setMovieIndexMock} />
     );
     const movieCards = screen.getAllByRole("button");
-    fireEvent.click(movieCards[1]); 
+    fireEvent.click(movieCards[1]);
     expect(setMovieIndexMock).toHaveBeenCalledWith(1);
   });
 });
