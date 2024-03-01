@@ -1,10 +1,9 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { screen, fireEvent } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import customRender from "./utils/customRender";
 import { vi } from "vitest";
 import EditProfile from "../components/ProfileDetails";
-
 
 
 const mockContextValue = {
@@ -14,10 +13,22 @@ const mockContextValue = {
     movieList: [[], vi.fn()], // Mock movies and its setter function
 };
 
-describe("EditProfile component unit tests", () => {
+describe("EditProfile component test", () => {
     test("EditProfile shows a Edit Profile button", () => {
         customRender(<EditProfile />, mockContextValue)
-        // const { editProfile } = render(<EditProfile />)
+
+        const profileDetails = screen.getByTestId(/profile-details/i)
+        expect(screen.profileDetails).not.toBeDefined()
+    })
+})
+
+
+describe("EditProfile component profile form tests", () => {
+    test("Profile form shows placeholder as a default", () => {
+        const name = screen.queryByPlaceholderText("name")
+        expect(name).toBeDefined()
+        const email = screen.queryByPlaceholderText("email")
+        expect(email).toBeDefined()
 
     })
 })
