@@ -43,7 +43,7 @@ const Profile = () => {
             { isBusy ? (
                 <h1>Loading...</h1>
             ) : (
-                <Row style={{ width: "100%" }}>
+                <Row style={{ width: "min(100vw, 1280px)" }}>
                     <Col lg={4} md={12}>
                         <Stack gap={3} style={{ marginBottom: "2rem" }}>
                             {/* Swaps between view and edit mode for details */}

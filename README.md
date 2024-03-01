@@ -37,6 +37,14 @@ Other Tech used in our application includes:
 - Render.com - Used for Backend application hosting
 - MongoDB.com(Atlas Cloud Service) - Used for Database hosting
 
+Libraries used throughout the application include:
+- react-boostrap: A component library based off the bootstrap CSS framework. This was decided early in the process in order to make the development process more efficient and the aesthetics lined up with our goals. The bootstrap library was used extensively through the application, both for laying out and for base components that are used in different parts of the application, such as the accordian dropdowns and the offcanvas, both of which would've taken considerable time to develop components for manually.
+- react-select: There was a need to use a multiselect dropdown for the watch provider selector in the search components. Unfortunately there was no default component provided with this functionality within the react-bootstrap library and so this library was used to suit that functionality, and as a result we used the same library was all the selectors used in the search components.
+- react-router-dom: React-router-dom is responsible for the client side routing within the application. This allows us to employ the use of routes however keep single page application functionality to help with efficiency when navigating the application. React-router-dom was an excellent choice that is used extensively in conjunction with the react framework, and was used for all the routing within this application.
+- jwt-decode: In conjunction with the jsonwebtoken library, this was used on the front end to decode and extract information from the token using a secret. This is so user data can be passed securely around components and ensure data safety when using the application.
+- bcrypt: An industry standard for password hashing prior to storage to enforce security. This is used whenever receivng a post call for the creation of a new user. It uses a secret string for encryption aswell as adding a salt to the hash to ensure even passwords that are the same string are encrypted differently for security. bcrypt also allows for checking an inputted user password against the stored hash when using the login route.
+- jsonwebtoken: An industry standard for secure access. The library allows for both the creation and authentication of JWT tokens in the context of a web application. This is used in both the generate token function and the custom middleware for validating jwt tokens when securing routes.
+- mongoose: An effective tool for modelling application data. Essential for efficient setup and validation of user data when organising data between the front end, back end and database. This was used extensively in the back end, for schema generation and modelling to validate incoming data from the front end prior to using the data to create new documents in the database.
 
 ## R2	Dataflow Diagram 
 
@@ -127,11 +135,11 @@ For our project we've used Github projects, a kanban style option, to organise o
 
 User testing was completed on the application by each member of the development team receiving their own rubric of the user stories and assigning notes and personal results as to how each aspect of the initial user stories was achieved. Features that weren't implemented due to time constraints were captured within these tests to give an accurate representation of what was achieved in comparison with initial objectives.
 
-![Myles User Tests](./docs/UserTests_Myles.pdf)
+[Myles User Tests](./docs/UserTests_Myles.pdf)
 
-![Mitch User Tests](./docs/UserTests_Mitch.pdf)
+[Mitch User Tests](./docs/UserTests_Mitch.pdf)
 
-![Yoshi User Tests](./docs/UserTests_Yoshi.pdf)
+[Yoshi User Tests](./docs/UserTests_Yoshi.pdf)
 
 ## R9   Formal Testing Framework
 
@@ -143,17 +151,23 @@ For the back-end, this was achieved using supertest / jest and each route was ca
 
 ![Back End Testing](./docs/BackEndTests.png)
 
-## R10
+## R10  Deployed Site
+
+[Deployed Front End](https://moviemaestro.netlify.app/)  
+[Deployed Back End](https://moviemaestro-api.onrender.com/)  
+
+## R11  Github Repositories
 
 [Github Repository Front End](https://github.com/MiloMT/MovieMaestro)  
-[Github Repository Back End](https://github.com/MiloMT/MovieMaestro-API)  
-[Deployed Front End](https://moviemaestro.netlify.app/)
-[Deployed Back End](https://moviemaestro-api.onrender.com/)
-[Github Project](https://github.com/users/MiloMT/projects/4)
+[Github Repository Back End](https://github.com/MiloMT/MovieMaestro-API)   
 
 ## R13	Project Planning
 
+[Github Project](https://github.com/users/MiloMT/projects/4)  
+
 Initial meetings were held to capture as many of the initial components and requirements in individual tests so that these can be tracked and assigned to team members as the development process was underway. These tasks were split into front end and back end to seperate the development map for each of these sides of the project.
+
+We decided on having one team member working on the back end primarily with the other two working on the front end. This allowed for more efficient development for the timeframe that we had and seperated out the responsibilities much more cleanly. This also followed along for any testing that took place later in the project cycle, and we ensured that each individual would be assigned particular components in the front end to seperate out the roles also.
 
 *Progress - 20/02/24 - Front End*
 ![Github Project Progress Front End 260220](./docs/GithubProject_FrontEnd_240220.png)
