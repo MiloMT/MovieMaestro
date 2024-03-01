@@ -17,7 +17,7 @@ function RegisterLoginSwitch() {
             <Stack gap={3}>
                 <Row>
                     <Col style={{paddingRight: 0, paddingLeft: 0}}>
-                        <div onClick={() => { setAction('Register') }}
+                        <div data-testid="login-switch" onClick={() => { setAction('Register') }}
                             className={action === "Login" ? "inactive" : "active"}
                         >
                             <h6>Register</h6>
@@ -25,7 +25,7 @@ function RegisterLoginSwitch() {
                         </div>   
                     </Col>
                     <Col style={{paddingRight: 0, paddingLeft: 0}}>
-                    <div onClick={() => { setAction('Login') }} 
+                    <div data-testid="register-switch" onClick={() => { setAction('Login') }} 
                         className={action === "Register" ? "inactive" : "active"}
                     >
                         <h6>Login</h6>
