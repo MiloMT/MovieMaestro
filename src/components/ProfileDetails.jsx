@@ -12,7 +12,7 @@ const ProfileDetails = () => {
             <h3>{user.email}</h3>
             <hr />
             <h4>Streaming Providers</h4>
-            {user.streamingPlatform.map((prov, index) => (
+            {user.streamingPlatform?.map((prov, index) => (
                 <p key={index}>{prov.label}</p>
             ))}
             <hr />

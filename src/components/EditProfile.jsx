@@ -70,7 +70,7 @@ function EditProfile({ setAction }) {
 
     return (
         <>
-            <div style={{textAlign: "left"}}>
+            <div style={{textAlign: "left"}} data-testid="profile-details">
                 <Form.Group className="selector">
                     <Form.Label htmlFor="nameField" className="selector-label">Name</Form.Label>
                     <Form.Control
