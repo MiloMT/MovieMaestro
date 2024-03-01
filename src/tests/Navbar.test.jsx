@@ -42,8 +42,6 @@ describe("NavBar component unit tests", () => {
   });
 });
 
-// INTEGRATION TESTS
-
 describe("Navbar integration tests", () => {
   test("Clicking on login button redirects to login page", async () => {
     customRender(<NavBar />, mockContextValue);

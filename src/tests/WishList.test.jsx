@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { screen, fireEvent } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import customRender from "./utils/customRender";
 import { vi } from "vitest";
 import WishList from "../components/WishList";
@@ -14,19 +14,19 @@ const mockContextValue = {
 
 // UNIT TESTS
 describe("WishList component tests", () => {
-    test("WishList title being rendered", () => {
-        customRender(<WishList />, mockContextValue)
+  test("WishList title being rendered", () => {
+    customRender(<WishList />, mockContextValue);
 
-        const title = screen.queryByText(/Wish List/i)
-        expect(title).toBeInTheDocument()
-    })
+    const title = screen.queryByText(/Wish List/i);
+    expect(title).toBeInTheDocument();
+  });
 
-    test("Renders a empty message when no context is provided", () => {
-        customRender(<WishList />, mockContextValue)
+  test("Renders a empty message when no context is provided", () => {
+    customRender(<WishList />, mockContextValue);
 
-        const emptyMessage = screen.getByText("Search movies to add to your wish list.")
-        expect(emptyMessage).toBeInTheDocument()
-    })
-    
-
-})
+    const emptyMessage = screen.getByText(
+      "Search movies to add to your wish list."
+    );
+    expect(emptyMessage).toBeInTheDocument();
+  });
+});
