@@ -35,7 +35,7 @@ const WishList = () => {
     return (
         <>
             <h3 style={{ textAlign: "left" }}>Wish list</h3>
-            <div className="watched-container">
+            <div data-testid="remove-wish-button" className="watched-container">
                 {user.wishList.map((movie, index) => (
                     <div key={index} className="watched-card-container">
                         <Card style={{ padding: 0 }}>
