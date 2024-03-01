@@ -22,7 +22,4 @@ describe("WatchedList component tests", () => {
     );
     expect(emptyMessage).toBeInTheDocument();
   });
-  
-
-
 });

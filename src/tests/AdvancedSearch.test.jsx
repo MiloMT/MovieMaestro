@@ -1,6 +1,6 @@
 import AdvancedSearch from "../components/AdvancedSearch";
 import customRender from "./utils/customRender";
-import { screen, fireEvent } from "@testing-library/react"
+import { screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 
 const mockContextValue = {
