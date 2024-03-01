@@ -8,10 +8,10 @@ import SideFilterMenu from "../components/SideFilterMenu"
 
 // Hardcoded mock context values
 const mockContextValue = {
-  api: [[], vi.fn()], // Mock apiDefaults and its setter function
-  LoggedIn: [true, vi.fn()], // Mock isLoggedIn and its setter function
-  loggedUser: ["mockUser", vi.fn()], // Mock user and its setter function
-  movieList: [[], vi.fn()], // Mock movies and its setter function
+    api: [[], vi.fn()], // Mock apiDefaults and its setter function
+    LoggedIn: [true, vi.fn()], // Mock isLoggedIn and its setter function
+    loggedUser: ["mockUser", vi.fn()], // Mock user and its setter function
+    movieList: [[], vi.fn()], // Mock movies and its setter function
 };
 
 
@@ -22,8 +22,8 @@ describe('SideFilterMenu component in MovieDisplay', () => {
             matches: false,
             media: query,
             onchange: null,
-            addListener: vi.fn(), 
-            removeListener: vi.fn(), 
+            addListener: vi.fn(),
+            removeListener: vi.fn(),
             addEventListener: vi.fn(),
             removeEventListener: vi.fn(),
             dispatchEvent: vi.fn(),
@@ -39,15 +39,15 @@ describe('SideFilterMenu component in MovieDisplay', () => {
     test('Close button is hidden', () => {
 
         const closeBotton = screen.queryByTestId('close-button')
-        
+
         expect(closeBotton).not.toBeInTheDocument()
     })
 
 })
 
 
-  test("Close button is hidden", () => {
+test("Close button is hidden", () => {
     const closeBotton = screen.queryByTestId("close-button");
     expect(closeBotton).not.toBeInTheDocument();
-  });
 });
+
