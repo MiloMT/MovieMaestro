@@ -38,6 +38,7 @@ const RegisterSection = ({ setAction }) => {
         try {
             await addUser(name, email, password)
             setBusy(false)
+            // Changes to login component after successful registration
             setAction('Login')
         } catch (error) {
             setBusy(false)
@@ -50,6 +51,7 @@ const RegisterSection = ({ setAction }) => {
             <Stack gap={3}>
                 <Row>
                     <Form.Control 
+                        data-testid="name"
                         type="name" 
                         value={name} 
                         onChange={e => setName(e.target.value)} 
@@ -58,6 +60,7 @@ const RegisterSection = ({ setAction }) => {
                 </Row>
                 <Row>
                     <Form.Control 
+                        data-testid="email"
                         type="email" 
                         value={email} 
                         onChange={e => setEmail(e.target.value)} 
@@ -66,6 +69,7 @@ const RegisterSection = ({ setAction }) => {
                 </Row>
                 <Row>
                     <Form.Control 
+                        data-testid="password"
                         type="password" 
                         value={password} 
                         onChange={e => setPassword(e.target.value)} 
@@ -73,6 +77,7 @@ const RegisterSection = ({ setAction }) => {
                     />
                 </Row>
                 <Row>
+                    {/* Gives user feedback by changing button if waiting on registration */}
                     {isBusy ? (
                         <Button variant="secondary">Loading...</Button>
                     ) : (

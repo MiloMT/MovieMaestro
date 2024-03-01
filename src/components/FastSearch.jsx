@@ -33,6 +33,7 @@ function FastSearch({ onHide = null }) {
         .then((data) => {
             setMovies(data.results)
         })
+        // Navigates to movie page after fetch and goes to top of page
         .then(() => navigate("/movie"))
         .then(() => window.scrollTo(0, 0))
     }
@@ -46,6 +47,8 @@ function FastSearch({ onHide = null }) {
                         <Stack gap={3}>
                             <GenreSelector setGenre={setGenre} />
                             <Form.Group className="button" controlId="submitButton">
+                                {/* If the component is in the side menu, will
+                                close the side menu on movie search */}
                                 <Button onClick={() => {
                                     MovieRequest()
                                     if (onHide) {

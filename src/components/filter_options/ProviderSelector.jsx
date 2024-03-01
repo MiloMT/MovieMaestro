@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form"
 import Select from "react-select"
 
 
+// Retrieves default settings if user logged in
 function getDefault(user, isLoggedIn) {
     if (sessionStorage.getItem("token") && isLoggedIn) {
         return user.streamingPlatform
@@ -35,6 +36,7 @@ const ProviderSelector = ({ setProvider }) => {
         <Form.Group controlId="formProvider" className="selector">
             <Form.Label className="selector-label">Streaming Providers</Form.Label>
             <Select 
+                // Allows for multiple selections in drop down component
                 isMulti
                 onChange={(array) => setSelectValue(array)}
                 defaultValue={providerDefault}

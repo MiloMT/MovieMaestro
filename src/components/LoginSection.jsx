@@ -26,6 +26,7 @@ const LoginSection = () => {
     const nav = useNavigate()
 
     async function loginUser(credentials) {
+        // Sets the button to login to give user feedback on action
         setBusy(true)
 
         return await fetch('https://moviemaestro-api.onrender.com/users/login', {
@@ -40,6 +41,7 @@ const LoginSection = () => {
             if (data.status === "Successful Login") {
                 setLoggedIn(true)
                 setFailedLogin(false)
+                // Sets user data on login for defaults in search components
                 sessionStorage.setItem("token", data.accessToken)
                 const userObj = jwtDecode(sessionStorage.getItem("token"))
                 fetch (
@@ -57,6 +59,7 @@ const LoginSection = () => {
                 .then(() => nav('/'))
             } else {
                 setBusy(false)
+                // If unsuccessful display message for user
                 setFailedLogin(true)
                 throw new Error("Incorrect login details")
             }
@@ -94,10 +97,12 @@ const LoginSection = () => {
                         placeholder="Password" 
                     />
                 </Row>
+                {/* If login fails, displays message until login succeeds */}
                 {failedLogin &&
                     <h6>Incorrect details, please try again.</h6>
                 }
                 <Row>
+                    {/* Provides user feedback while waiting in the form of button changing */}
                     {isBusy ? (
                         <Button type="button" variant="secondary">Loading...</Button>
                     ) : (

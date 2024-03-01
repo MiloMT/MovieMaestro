@@ -32,6 +32,7 @@ function AdvancedSearch({ onHide = null }) {
             `&language=${language.value}` +
             `&watch_region=${region.value}` +
             `&with_genres=${genre.value}` +
+            // joining the array with the unicode for | for an 'or' url request join
             `&with_watch_providers=${provider.map(prov => prov.value).join("%7C")}` +
             `&sort_by=${priority.value}`
 
@@ -44,12 +45,9 @@ function AdvancedSearch({ onHide = null }) {
         })
         .then((res) => res.json())
         .then((data) => {
-            if (data.results.length < 5) {
-                console.log(data.results)
-            } else {
-                setMovies(data.results)
-            }
+            setMovies(data.results)
         })
+        // Navigates to movie page after fetch and goes to top of page
         .then(() => navigate("/movie"))
         .then(() => window.scrollTo(0, 0))
     }
@@ -67,6 +65,8 @@ function AdvancedSearch({ onHide = null }) {
                             <ProviderSelector setProvider={setProvider} />
                             <PrioritySelector setPriority={setPriority} />
                             <Form.Group className="button" controlId="submitButton">
+                                {/* If the component is in the side menu, will
+                                close the side menu on movie search */}
                                 <Button onClick={() => {
                                     MovieRequest()
                                     if (onHide) {

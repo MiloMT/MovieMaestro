@@ -14,16 +14,20 @@ function SideFilterMenu() {
     
     return (
         <>
-            <Button data-testid="search-button"  variant="primary" className="d-lg-none button-full" onClick={() => setShow(true)}>
+            <Button  variant="primary" className="d-lg-none button-full" onClick={() => setShow(true)}>
                 Search Movie
             </Button>
 
             <Offcanvas show={show} onHide={() => setShow(false)} responsive="lg">
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title data-testid="side-menu" >Search Movie</Offcanvas.Title>
+
+
+                <Offcanvas.Header data-testid="close-button" closeButton>
+                    <Offcanvas.Title >Search Movie</Offcanvas.Title>
+
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Stack gap={3}>
+                        {/* Passes on hide functions so that components can trigger hide */}
                         <FastSearch onHide={() => setShow(false)} />
                         <AdvancedSearch onHide={() => setShow(false)} />
                     </Stack>

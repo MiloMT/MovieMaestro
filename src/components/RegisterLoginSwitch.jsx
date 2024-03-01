@@ -3,11 +3,9 @@ import { useState } from 'react'
 import Stack from "react-bootstrap/Stack"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Button from "react-bootstrap/Button"
 // Component Imports
 import RegisterSection from './RegisterSection'
 import LoginSection from './LoginSection'
-
 
 
 function RegisterLoginSwitch() {
@@ -36,6 +34,7 @@ function RegisterLoginSwitch() {
                     
                     </Col>
                 </Row>
+                {/* Swaps between login and register selected */}
                 {action === "Register" ? (
                     <RegisterSection setAction={setAction} />
                 ) : (

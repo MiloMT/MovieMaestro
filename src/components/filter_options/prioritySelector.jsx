@@ -20,6 +20,7 @@ const PrioritySelector = ({ setPriority }) => {
             <Select 
                 onChange={(obj) => setSelectValue(obj)}
                 defaultValue={{ value: "popularity.desc", label: "Popularity"}}
+                // Manually set option group as can't be retrieved from API
                 options= {[
                     { value: "popularity.desc", label: "Popularity"},
                     { value: "primary_release_date.desc", label: "Release Date"},
