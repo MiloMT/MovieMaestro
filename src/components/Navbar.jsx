@@ -11,8 +11,6 @@ import Col from "react-bootstrap/Col"
 import Stack from "react-bootstrap/Stack"
 // Component Imports
 import logo from "../assets/logo.png"
-import profile from "../assets/profile.png"
-
 
 
 const NavBar = () => {
@@ -32,7 +30,7 @@ const NavBar = () => {
     }
 
     return (
-        <Navbar data-testid="navbar" fixed="top" className="bg-body-tertiary">
+        <Navbar data-testid="navbar" fixed="top">
             <Container>
                 <Col style={{display: "flex", justifyContent: "start"}}>
                     <Link to="/">
@@ -41,24 +39,22 @@ const NavBar = () => {
                         </Navbar.Brand>
                     </Link>
                 </Col>
-                <Col>
-                    <h1 className="mobile-hide">MovieMaestro</h1>
-                </Col>
-                {/* Render is conditional on whether use is logged in */}
+                {/* Render is conditional on whether user is logged in */}
                 <Col style={{display: "flex", justifyContent: "end"}}>
                     { isLoggedIn ? (
-                        <>
-                            <Stack direction="horizontal" gap={2}>
-                                <Link to="/profile">
-                                    <Button onClick={() => nav("/profile")}>
-                                        PROFILE
-                                    </Button>
-                                </Link>
-                                <Button onClick={logout}>LOGOUT</Button>
-                            </Stack>
-                        </>
+                        <Stack direction="horizontal" gap={2}>
+                            <Link to="/profile">
+                                <Button onClick={() => nav("/profile")}>
+                                    PROFILE
+                                </Button>
+                            </Link>
+                            <Button onClick={logout}>LOGOUT</Button>
+                        </Stack>
                     ) : (
-                        <Button onClick={() => nav("/login")}>LOGIN</Button>
+                        <Stack direction="horizontal" gap={1}>
+                            <Button onClick={() => nav("/login")}>LOGIN</Button>
+                            <Button onClick={() => nav("/login")}>SIGN UP</Button>
+                        </Stack>
                     )}
                 </Col>
             </Container>

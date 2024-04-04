@@ -10,7 +10,7 @@ import Logo from "../assets/TMDBLogo.svg"
 const Footer = () => {
     return (
         <>
-            <Navbar fixed="bottom" className="bg-body-tertiary">
+            <Navbar fixed="bottom">
                 <Container>
                     <Col md="auto">
                         <Navbar.Brand href="https://www.themoviedb.org/">
@@ -23,9 +23,6 @@ const Footer = () => {
                         </p>
                     </Col>
                     <Col>
-                        <Navbar.Brand className="footer-names mobile-hide">
-                            <p>Created by: Myles, Yoshi, Mitch</p>
-                        </Navbar.Brand>
                     </Col>
                 </Container>
             </Navbar>
