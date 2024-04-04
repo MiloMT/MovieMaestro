@@ -30,7 +30,7 @@ const NavBar = () => {
     }
 
     return (
-        <Navbar data-testid="navbar" fixed="top">
+        <Navbar data-testid="navbar" fixed="top" bg="light">
             <Container>
                 <Col style={{display: "flex", justifyContent: "start"}}>
                     <Link to="/">

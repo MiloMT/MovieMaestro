@@ -10,7 +10,7 @@ import Logo from "../assets/TMDBLogo.svg"
 const Footer = () => {
     return (
         <>
-            <Navbar fixed="bottom">
+            <Navbar fixed="bottom" bg="light">
                 <Container>
                     <Col md="auto">
                         <Navbar.Brand href="https://www.themoviedb.org/">

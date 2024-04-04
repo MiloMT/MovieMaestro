@@ -16,6 +16,7 @@ const OtherMovies = ({ setMovieIndex, selectedMovies }) => {
                             key={index}
                             onClick={() => setMovieIndex(index)}
                             style={{ padding: 0 }}
+                            border="secondary"
                             as={Button}
                         >
                             <Card.Img
