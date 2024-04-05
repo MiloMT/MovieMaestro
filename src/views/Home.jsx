@@ -11,7 +11,9 @@ import Button from 'react-bootstrap/Button'
 import FastSearch from '../components/FastSearch'
 import AdvancedSearch from '../components/AdvancedSearch'
 // Icons
+import { IconContext } from "react-icons"
 import { BiCameraMovie } from "react-icons/bi"
+import { SiScrollreveal } from "react-icons/si"
 
 const Home = () => {
     const { api, LoggedIn, loggedUser, movieList } = useContext(Context)
@@ -21,16 +23,29 @@ const Home = () => {
         <>
             <Container>
                 <Stack gap={3}>
-                    <Row>
-                        <Col md={10}>
+                    <Row className="header-row">
+                        <Col className="header-row-left">
                             <h1>Stuck Doom Scrolling?</h1>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col md={2}>
-                            <BiCameraMovie />
+                        <Col className="mobile-hide">
+                            <hr className="header-hr"/>
                         </Col>
-                        <Col md={10}>
+                        <Col md={1} className="mobile-hide">
+                            <IconContext.Provider value={{ size: 50 }}>
+                                <SiScrollreveal />
+                            </IconContext.Provider>  
+                        </Col>
+                    </Row>
+                    <Row className="header-row">
+                        <Col md={1} className="mobile-hide">
+                            <IconContext.Provider value={{ size: 50 }}>
+                                <BiCameraMovie />
+                            </IconContext.Provider>
+                        </Col>
+                        <Col className="mobile-hide">
+                            <hr className="header-hr"/>
+                        </Col>
+                        <Col className="header-row-right">
                             <h1>Let us choose for you!</h1>
                         </Col>
                     </Row>

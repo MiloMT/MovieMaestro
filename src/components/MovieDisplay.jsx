@@ -109,6 +109,19 @@ const MovieDisplay = () => {
         setUser(data)
     };
 
+    const ScoreIndicator = ({ value, maxValue }) => {
+        const val = (value / maxValue) * 100;
+        const deg = (180 / 100) * val;
+        return (
+            <div className="indicator">
+            <span className="bar" style={{ transform: `rotate(${deg}deg)` }} />
+            <span className="result">
+                <span>{value}</span>/<span>{maxValue}</span>
+            </span>
+            </div>
+        );
+    }
+
     return (
         <>
             {isBusy ? (
@@ -127,28 +140,35 @@ const MovieDisplay = () => {
                                 </Col>
                                 <Col>
                                     <Stack gap={3} className="movie-info">
-                                        <h4>{selectedMovies[movieIndex].title}</h4>
+                                        <Row>
+                                            <Col>
+                                                <Row>
+                                                    <h4>{selectedMovies[movieIndex].title} ({selectedMovies[movieIndex].release_date.substring(0, 4)})</h4>
+                                                </Row>
+                                                <Row>
+                                                    <p>
+                                                        {selectedMovies[movieIndex].genre_ids
+                                                            .map(
+                                                                (id) =>
+                                                                apiDefaults.genreList.find((obj) => obj.id === id)
+                                                                    .name
+                                                            )
+                                                            .join(", ")
+                                                        }
+                                                    </p>
+                                                </Row>
+                                            </Col>
+                                            <Col md={4}>
+                                                <ScoreIndicator 
+                                                    value={Math.round(selectedMovies[movieIndex].vote_average * 10) / 10} 
+                                                    maxValue={10} 
+                                                />
+                                            </Col>
+                                        </Row>
                                         <p>{selectedMovies[movieIndex].overview}</p>
                                         <Row>
                                             <Col>
-                                                <h6>Rating</h6>
-                                                <p>{selectedMovies[movieIndex].vote_average}</p>
-                                            </Col>
-                                            <Col>
-                                                <h6>Release Date</h6>
-                                                <p>{selectedMovies[movieIndex].release_date}</p>
-                                            </Col>
-                                            <Col>
-                                                <h6>Genres</h6>
-                                                <p>
-                                                {selectedMovies[movieIndex].genre_ids
-                                                .map(
-                                                    (id) =>
-                                                    apiDefaults.genreList.find((obj) => obj.id === id)
-                                                        .name
-                                                )
-                                                .join(", ")}
-                                                </p>
+                                                
                                             </Col>
                                         </Row>
                                         {/* Buttons only show if user is logged in */}
