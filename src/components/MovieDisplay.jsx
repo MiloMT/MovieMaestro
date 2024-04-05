@@ -140,7 +140,7 @@ const MovieDisplay = () => {
                                 </Col>
                                 <Col>
                                     <Stack gap={3} className="movie-info">
-                                        <Row>
+                                        <Row className="header-row">
                                             <Col>
                                                 <Row>
                                                     <h4>{selectedMovies[movieIndex].title} ({selectedMovies[movieIndex].release_date.substring(0, 4)})</h4>
