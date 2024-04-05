@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 // Bootstrap Components
-import Container from "react-bootstrap/Container"
 import Stack from "react-bootstrap/Stack"
 import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+
+import SyncLoader from "react-spinners/SyncLoader"
 
 
 const RegisterSection = ({ setAction }) => {
@@ -79,7 +79,14 @@ const RegisterSection = ({ setAction }) => {
                 <Row>
                     {/* Gives user feedback by changing button if waiting on registration */}
                     {isBusy ? (
-                        <Button variant="secondary">Loading...</Button>
+                        <Button variant="secondary">
+                            <SyncLoader 
+                                color="#0d6efd" 
+                                size={10}
+                                aria-label="Loading Spinner"
+                                speedMultiplier={0.75}    
+                            />
+                        </Button>
                     ) : (
                         <Button type="submit" variant="primary">Create Account</Button>
                     )}

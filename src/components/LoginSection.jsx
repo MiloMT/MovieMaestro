@@ -2,14 +2,14 @@ import React, { useContext, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from "jwt-decode"
 // Bootstrap Components
-import Container from "react-bootstrap/Container"
 import Stack from "react-bootstrap/Stack"
 import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
 import { Context } from './App'
+
+import SyncLoader from "react-spinners/SyncLoader"
 
 
 const LoginSection = () => {
@@ -104,7 +104,14 @@ const LoginSection = () => {
                 <Row>
                     {/* Provides user feedback while waiting in the form of button changing */}
                     {isBusy ? (
-                        <Button type="button" variant="secondary">Loading...</Button>
+                        <Button type="button" variant="secondary">
+                            <SyncLoader 
+                                color="#0d6efd" 
+                                size={10}
+                                aria-label="Loading Spinner"
+                                speedMultiplier={0.75}    
+                            />
+                        </Button>
                     ) : (
                         <Button type="submit" variant="primary">Login</Button>
                     )}
