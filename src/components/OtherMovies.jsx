@@ -23,7 +23,7 @@ const OtherMovies = ({ setMovieIndex, selectedMovies }) => {
                                 variant="top"
                                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                             />
-                            <Card.Body>{movie.title}</Card.Body>
+                            <Card.Body className="other-movie-title">{movie.title}</Card.Body>
                         </Card>
                     ))}
                 </CardGroup>

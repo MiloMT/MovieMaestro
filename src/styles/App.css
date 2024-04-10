@@ -59,7 +59,7 @@
     transition: filter 300ms;
 }
 
-/* Movie Cards */
+/* Main Movie Card */
 
 .card {
     padding: 2em;
@@ -94,15 +94,33 @@
 
 .watched-card-container {
     display: inline-block;
+    position: relative;
     margin-right: 10px;
     max-width: 135px;
     white-space: wrap;
 }
 
-/* Movie Display */
+/* Other Movie Cards */
 
-/* indicator STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.other-movie-title {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-remove-button {
+    background-color: red;
+    padding: 0.5em;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 500;
+    top: 1em;
+    right: 1em;
+}
+
+/* Indicator */
 
 .indicator {
     position: relative;
@@ -161,7 +179,6 @@
         transform: rotate(0);
     }
 }
-  
 
 /* Conditional Displays */
 
@@ -201,7 +218,6 @@
 }
 
 
-
 @media (max-width: 768px) {
     .movie-image {
         margin-bottom: 3rem;
@@ -215,6 +231,7 @@
         visibility: visible;
     }
 }
+
 
 @media (max-width: 576px) {
     .mobile-hide {

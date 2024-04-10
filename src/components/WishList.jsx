@@ -4,6 +4,9 @@ import { Context } from "./App"
 import Button from "react-bootstrap/Button"
 import { jwtDecode } from "jwt-decode"
 
+import { IconContext } from "react-icons"
+import { RiDeleteBin6Line } from "react-icons/ri"
+
 const WishList = () => {
     const { loggedUser } = useContext(Context)
     const user = loggedUser[0]
@@ -39,15 +42,15 @@ const WishList = () => {
                 {user.wishList.map((movie, index) => (
                     <div key={index} className="watched-card-container">
                         <Card style={{ padding: 0 }}>
+                            <IconContext.Provider value={{ color: "white", size: "2.5em", className: "movie-remove-button" }}>
+                                <RiDeleteBin6Line onClick={() => removeMovie(movie)}/>
+                            </IconContext.Provider>
                             <Card.Img
                                 variant="top"
                                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                                 style={{ height: "200px" }}
                             />
-                            <Card.Body>{movie.title}</Card.Body>
-                            <Button variant="danger" onClick={() => removeMovie(movie)}>
-                                Remove
-                            </Button>
+                            <Card.Body className="other-movie-title">{movie.title}</Card.Body>
                         </Card>
                     </div>    
                 ))}

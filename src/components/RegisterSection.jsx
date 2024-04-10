@@ -84,7 +84,7 @@ const RegisterSection = ({ setAction }) => {
                                 color="#0d6efd" 
                                 size={10}
                                 aria-label="Loading Spinner"
-                                speedMultiplier={0.75}    
+                                speedMultiplier={0.5}    
                             />
                         </Button>
                     ) : (
