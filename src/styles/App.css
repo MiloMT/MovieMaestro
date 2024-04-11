@@ -6,6 +6,16 @@
     padding: 100px 1rem;
 }
 
+/* Loading */
+
+.loading-container {
+    align-items: center;
+}
+
+.loading-header {
+    color: darkgray;
+}
+
 /* Home Page */
 
 .header-row {
