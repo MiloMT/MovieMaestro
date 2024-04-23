@@ -29,7 +29,7 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar data-testid='navbar' fixed='top' bg='light'>
+    <Navbar className='navbar' data-testid='navbar' fixed='top'>
       <Container>
         <Col style={{ display: 'flex', justifyContent: 'start' }}>
           <Link to='/'>
