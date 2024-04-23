@@ -50,7 +50,6 @@ const NavBar = () => {
           ) : (
             <Stack direction='horizontal' gap={1}>
               <Button onClick={() => nav('/login')}>LOGIN</Button>
-              <Button onClick={() => nav('/login')}>SIGN UP</Button>
             </Stack>
           )}
         </Col>

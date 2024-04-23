@@ -8,6 +8,9 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 // Component Imports
 import OtherMovies from './OtherMovies.jsx'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const MovieDisplay = () => {
   // Context States
@@ -128,6 +131,30 @@ const MovieDisplay = () => {
     )
   }
 
+  const notifyWatch = () => {
+    toast.success("Added to watch list!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  }
+  
+  const notifyWish = () => {
+    toast.success("Added to wish list!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  }  
+
   return (
     <>
       {isBusy ? (
@@ -203,6 +230,7 @@ const MovieDisplay = () => {
                               onClick={() => {
                                 handleAddWatchedList()
                                 setInWatchedList(true)
+                                notifyWatch()
                               }}
                               className='button-full'
                             >
@@ -224,6 +252,7 @@ const MovieDisplay = () => {
                               onClick={() => {
                                 handleAddWishList()
                                 setInWishList(true)
+                                notifyWish()
                               }}
                               className='button-full'
                             >
@@ -242,6 +271,18 @@ const MovieDisplay = () => {
               setMovieIndex={setMovieIndex}
             />
           </Stack>
+          <ToastContainer 
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
         </>
       )}
     </>
