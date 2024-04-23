@@ -24,7 +24,7 @@ const Home = () => {
       <Container>
         <Stack gap={3}>
           <Row className='header-row'>
-            <Col className='header-row-left'>
+            <Col className='header-row-left mobile-wrap'>
               <h1>Stuck Doom Scrolling?</h1>
             </Col>
             <Col className='mobile-hide'>
@@ -45,29 +45,28 @@ const Home = () => {
             <Col className='mobile-hide'>
               <hr className='header-hr' />
             </Col>
-            <Col className='header-row-right'>
+            <Col className='header-row-right mobile-wrap'>
               <h1>Let us choose for you!</h1>
             </Col>
           </Row>
           <FastSearch />
           <AdvancedSearch />
-          {/* {!isLoggedIn ? (
-                        <>
-                            <Row>
-                                <div>
-                                    Want faster searches? Don't want to input your streaming platform
-                                    availability everytime? Then register for an account to get default
-                                    settings applied straight away!
-                                </div>
-                            </Row>
-                            <Row>
-                                <Link to='/login'>
-                                    <Button fixed="bottom">SIGN UP</Button>
-                                </Link>
-                            </Row>
-                        </>
-                    ) : null
-                    } */}
+          {!isLoggedIn ? (
+            <>
+              <Row>
+                <div>
+                  Want faster searches? Don't want to input your streaming
+                  platform availability everytime? Then register for an account
+                  to get default settings applied straight away!
+                </div>
+              </Row>
+              <Row>
+                <Link to='/login'>
+                  <Button fixed='bottom'>SIGN UP</Button>
+                </Link>
+              </Row>
+            </>
+          ) : null}
         </Stack>
       </Container>
     </>

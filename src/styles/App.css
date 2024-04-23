@@ -293,4 +293,9 @@
   .mobile-show {
     display: relative;
   }
+
+  .mobile-wrap {
+    text-wrap: wrap;
+    text-align: center;
+  }
 }
