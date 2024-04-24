@@ -9,20 +9,11 @@ import Logo from '../assets/TMDBLogo.svg'
 const Footer = () => {
   return (
     <>
-      <Navbar className='navbar' fixed='bottom'>
+      <Navbar id='footer' fixed='bottom'>
         <Container>
-          <Col md='auto'>
-            <Navbar.Brand href='https://www.themoviedb.org/'>
-              <img src={Logo} alt='TMDB Logo' className='tmdb-logo' />
-            </Navbar.Brand>
-          </Col>
-          <Col md='4'>
-            <p className='tmdb-attribution tablet-hide'>
-              This product uses the TMDB API but is not endorsed or certified by
-              TMDB.
-            </p>
-          </Col>
-          <Col></Col>
+          <Navbar.Brand href='https://www.themoviedb.org/'>
+            <img src={Logo} alt='TMDB Logo' className='tmdb-logo' />
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </>
