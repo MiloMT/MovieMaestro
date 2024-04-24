@@ -11,6 +11,36 @@ body {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
+/* Navbar + Footer */
+
+#navbar {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 0 15px;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+#footer {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  margin-left: calc(50vw - 640px + 1rem);
+  width: 85px;
+  height: 85px;
+  display: flex;
+
+}
+
 /* Loading */
 
 .loading-container {
@@ -19,14 +49,6 @@ body {
 
 .loading-header {
   color: darkgray;
-}
-
-.navbar {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Home Page */
@@ -54,7 +76,6 @@ body {
 .tmdb-logo {
   width: 60px;
   height: auto;
-  margin-left: 10px;
 }
 
 .tmdb-attribution {
@@ -281,6 +302,17 @@ body {
 .selector-label {
   font-weight: 600;
   font-size: 0.8rem;
+}
+
+@media (max-width: 1280px) {
+  #navbar {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #footer {
+    margin-left: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
