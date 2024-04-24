@@ -11,15 +11,7 @@ body {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-/* Loading */
-
-.loading-container {
-  align-items: center;
-}
-
-.loading-header {
-  color: darkgray;
-}
+/* Navbar + Footer */
 
 #navbar {
   background: rgba(255, 255, 255, 0.9);
@@ -47,6 +39,16 @@ body {
   height: 85px;
   display: flex;
 
+}
+
+/* Loading */
+
+.loading-container {
+  align-items: center;
+}
+
+.loading-header {
+  color: darkgray;
 }
 
 /* Home Page */
